@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
+import 'cadastro.dart';
+import 'sobre.dart';
 
-class TelaLogin extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -75,25 +78,6 @@ class FormularioLogin extends StatelessWidget {
               ),
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
-            Container(
-              height: 40,
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                child: Text(
-                  "Recuperar Senha",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  /*Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ResetPasswordPage(),
-                    ),
-                  );*/
-                },
-              ),
-            ),
             SizedBox(
               height: 40,
             ),
@@ -132,12 +116,12 @@ class FormularioLogin extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    /*Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => Home(),
                       ),
-                    );*/
+                    );
                   },
                 ),
               ),
@@ -150,16 +134,37 @@ class FormularioLogin extends StatelessWidget {
               child: TextButton(
                 child: Text(
                   "Cadastre-se",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Cadastro(),
+                    ),
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              height: 1,
+            ),
+            Container(
+              height: 20,
+              child: TextButton(
+                child: Text(
+                  "Sobre o App",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                  /*Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignupPage(),
+                      builder: (context) => Sobre(),
                     ),
-                  );*/
+                  );
                 },
               ),
             ),
