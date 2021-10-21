@@ -6,19 +6,17 @@ import 'sobre.dart';
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark(),
-      home: FormularioLogin(),
-    );
-  }
-}
-
-class FormularioLogin extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.black.withBlue(60), Colors.black.withBlue(20)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+
+        ),
         child: ListView(
           children: <Widget>[
             SizedBox(
@@ -139,7 +137,7 @@ class FormularioLogin extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Cadastro(),
+                      builder: (context) => Cadastro('','','',''),
                     ),
                   );
                 },

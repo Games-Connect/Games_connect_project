@@ -9,7 +9,7 @@ void main(){
       debugShowCheckedModeBanner: false,
       title: 'Games Connect',
       theme: ThemeData.dark(),
-      home: Home(),
+      home: Login(),
     )
   );
 }
