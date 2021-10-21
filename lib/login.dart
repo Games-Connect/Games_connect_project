@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
+import 'cadastro.dart';
+import 'sobre.dart';
 
-class TelaLogin extends StatelessWidget {
+class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: FormularioLogin(),
-      ),
+      theme: ThemeData.dark(),
+      home: FormularioLogin(),
     );
   }
 }
@@ -17,7 +19,6 @@ class FormularioLogin extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 60, left: 40, right: 40),
-        color: Colors.black,
         child: ListView(
           children: <Widget>[
             SizedBox(
@@ -33,7 +34,7 @@ class FormularioLogin extends StatelessWidget {
                         child: Text('Games Connect',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: Colors.white,
+                                //color: Colors.white,
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold))))),
             TextField(
@@ -47,12 +48,12 @@ class FormularioLogin extends StatelessWidget {
                 ),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
-                  color: Colors.white,
+                  //color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 25,
@@ -68,31 +69,12 @@ class FormularioLogin extends StatelessWidget {
                 ),
                 labelText: "Senha",
                 labelStyle: TextStyle(
-                  color: Colors.white,
+                  //color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-            Container(
-              height: 40,
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                child: Text(
-                  "Recuperar Senha",
-                  textAlign: TextAlign.right,
-                  style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  /*Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ResetPasswordPage(),
-                    ),
-                  );*/
-                },
-              ),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 40,
@@ -101,7 +83,7 @@ class FormularioLogin extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                /*gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   stops: [0.3, 1],
@@ -109,7 +91,7 @@ class FormularioLogin extends StatelessWidget {
                     Colors.black.withBlue(60),
                     Colors.black.withBlue(20)
                   ],
-                ),
+                ),*/
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
@@ -124,7 +106,7 @@ class FormularioLogin extends StatelessWidget {
                         'Login',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                          //color: Colors.white,
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.center,
@@ -132,12 +114,12 @@ class FormularioLogin extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    /*Navigator.push(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => Home(),
                       ),
-                    );*/
+                    );
                   },
                 ),
               ),
@@ -146,20 +128,41 @@ class FormularioLogin extends StatelessWidget {
               height: 10,
             ),
             Container(
-              height: 40,
+              height: 20,
               child: TextButton(
                 child: Text(
                   "Cadastre-se",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.left,
+                  //style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                  /*Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignupPage(),
+                      builder: (context) => Cadastro(),
                     ),
-                  );*/
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Container(
+              height: 20,
+              child: TextButton(
+                child: Text(
+                  "Sobre o App",
+                  textAlign: TextAlign.center,
+                  //style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Sobre(),
+                    ),
+                  );
                 },
               ),
             ),

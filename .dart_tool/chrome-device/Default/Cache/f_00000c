@@ -53,7 +53,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 16,
         [_Location_line]: 164,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     },
     get C6() {
@@ -86,7 +86,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 14,
         [_Location_line]: 162,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     },
     get C10() {
@@ -129,7 +129,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 25,
         [_Location_line]: 173,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     },
     get C15() {
@@ -182,7 +182,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 24,
         [_Location_line]: 191,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     },
     get C19() {
@@ -219,7 +219,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 18,
         [_Location_line]: 209,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     },
     get C26() {
@@ -262,7 +262,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 16,
         [_Location_line]: 206,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     },
     get C31() {
@@ -285,7 +285,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 14,
         [_Location_line]: 205,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     },
     get C34() {
@@ -318,13 +318,13 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
         [_Location_name]: null,
         [_Location_column]: 12,
         [_Location_line]: 203,
-        [_Location_file]: "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart"
+        [_Location_file]: "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart"
       });
     }
   }, false);
   var C = Array(36).fill(void 0);
   var I = [
-    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/icon.dart",
+    "file:///C:/flutter/sdk/packages/flutter/lib/src/widgets/icon.dart",
     "package:flutter/src/widgets/icon.dart"
   ];
   var icon$0 = dart.privateName(icon$, "Icon.icon");
@@ -440,7 +440,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/f
   dart.trackLibraries("packages/flutter/src/widgets/icon.dart", {
     "package:flutter/src/widgets/icon.dart": icon$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["icon.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkFkB;;;;;;IAcF;;;;;;IA6BD;;;;;;IASC;;;;;;IAeO;;;;;;UAGK;;AACxB,YAAY,AAAsB,8BAAG,kCAA4B,OAAO;AACpD,2BAAmC,yBAAd,aAAgC,wBAAG,OAAO;AAE/D,sBAAsB,wBAAG,OAAO;AAEtC,sBAAgB,iBAAL,cAAQ,AAAU,SAAD;AAE1C,UAAI,AAAK;AACP,cAAO,iCACE,2BACA,+BAAgB,QAAQ,UAAU,QAAQ;;AAIxC,yBAAgC,OAAlB,AAAU,SAAD,UAAC,eAAW;AAC1C,uBAAkB,mBAAN,eAAwB,eAAf,AAAU,SAAD;AACpC,UAAI,WAAW,KAAI,KACjB,AAAkE,YAAtD,AAAU,SAAD,aAAa,AAAU,AAAQ,SAAT,WAAW,WAAW;AAE5D,uBAAa,kCACK,+CACR,aAAa,QACtB,kCACS,yBAAiB,AAAE,eAAN,8BACnB,uCACI,cACF,SAAS,YACN,QAAQ,cACF,AAAE,eAAN,gCACC,AAAE,eAAN;AAKf,UAAQ,AAAE,eAAN;AACF,gBAAQ,aAAa;;;AAOhB,YALD,aAAa,+EACQ;AAAY,2BAAM,CAAC,KAAK,KAAK;;gCAC3B,+CACF,cACZ,UAAU;AAEnB;;;;AAEA;;;;AAIN,YAAO,iCACE,2BACA,uCACE,+BACE,QAAQ,UACP,QAAQ,SACT,6BACE,UAAU;IAK3B;wBAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC8C,MAAlF,AAAW,UAAD,KAAK,mCAAiB,QAAQ,oBAAc,qBAAqB;AACX,MAAhE,AAAW,UAAD,KAAK,mCAAe,QAAQ,0BAAoB;AACO,MAAjE,AAAW,UAAD,KAAK,6BAAc,SAAS,2BAAqB;IAC7D;;6BAxJO;QACA;QACA;QACA;QACA;QACA;;IALA;IAEA;IACA;IACA;IACA;AACF,8CAAW,GAAG;;EAAC","file":"../../../../../../../../packages/flutter/src/widgets/icon.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["icon.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAkFkB;;;;;;IAcF;;;;;;IA6BD;;;;;;IASC;;;;;;IAeO;;;;;;UAGK;;AACxB,YAAY,AAAsB,8BAAG,kCAA4B,OAAO;AACpD,2BAAmC,yBAAd,aAAgC,wBAAG,OAAO;AAE/D,sBAAsB,wBAAG,OAAO;AAEtC,sBAAgB,iBAAL,cAAQ,AAAU,SAAD;AAE1C,UAAI,AAAK;AACP,cAAO,iCACE,2BACA,+BAAgB,QAAQ,UAAU,QAAQ;;AAIxC,yBAAgC,OAAlB,AAAU,SAAD,UAAC,eAAW;AAC1C,uBAAkB,mBAAN,eAAwB,eAAf,AAAU,SAAD;AACpC,UAAI,WAAW,KAAI,KACjB,AAAkE,YAAtD,AAAU,SAAD,aAAa,AAAU,AAAQ,SAAT,WAAW,WAAW;AAE5D,uBAAa,kCACK,+CACR,aAAa,QACtB,kCACS,yBAAiB,AAAE,eAAN,8BACnB,uCACI,cACF,SAAS,YACN,QAAQ,cACF,AAAE,eAAN,gCACC,AAAE,eAAN;AAKf,UAAQ,AAAE,eAAN;AACF,gBAAQ,aAAa;;;AAOhB,YALD,aAAa,+EACQ;AAAY,2BAAM,CAAC,KAAK,KAAK;;gCAC3B,+CACF,cACZ,UAAU;AAEnB;;;;AAEA;;;;AAIN,YAAO,iCACE,2BACA,uCACE,+BACE,QAAQ,UACP,QAAQ,SACT,6BACE,UAAU;IAK3B;wBAGqD;AACd,MAA/B,0BAAoB,UAAU;AAC8C,MAAlF,AAAW,UAAD,KAAK,mCAAiB,QAAQ,oBAAc,qBAAqB;AACX,MAAhE,AAAW,UAAD,KAAK,mCAAe,QAAQ,0BAAoB;AACO,MAAjE,AAAW,UAAD,KAAK,6BAAc,SAAS,2BAAqB;IAC7D;;6BAxJO;QACA;QACA;QACA;QACA;QACA;;IALA;IAEA;IACA;IACA;IACA;AACF,8CAAW,GAAG;;EAAC","file":"../../../../../../../packages/flutter/src/widgets/icon.dart.lib.js"}');
   // Exports:
   return {
     src__widgets__icon: icon$
