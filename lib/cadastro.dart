@@ -3,20 +3,25 @@ import 'home.dart';
 import 'login.dart';
 
 class Cadastro extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData.dark(),
-      home: FormularioCadastro(),
-    );
-  }
-}
+  final String nome;
+  final String email;
+  final String senha;
+  final String senha2;
 
-class FormularioCadastro extends StatelessWidget {
+    const Cadastro(this.nome, this.email, this.senha, this.senha2, {Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.black.withBlue(60), Colors.black.withBlue(20)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+
+        ),
         padding: EdgeInsets.only(top: 40, left: 40, right: 40),
         child: ListView(
           children: <Widget>[
@@ -32,6 +37,7 @@ class FormularioCadastro extends StatelessWidget {
             TextFormField(
               //cursorColor: Colors.yellow,
               // autofocus: true,
+              initialValue: this.nome,
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
@@ -53,6 +59,7 @@ class FormularioCadastro extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              initialValue: this.email,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
@@ -73,6 +80,7 @@ class FormularioCadastro extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              initialValue: this.senha,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
@@ -94,6 +102,7 @@ class FormularioCadastro extends StatelessWidget {
             ),
             TextFormField(
               // autofocus: true,
+              initialValue: this.senha2,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
@@ -130,13 +139,23 @@ class FormularioCadastro extends StatelessWidget {
                   Radius.circular(5),
                 ),
               ),
-              child: SizedBox.expand(
+              child: SizedBox.expand( 
                 child: TextButton(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
+                      if (this.nome != '')
+                        Text(
+                          'Atualizar Cadastro',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      if (this.nome == '')
+                        Text(
                         'Finalizar Cadastro',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,

@@ -16,7 +16,7 @@ class WidgetFunction extends StatelessWidget {
       // MARGENS (externo)
       //margin: EdgeInsets.all(5),
       //margin: EdgeInsets.only(top: 10),
-      margin: EdgeInsets.fromLTRB(5, 60, 2, 0),
+      margin: EdgeInsets.fromLTRB(5, 40, 2, 0),
 
       // ESPAÇAMENTO (interno)
       padding: EdgeInsets.all(5),
@@ -26,18 +26,6 @@ class WidgetFunction extends StatelessWidget {
       width: MediaQuery.of(context).size.width * .80,
       //height: 300,
       
-      //DECORAÇÃO
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Colors.black.withBlue(60), Colors.black.withBlue(20)],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-
-        //BORDAS ARREDONDADAS
-        borderRadius: BorderRadius.all(Radius.circular(20))
-       ),
-
       child: Row(
         children: [   
           Container(
