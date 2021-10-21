@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:games_connect_project/cadastro.dart';
+import 'jogos.dart';
 import 'widget_function.dart';
 import 'login.dart';
 
@@ -41,13 +42,58 @@ class Home extends StatelessWidget {
                 color: Colors.white,
               ),  
             ),
-            WidgetFunction('God of War Ragnarok ','lib/imagens/download-4.jpg'),
-            WidgetFunction('Call of Duty','lib/imagens/download-4.jpg'),
-            WidgetFunction('Super Mario Bros','lib/imagens/download-4.jpg'),
-            //SizedBox(
-             // height: 50,
-            //),
-            //WidgetFunction('God of War Ragnarok ','lib/imagens/download-4.jpg'),
+            WidgetFunction('God of War Ragnarok ','lib/imagens/gow.jpg'),
+            WidgetFunction('Call of Duty - World At War','lib/imagens/cod.jpg'),
+            WidgetFunction('Super Mario Bros','lib/imagens/mario.jpg'),
+            SizedBox(
+              height: 50,
+            ),
+
+            Container(
+              height: 60,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                /*gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  stops: [0.3, 1],
+                  colors: [
+                    Colors.black.withBlue(60),
+                    Colors.black.withBlue(20)
+                  ],
+                ),*/
+                borderRadius: BorderRadius.all(
+                  Radius.circular(5),
+                ),
+              ),
+              child: SizedBox.expand(
+                child: TextButton(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Cadastrar Jogos',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          //color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Jogos('',''),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
 
 
           ],
@@ -144,22 +190,33 @@ class Home extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.fromLTRB(20, 20, 2, 0),
                     
-                    child:Row(
-                      children: [
-                        Icon(Icons.games, size:30),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(40, 0, 20, 0),
-                          child:Text(
-                            'Cadastrar jogos', 
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ), 
+                    child: TextButton(
+
+                      child:Row(
+                        children: [
+                          Icon(Icons.games, size:30),
+                          Container(
+                            margin: EdgeInsets.fromLTRB(40, 0, 20, 0),
+                            child:Text(
+                              'Cadastrar jogos', 
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ), 
+                            ),
+                          )
+                        ],
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Jogos('', ''),
                           ),
-                        )
-                      ],
+                        );
+                      },
                     ),
                   ), 
 
