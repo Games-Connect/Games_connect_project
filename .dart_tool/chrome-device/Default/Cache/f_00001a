@@ -1,74 +1,68 @@
-define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/collection/src/priority_queue.dart', 'packages/flutter/src/foundation/print.dart', 'packages/flutter/src/scheduler/debug.dart', 'packages/flutter/src/foundation/binding.dart', 'packages/flutter/src/scheduler/priority.dart'], (function load__packages__flutter__src__scheduler__binding_dart(dart_sdk, packages__flutter__src__foundation__debug$46dart, packages__collection__src__priority_queue$46dart, packages__flutter__src__foundation__print$46dart, packages__flutter__src__scheduler__debug$46dart, packages__flutter__src__foundation__binding$46dart, packages__flutter__src__scheduler__priority$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/synchronous_future.dart', 'packages/flutter/src/painting/image_stream.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/object.dart', 'packages/flutter/src/painting/image_cache.dart', 'packages/flutter/src/painting/binding.dart', 'packages/flutter/src/services/system_channels.dart', 'packages/flutter/src/foundation/_platform_web.dart'], (function load__packages__flutter__src__painting___network_image_web_dart(dart_sdk, packages__flutter__src__foundation__synchronous_future$46dart, packages__flutter__src__painting__image_stream$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__object$46dart, packages__flutter__src__painting__image_cache$46dart, packages__flutter__src__painting__binding$46dart, packages__flutter__src__services__system_channels$46dart, packages__flutter__src__foundation___platform_web$46dart) {
   'use strict';
   const core = dart_sdk.core;
   const async = dart_sdk.async;
-  const _internal = dart_sdk._internal;
-  const developer = dart_sdk.developer;
   const _interceptors = dart_sdk._interceptors;
   const ui = dart_sdk.ui;
   const _js_helper = dart_sdk._js_helper;
-  const collection = dart_sdk.collection;
+  const typed_data = dart_sdk.typed_data;
+  const io = dart_sdk.io;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const synchronous_future = packages__flutter__src__foundation__synchronous_future$46dart.src__foundation__synchronous_future;
+  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
   const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
-  const debug = packages__flutter__src__foundation__debug$46dart.src__foundation__debug;
-  const priority_queue = packages__collection__src__priority_queue$46dart.src__priority_queue;
-  const print = packages__flutter__src__foundation__print$46dart.src__foundation__print;
-  const debug$ = packages__flutter__src__scheduler__debug$46dart.src__scheduler__debug;
-  const binding = packages__flutter__src__foundation__binding$46dart.src__foundation__binding;
-  const priority$ = packages__flutter__src__scheduler__priority$46dart.src__scheduler__priority;
-  var binding$ = Object.create(dart.library);
-  var $add = dartx.add;
-  var $length = dartx.length;
-  var $contains = dartx.contains;
-  var $remove = dartx.remove;
-  var $isEmpty = dartx.isEmpty;
-  var $compareTo = dartx.compareTo;
-  var $_set = dartx._set;
-  var $keys = dartx.keys;
-  var $_get = dartx._get;
-  var $trimRight = dartx.trimRight;
-  var $split = dartx.split;
-  var $join = dartx.join;
-  var $round = dartx.round;
-  var $toString = dartx.toString;
-  var $padRight = dartx.padRight;
-  var $padLeft = dartx.padLeft;
-  var $forEach = dartx.forEach;
-  var $clear = dartx.clear;
-  var $times = dartx['*'];
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
+  const image_cache = packages__flutter__src__painting__image_cache$46dart.src__painting__image_cache;
+  const binding = packages__flutter__src__painting__binding$46dart.src__painting__binding;
+  const asset_bundle = packages__flutter__src__services__system_channels$46dart.src__services__asset_bundle;
+  const platform = packages__flutter__src__foundation___platform_web$46dart.src__foundation__platform;
+  var _network_image_web = Object.create(dart.library);
+  var image_provider = Object.create(dart.library);
+  var $runtimeType = dartx.runtimeType;
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $_equals = dartx._equals;
+  var $buffer = dartx.buffer;
+  var $asUint8List = dartx.asUint8List;
+  var $lengthInBytes = dartx.lengthInBytes;
+  var $hashCode = dartx.hashCode;
   dart._checkModuleNullSafetyMode(true);
   var T$ = {
-    VoidTobool: () => (T$.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    VoidToNull: () => (T$.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    SynchronousFutureOfNetworkImage: () => (T$.SynchronousFutureOfNetworkImage = dart.constFn(synchronous_future.SynchronousFuture$(_network_image_web.NetworkImage)))(),
+    StreamControllerOfImageChunkEvent: () => (T$.StreamControllerOfImageChunkEvent = dart.constFn(async.StreamController$(image_stream.ImageChunkEvent)))(),
+    ImageProviderOfObject: () => (T$.ImageProviderOfObject = dart.constFn(image_provider.ImageProvider$(core.Object)))(),
+    DiagnosticsPropertyOfImageProviderOfObject: () => (T$.DiagnosticsPropertyOfImageProviderOfObject = dart.constFn(diagnostics.DiagnosticsProperty$(T$.ImageProviderOfObject())))(),
+    DiagnosticsPropertyOfNetworkImage: () => (T$.DiagnosticsPropertyOfNetworkImage = dart.constFn(diagnostics.DiagnosticsProperty$(_network_image_web.NetworkImage)))(),
     JSArrayOfDiagnosticsNode: () => (T$.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
-    ListOfFrameTiming: () => (T$.ListOfFrameTiming = dart.constFn(core.List$(ui.FrameTiming)))(),
-    ListOfFrameTimingTovoid: () => (T$.ListOfFrameTimingTovoid = dart.constFn(dart.fnType(dart.void, [T$.ListOfFrameTiming()])))(),
-    JSArrayOfListOfFrameTimingTovoid: () => (T$.JSArrayOfListOfFrameTimingTovoid = dart.constFn(_interceptors.JSArray$(T$.ListOfFrameTimingTovoid())))(),
-    __Tobool: () => (T$.__Tobool = dart.constFn(dart.fnType(core.bool, [], {}, {priority: core.int, scheduler: binding$.SchedulerBinding})))(),
-    HeapPriorityQueueOf_TaskEntry: () => (T$.HeapPriorityQueueOf_TaskEntry = dart.constFn(priority_queue.HeapPriorityQueue$(binding$._TaskEntry)))(),
-    _TaskEntryAnd_TaskEntryToint: () => (T$._TaskEntryAnd_TaskEntryToint = dart.constFn(dart.fnType(core.int, [binding$._TaskEntry, binding$._TaskEntry])))(),
-    IdentityMapOfint$_FrameCallbackEntry: () => (T$.IdentityMapOfint$_FrameCallbackEntry = dart.constFn(_js_helper.IdentityMap$(core.int, binding$._FrameCallbackEntry)))(),
-    _IdentityHashSetOfint: () => (T$._IdentityHashSetOfint = dart.constFn(collection._IdentityHashSet$(core.int)))(),
-    DurationTovoid: () => (T$.DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))(),
-    JSArrayOfDurationTovoid: () => (T$.JSArrayOfDurationTovoid = dart.constFn(_interceptors.JSArray$(T$.DurationTovoid())))(),
-    ListOfListOfFrameTimingTovoid: () => (T$.ListOfListOfFrameTimingTovoid = dart.constFn(core.List$(T$.ListOfFrameTimingTovoid())))(),
-    DiagnosticsPropertyOfListOfFrameTimingTovoid: () => (T$.DiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(diagnostics.DiagnosticsProperty$(T$.ListOfFrameTimingTovoid())))(),
+    ListOfDiagnosticsNode: () => (T$.ListOfDiagnosticsNode = dart.constFn(core.List$(diagnostics.DiagnosticsNode)))(),
+    VoidToListOfDiagnosticsNode: () => (T$.VoidToListOfDiagnosticsNode = dart.constFn(dart.fnType(T$.ListOfDiagnosticsNode(), [])))(),
+    VoidTobool: () => (T$.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    intAndintTovoid: () => (T$.intAndintTovoid = dart.constFn(dart.fnType(dart.void, [core.int, core.int])))(),
+    StackTraceN: () => (T$.StackTraceN = dart.constFn(dart.nullable(core.StackTrace)))(),
+    ObjectAndStackTraceNTovoid: () => (T$.ObjectAndStackTraceNTovoid = dart.constFn(dart.fnType(dart.void, [core.Object, T$.StackTraceN()])))(),
+    DiagnosticsPropertyOfImageConfiguration: () => (T$.DiagnosticsPropertyOfImageConfiguration = dart.constFn(diagnostics.DiagnosticsProperty$(image_provider.ImageConfiguration)))(),
     SyncIterableOfDiagnosticsNode: () => (T$.SyncIterableOfDiagnosticsNode = dart.constFn(_js_helper.SyncIterable$(diagnostics.DiagnosticsNode)))(),
     IterableOfDiagnosticsNode: () => (T$.IterableOfDiagnosticsNode = dart.constFn(core.Iterable$(diagnostics.DiagnosticsNode)))(),
     VoidToIterableOfDiagnosticsNode: () => (T$.VoidToIterableOfDiagnosticsNode = dart.constFn(dart.fnType(T$.IterableOfDiagnosticsNode(), [])))(),
-    FutureOfdouble: () => (T$.FutureOfdouble = dart.constFn(async.Future$(core.double)))(),
-    VoidToFutureOfdouble: () => (T$.VoidToFutureOfdouble = dart.constFn(dart.fnType(T$.FutureOfdouble(), [])))(),
     FutureOfvoid: () => (T$.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
-    doubleToFutureOfvoid: () => (T$.doubleToFutureOfvoid = dart.constFn(dart.fnType(T$.FutureOfvoid(), [core.double])))(),
-    LinkedHashMapOfint$_FrameCallbackEntry: () => (T$.LinkedHashMapOfint$_FrameCallbackEntry = dart.constFn(collection.LinkedHashMap$(core.int, binding$._FrameCallbackEntry)))(),
-    CompleterOfvoid: () => (T$.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
+    ImageCacheStatusN: () => (T$.ImageCacheStatusN = dart.constFn(dart.nullable(image_cache.ImageCacheStatus)))(),
+    CompleterOfImageCacheStatusN: () => (T$.CompleterOfImageCacheStatusN = dart.constFn(async.Completer$(T$.ImageCacheStatusN())))(),
+    ObjectAndStackTraceNToFutureOfvoid: () => (T$.ObjectAndStackTraceNToFutureOfvoid = dart.constFn(dart.fnType(T$.FutureOfvoid(), [core.Object, T$.StackTraceN()])))(),
+    ZoneAndZoneDelegateAndZone__Tovoid: () => (T$.ZoneAndZoneDelegateAndZone__Tovoid = dart.constFn(dart.fnType(dart.void, [async.Zone, async.ZoneDelegate, async.Zone, core.Object, core.StackTrace])))(),
     VoidTovoid: () => (T$.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    VoidToFutureOfvoid: () => (T$.VoidToFutureOfvoid = dart.constFn(dart.fnType(T$.FutureOfvoid(), [])))(),
-    intAnd_FrameCallbackEntryTovoid: () => (T$.intAnd_FrameCallbackEntryTovoid = dart.constFn(dart.fnType(dart.void, [core.int, binding$._FrameCallbackEntry])))(),
-    ListOfDurationTovoid: () => (T$.ListOfDurationTovoid = dart.constFn(core.List$(T$.DurationTovoid())))(),
-    IdentityMapOfString$dynamic: () => (T$.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))()
+    VoidToImageStreamCompleter: () => (T$.VoidToImageStreamCompleter = dart.constFn(dart.fnType(image_stream.ImageStreamCompleter, [])))(),
+    DiagnosticsPropertyOfAssetBundleImageKey: () => (T$.DiagnosticsPropertyOfAssetBundleImageKey = dart.constFn(diagnostics.DiagnosticsProperty$(image_provider.AssetBundleImageKey)))(),
+    FutureOfCodec: () => (T$.FutureOfCodec = dart.constFn(async.Future$(ui.Codec)))(),
+    boolN: () => (T$.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    intN: () => (T$.intN = dart.constFn(dart.nullable(core.int)))(),
+    Uint8List__ToFutureOfCodec: () => (T$.Uint8List__ToFutureOfCodec = dart.constFn(dart.fnType(T$.FutureOfCodec(), [typed_data.Uint8List], {allowUpscaling: T$.boolN(), cacheHeight: T$.intN(), cacheWidth: T$.intN()}, {})))(),
+    SynchronousFutureOf_SizeAwareCacheKey: () => (T$.SynchronousFutureOf_SizeAwareCacheKey = dart.constFn(synchronous_future.SynchronousFuture$(image_provider._SizeAwareCacheKey)))(),
+    ObjectToNull: () => (T$.ObjectToNull = dart.constFn(dart.fnType(core.Null, [core.Object])))(),
+    CompleterOf_SizeAwareCacheKey: () => (T$.CompleterOf_SizeAwareCacheKey = dart.constFn(async.Completer$(image_provider._SizeAwareCacheKey)))(),
+    SynchronousFutureOfFileImage: () => (T$.SynchronousFutureOfFileImage = dart.constFn(synchronous_future.SynchronousFuture$(image_provider.FileImage)))(),
+    SynchronousFutureOfMemoryImage: () => (T$.SynchronousFutureOfMemoryImage = dart.constFn(synchronous_future.SynchronousFuture$(image_provider.MemoryImage)))(),
+    SynchronousFutureOfAssetBundleImageKey: () => (T$.SynchronousFutureOfAssetBundleImageKey = dart.constFn(synchronous_future.SynchronousFuture$(image_provider.AssetBundleImageKey)))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -76,794 +70,951 @@ define(['dart_sdk', 'packages/flutter/src/foundation/debug.dart', 'packages/coll
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: binding$.SchedulerPhase.prototype,
-        [_name$]: "SchedulerPhase.idle",
-        index: 0
-      });
-    },
-    get C1() {
-      return C[1] = dart.const({
-        __proto__: binding$.SchedulerPhase.prototype,
-        [_name$]: "SchedulerPhase.transientCallbacks",
-        index: 1
-      });
-    },
-    get C2() {
-      return C[2] = dart.const({
-        __proto__: binding$.SchedulerPhase.prototype,
-        [_name$]: "SchedulerPhase.midFrameMicrotasks",
-        index: 2
-      });
-    },
-    get C3() {
-      return C[3] = dart.const({
-        __proto__: binding$.SchedulerPhase.prototype,
-        [_name$]: "SchedulerPhase.persistentCallbacks",
-        index: 3
-      });
-    },
-    get C4() {
-      return C[4] = dart.const({
-        __proto__: binding$.SchedulerPhase.prototype,
-        [_name$]: "SchedulerPhase.postFrameCallbacks",
-        index: 4
-      });
-    },
-    get C5() {
-      return C[5] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4], binding$.SchedulerPhase);
-    },
-    get C6() {
-      return C[6] = dart.fn(binding$.defaultSchedulingStrategy, T$.__Tobool());
-    },
-    get C7() {
-      return C[7] = dart.fn(binding$.SchedulerBinding._taskSorter, T$._TaskEntryAnd_TaskEntryToint());
-    },
-    get C8() {
-      return C[8] = dart.const({
-        __proto__: ui.AppLifecycleState.prototype,
-        [_name]: "AppLifecycleState.resumed",
-        index: 0
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: ui.AppLifecycleState.prototype,
-        [_name]: "AppLifecycleState.inactive",
-        index: 1
-      });
-    },
-    get C10() {
-      return C[10] = dart.const({
-        __proto__: ui.AppLifecycleState.prototype,
-        [_name]: "AppLifecycleState.paused",
-        index: 2
-      });
-    },
-    get C11() {
-      return C[11] = dart.const({
-        __proto__: ui.AppLifecycleState.prototype,
-        [_name]: "AppLifecycleState.detached",
-        index: 3
+        __proto__: image_provider.ImageConfiguration.prototype,
+        [ImageConfiguration_platform]: null,
+        [ImageConfiguration_size]: null,
+        [ImageConfiguration_textDirection]: null,
+        [ImageConfiguration_locale]: null,
+        [ImageConfiguration_devicePixelRatio]: null,
+        [ImageConfiguration_bundle]: null
       });
     }
   }, false);
-  var C = Array(12).fill(void 0);
+  var C = [void 0];
   var I = [
-    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/scheduler/binding.dart",
-    "package:flutter/src/scheduler/binding.dart"
+    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/painting/_network_image_web.dart",
+    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/painting/image_provider.dart",
+    "package:flutter/src/painting/image_provider.dart",
+    "package:flutter/src/painting/_network_image_web.dart"
   ];
-  var ___TaskEntry_debugStack = dart.privateName(binding$, "_#_TaskEntry#debugStack");
-  const _is__TaskEntry_default = Symbol('_is__TaskEntry_default');
-  binding$._TaskEntry$ = dart.generic(T => {
-    var CompleterOfT = () => (CompleterOfT = dart.constFn(async.Completer$(T)))();
-    class _TaskEntry extends core.Object {
-      get debugStack() {
-        let t0;
-        t0 = this[___TaskEntry_debugStack];
-        return t0 == null ? dart.throw(new _internal.LateError.fieldNI("debugStack")) : t0;
+  var url$ = dart.privateName(_network_image_web, "NetworkImage.url");
+  var scale$ = dart.privateName(_network_image_web, "NetworkImage.scale");
+  var headers$ = dart.privateName(_network_image_web, "NetworkImage.headers");
+  var _loadAsync = dart.privateName(_network_image_web, "_loadAsync");
+  var _imageStreamInformationCollector = dart.privateName(_network_image_web, "_imageStreamInformationCollector");
+  var _createErrorHandlerAndKey = dart.privateName(image_provider, "_createErrorHandlerAndKey");
+  var ImageConfiguration_platform = dart.privateName(image_provider, "ImageConfiguration.platform");
+  var ImageConfiguration_size = dart.privateName(image_provider, "ImageConfiguration.size");
+  var ImageConfiguration_textDirection = dart.privateName(image_provider, "ImageConfiguration.textDirection");
+  var ImageConfiguration_locale = dart.privateName(image_provider, "ImageConfiguration.locale");
+  var ImageConfiguration_devicePixelRatio = dart.privateName(image_provider, "ImageConfiguration.devicePixelRatio");
+  var ImageConfiguration_bundle = dart.privateName(image_provider, "ImageConfiguration.bundle");
+  const _is_ImageProvider_default = Symbol('_is_ImageProvider_default');
+  image_provider.ImageProvider$ = dart.generic(T => {
+    var TAndFnTovoid = () => (TAndFnTovoid = dart.constFn(dart.fnType(dart.void, [T, T$.ObjectAndStackTraceNTovoid()])))();
+    var DiagnosticsPropertyOfT = () => (DiagnosticsPropertyOfT = dart.constFn(diagnostics.DiagnosticsProperty$(T)))();
+    var TN = () => (TN = dart.constFn(dart.nullable(T)))();
+    var TNAndObjectAndStackTraceNToFutureOfvoid = () => (TNAndObjectAndStackTraceNToFutureOfvoid = dart.constFn(dart.fnType(T$.FutureOfvoid(), [TN(), core.Object, T$.StackTraceN()])))();
+    var TToNull = () => (TToNull = dart.constFn(dart.fnType(core.Null, [T])))();
+    class ImageProvider extends core.Object {
+      resolve(configuration) {
+        if (!(configuration !== null)) dart.assertFailed(null, I[1], 325, 12, "configuration != null");
+        let stream = this.createStream(configuration);
+        this[_createErrorHandlerAndKey](configuration, dart.fn((key, errorHandler) => {
+          this.resolveStreamForKey(configuration, stream, key, errorHandler);
+        }, TAndFnTovoid()), dart.fn((key, exception, stack) => async.async(dart.void, (function*() {
+          yield null;
+          let imageCompleter = new image_provider._ErrorImageCompleter.new();
+          stream.setCompleter(imageCompleter);
+          let collector = null;
+          if (!dart.fn(() => {
+            collector = dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new((function*() {
+              yield new (T$.DiagnosticsPropertyOfImageProviderOfObject()).new("Image provider", this);
+              yield new (T$.DiagnosticsPropertyOfImageConfiguration()).new("Image configuration", configuration);
+              yield new (DiagnosticsPropertyOfT()).new("Image key", key, {defaultValue: null});
+            }).bind(this)), T$.VoidToIterableOfDiagnosticsNode());
+            return true;
+          }, T$.VoidTobool())()) dart.assertFailed(null, I[1], 339, 16, "() {\r\n          collector = () sync* {\r\n            yield DiagnosticsProperty<ImageProvider>('Image provider', this);\r\n            yield DiagnosticsProperty<ImageConfiguration>('Image configuration', configuration);\r\n            yield DiagnosticsProperty<T>('Image key', key, defaultValue: null);\r\n          };\r\n          return true;\r\n        }()");
+          imageCompleter.setError({exception: exception, stack: stack, context: new assertions.ErrorDescription.new("while resolving an image"), silent: true, informationCollector: collector});
+        }).bind(this)), TNAndObjectAndStackTraceNToFutureOfvoid()));
+        return stream;
       }
-      set debugStack(t0) {
-        this[___TaskEntry_debugStack] = t0;
+      createStream(configuration) {
+        return new image_stream.ImageStream.new();
       }
-      run() {
-        let t1;
-        if (!false) {
-          developer.Timeline.timeSync(core.Null, (t1 = this.debugLabel, t1 == null ? "Scheduled Task" : t1), dart.fn(() => {
-            this.completer.complete(this.task());
-          }, T$.VoidToNull()), {flow: this.flow != null ? developer.Flow.step(dart.nullCheck(this.flow).id) : null});
-        } else {
-          this.completer.complete(this.task());
-        }
-      }
-    }
-    (_TaskEntry.new = function(task, priority, debugLabel, flow) {
-      this[___TaskEntry_debugStack] = null;
-      this.completer = CompleterOfT().new();
-      this.task = task;
-      this.priority = priority;
-      this.debugLabel = debugLabel;
-      this.flow = flow;
-      if (!dart.fn(() => {
-        this.debugStack = core.StackTrace.current;
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 62, 12, "() {\r\n      debugStack = StackTrace.current;\r\n      return true;\r\n    }()");
-    }).prototype = _TaskEntry.prototype;
-    dart.addTypeTests(_TaskEntry);
-    _TaskEntry.prototype[_is__TaskEntry_default] = true;
-    dart.addTypeCaches(_TaskEntry);
-    dart.setMethodSignature(_TaskEntry, () => ({
-      __proto__: dart.getMethods(_TaskEntry.__proto__),
-      run: dart.fnType(dart.void, [])
-    }));
-    dart.setGetterSignature(_TaskEntry, () => ({
-      __proto__: dart.getGetters(_TaskEntry.__proto__),
-      debugStack: core.StackTrace
-    }));
-    dart.setSetterSignature(_TaskEntry, () => ({
-      __proto__: dart.getSetters(_TaskEntry.__proto__),
-      debugStack: core.StackTrace
-    }));
-    dart.setLibraryUri(_TaskEntry, I[1]);
-    dart.setFieldSignature(_TaskEntry, () => ({
-      __proto__: dart.getFields(_TaskEntry.__proto__),
-      task: dart.finalFieldType(dart.fnType(T, [])),
-      priority: dart.finalFieldType(core.int),
-      debugLabel: dart.finalFieldType(dart.nullable(core.String)),
-      flow: dart.finalFieldType(dart.nullable(developer.Flow)),
-      [___TaskEntry_debugStack]: dart.fieldType(dart.nullable(core.StackTrace)),
-      completer: dart.finalFieldType(async.Completer$(T))
-    }));
-    return _TaskEntry;
-  });
-  binding$._TaskEntry = binding$._TaskEntry$();
-  dart.addTypeTests(binding$._TaskEntry, _is__TaskEntry_default);
-  binding$._FrameCallbackEntry = class _FrameCallbackEntry extends core.Object {};
-  (binding$._FrameCallbackEntry.new = function(callback, opts) {
-    let rescheduling = opts && 'rescheduling' in opts ? opts.rescheduling : false;
-    this.debugStack = null;
-    this.callback = callback;
-    if (!dart.fn(() => {
-      if (rescheduling) {
-        if (!dart.fn(() => {
-          if (binding$._FrameCallbackEntry.debugCurrentCallbackStack == null) {
-            dart.throw(new assertions.FlutterError.fromParts(T$.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("scheduleFrameCallback called with rescheduling true, but no callback is in scope."), new assertions.ErrorDescription.new("The \"rescheduling\" argument should only be set to true if the " + "callback is being reregistered from within the callback itself, " + "and only then if the callback itself is entirely synchronous."), new assertions.ErrorHint.new("If this is the initial registration of the callback, or if the " + "callback is asynchronous, then do not use the \"rescheduling\" " + "argument.")])));
-          }
-          return true;
-        }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 94, 16, "() {\r\n          if (debugCurrentCallbackStack == null) {\r\n            throw FlutterError.fromParts(<DiagnosticsNode>[\r\n              ErrorSummary('scheduleFrameCallback called with rescheduling true, but no callback is in scope.'),\r\n              ErrorDescription(\r\n                'The \"rescheduling\" argument should only be set to true if the '\r\n                'callback is being reregistered from within the callback itself, '\r\n                'and only then if the callback itself is entirely synchronous.',\r\n              ),\r\n              ErrorHint(\r\n                'If this is the initial registration of the callback, or if the '\r\n                'callback is asynchronous, then do not use the \"rescheduling\" '\r\n                'argument.',\r\n              ),\r\n            ]);\r\n          }\r\n          return true;\r\n        }()");
-        this.debugStack = binding$._FrameCallbackEntry.debugCurrentCallbackStack;
-      } else {
-        this.debugStack = core.StackTrace.current;
-      }
-      return true;
-    }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 92, 12, "() {\r\n      if (rescheduling) {\r\n        assert(() {\r\n          if (debugCurrentCallbackStack == null) {\r\n            throw FlutterError.fromParts(<DiagnosticsNode>[\r\n              ErrorSummary('scheduleFrameCallback called with rescheduling true, but no callback is in scope.'),\r\n              ErrorDescription(\r\n                'The \"rescheduling\" argument should only be set to true if the '\r\n                'callback is being reregistered from within the callback itself, '\r\n                'and only then if the callback itself is entirely synchronous.',\r\n              ),\r\n              ErrorHint(\r\n                'If this is the initial registration of the callback, or if the '\r\n                'callback is asynchronous, then do not use the \"rescheduling\" '\r\n                'argument.',\r\n              ),\r\n            ]);\r\n          }\r\n          return true;\r\n        }());\r\n        debugStack = debugCurrentCallbackStack;\r\n      } else {\r\n        // TODO(ianh): trim the frames from this library, so that the call to scheduleFrameCallback is the top one\r\n        debugStack = StackTrace.current;\r\n      }\r\n      return true;\r\n    }()");
-  }).prototype = binding$._FrameCallbackEntry.prototype;
-  dart.addTypeTests(binding$._FrameCallbackEntry);
-  dart.addTypeCaches(binding$._FrameCallbackEntry);
-  dart.setLibraryUri(binding$._FrameCallbackEntry, I[1]);
-  dart.setFieldSignature(binding$._FrameCallbackEntry, () => ({
-    __proto__: dart.getFields(binding$._FrameCallbackEntry.__proto__),
-    callback: dart.finalFieldType(dart.fnType(dart.void, [core.Duration])),
-    debugStack: dart.fieldType(dart.nullable(core.StackTrace))
-  }));
-  dart.defineLazy(binding$._FrameCallbackEntry, {
-    /*binding$._FrameCallbackEntry.debugCurrentCallbackStack*/get debugCurrentCallbackStack() {
-      return null;
-    },
-    set debugCurrentCallbackStack(_) {}
-  }, false);
-  var _name$ = dart.privateName(binding$, "_name");
-  binding$.SchedulerPhase = class SchedulerPhase extends core.Object {
-    toString() {
-      return this[_name$];
-    }
-  };
-  (binding$.SchedulerPhase.new = function(index, _name) {
-    this.index = index;
-    this[_name$] = _name;
-    ;
-  }).prototype = binding$.SchedulerPhase.prototype;
-  dart.addTypeTests(binding$.SchedulerPhase);
-  dart.addTypeCaches(binding$.SchedulerPhase);
-  dart.setLibraryUri(binding$.SchedulerPhase, I[1]);
-  dart.setFieldSignature(binding$.SchedulerPhase, () => ({
-    __proto__: dart.getFields(binding$.SchedulerPhase.__proto__),
-    index: dart.finalFieldType(core.int),
-    [_name$]: dart.finalFieldType(core.String)
-  }));
-  dart.defineExtensionMethods(binding$.SchedulerPhase, ['toString']);
-  binding$.SchedulerPhase.idle = C[0] || CT.C0;
-  binding$.SchedulerPhase.transientCallbacks = C[1] || CT.C1;
-  binding$.SchedulerPhase.midFrameMicrotasks = C[2] || CT.C2;
-  binding$.SchedulerPhase.persistentCallbacks = C[3] || CT.C3;
-  binding$.SchedulerPhase.postFrameCallbacks = C[4] || CT.C4;
-  binding$.SchedulerPhase.values = C[5] || CT.C5;
-  var schedulingStrategy = dart.privateName(binding$, "SchedulerBinding.schedulingStrategy");
-  var _timingsCallbacks = dart.privateName(binding$, "_timingsCallbacks");
-  var _lifecycleState = dart.privateName(binding$, "_lifecycleState");
-  var _taskQueue = dart.privateName(binding$, "_taskQueue");
-  var _hasRequestedAnEventLoopCallback = dart.privateName(binding$, "_hasRequestedAnEventLoopCallback");
-  var _nextFrameCallbackId = dart.privateName(binding$, "_nextFrameCallbackId");
-  var _transientCallbacks = dart.privateName(binding$, "_transientCallbacks");
-  var _removedIds = dart.privateName(binding$, "_removedIds");
-  var _persistentCallbacks = dart.privateName(binding$, "_persistentCallbacks");
-  var _postFrameCallbacks = dart.privateName(binding$, "_postFrameCallbacks");
-  var _nextFrameCompleter = dart.privateName(binding$, "_nextFrameCompleter");
-  var _hasScheduledFrame = dart.privateName(binding$, "_hasScheduledFrame");
-  var _schedulerPhase = dart.privateName(binding$, "_schedulerPhase");
-  var _framesEnabled = dart.privateName(binding$, "_framesEnabled");
-  var _warmUpFrame = dart.privateName(binding$, "_warmUpFrame");
-  var _firstRawTimeStampInEpoch = dart.privateName(binding$, "_firstRawTimeStampInEpoch");
-  var _epochStart = dart.privateName(binding$, "_epochStart");
-  var _lastRawTimeStamp = dart.privateName(binding$, "_lastRawTimeStamp");
-  var _currentFrameTimeStamp = dart.privateName(binding$, "_currentFrameTimeStamp");
-  var _debugFrameNumber = dart.privateName(binding$, "_debugFrameNumber");
-  var _debugBanner = dart.privateName(binding$, "_debugBanner");
-  var _rescheduleAfterWarmUpFrame = dart.privateName(binding$, "_rescheduleAfterWarmUpFrame");
-  var _profileFramePostEvent = dart.privateName(binding$, "_profileFramePostEvent");
-  var _executeTimingsCallbacks = dart.privateName(binding$, "_executeTimingsCallbacks");
-  var _setFramesEnabledState = dart.privateName(binding$, "_setFramesEnabledState");
-  var _name = dart.privateName(ui, "_name");
-  var _ensureEventLoopCallback = dart.privateName(binding$, "_ensureEventLoopCallback");
-  var _runTasks = dart.privateName(binding$, "_runTasks");
-  var _handleBeginFrame = dart.privateName(binding$, "_handleBeginFrame");
-  var _handleDrawFrame = dart.privateName(binding$, "_handleDrawFrame");
-  var _adjustForEpoch = dart.privateName(binding$, "_adjustForEpoch");
-  var _invokeFrameCallback = dart.privateName(binding$, "_invokeFrameCallback");
-  binding$.SchedulerBinding = class SchedulerBinding extends binding.BindingBase {
-    static get instance() {
-      return binding$.SchedulerBinding._instance;
-    }
-    static _taskSorter(e1, e2) {
-      return -e1.priority[$compareTo](e2.priority);
-    }
-    static debugPrintTransientCallbackRegistrationStack() {
-      if (!dart.fn(() => {
-        if (binding$._FrameCallbackEntry.debugCurrentCallbackStack != null) {
-          print.debugPrint("When the current transient callback was registered, this was the stack:");
-          print.debugPrint(assertions.FlutterError.defaultStackFilter(assertions.FlutterError.demangleStackTrace(dart.nullCheck(binding$._FrameCallbackEntry.debugCurrentCallbackStack)).toString()[$trimRight]()[$split]("\n"))[$join]("\n"));
-        } else {
-          print.debugPrint("No transient callback is currently executing.");
-        }
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 616, 12, "() {\r\n      if (_FrameCallbackEntry.debugCurrentCallbackStack != null) {\r\n        debugPrint('When the current transient callback was registered, this was the stack:');\r\n        debugPrint(\r\n          FlutterError.defaultStackFilter(\r\n            FlutterError.demangleStackTrace(\r\n              _FrameCallbackEntry.debugCurrentCallbackStack!,\r\n            ).toString().trimRight().split('\\n'),\r\n          ).join('\\n'),\r\n        );\r\n      } else {\r\n        debugPrint('No transient callback is currently executing.');\r\n      }\r\n      return true;\r\n    }()");
-    }
-    static _debugDescribeTimeStamp(timeStamp, buffer) {
-      if (timeStamp.inDays > 0) buffer.write(dart.str(timeStamp.inDays) + "d ");
-      if (timeStamp.inHours > 0) buffer.write(dart.str(timeStamp.inHours - timeStamp.inDays * 24) + "h ");
-      if (timeStamp.inMinutes > 0) buffer.write(dart.str(timeStamp.inMinutes - timeStamp.inHours * 60) + "m ");
-      if (timeStamp.inSeconds > 0) buffer.write(dart.str(timeStamp.inSeconds - timeStamp.inMinutes * 60) + "s ");
-      buffer.write(dart.str(timeStamp.inMilliseconds - timeStamp.inSeconds * 1000));
-      let microseconds = timeStamp.inMicroseconds - timeStamp.inMilliseconds * 1000;
-      if (microseconds > 0) buffer.write("." + microseconds[$toString]()[$padLeft](3, "0"));
-      buffer.write("ms");
-    }
-  };
-  binding$.SchedulerBinding[dart.mixinOn] = BindingBase => class SchedulerBinding extends BindingBase {
-    get schedulingStrategy() {
-      return this[schedulingStrategy];
-    }
-    set schedulingStrategy(value) {
-      this[schedulingStrategy] = value;
-    }
-    initInstances() {
-      super.initInstances();
-      binding$.SchedulerBinding._instance = this;
-      if (!false) {
-        let frameNumber = 0;
-        this.addTimingsCallback(dart.fn(timings => {
-          for (let frameTiming of timings) {
-            frameNumber = frameNumber + 1;
-            this[_profileFramePostEvent](frameNumber, frameTiming);
-          }
-        }, T$.ListOfFrameTimingTovoid()));
-      }
-    }
-    addTimingsCallback(callback) {
-      this[_timingsCallbacks][$add](callback);
-      if (this[_timingsCallbacks][$length] === 1) {
-        if (!(this.window.onReportTimings == null)) dart.assertFailed(null, I[0], 268, 14, "window.onReportTimings == null");
-        this.window.onReportTimings = dart.bind(this, _executeTimingsCallbacks);
-      }
-      if (!dart.equals(this.window.onReportTimings, dart.bind(this, _executeTimingsCallbacks))) dart.assertFailed(null, I[0], 271, 12, "window.onReportTimings == _executeTimingsCallbacks");
-    }
-    removeTimingsCallback(callback) {
-      if (!this[_timingsCallbacks][$contains](callback)) dart.assertFailed(null, I[0], 276, 12, "_timingsCallbacks.contains(callback)");
-      this[_timingsCallbacks][$remove](callback);
-      if (this[_timingsCallbacks][$isEmpty]) {
-        this.window.onReportTimings = null;
-      }
-    }
-    [_executeTimingsCallbacks](timings) {
-      let clonedCallbacks = T$.ListOfListOfFrameTimingTovoid().from(this[_timingsCallbacks]);
-      for (let callback of clonedCallbacks) {
-        try {
-          if (this[_timingsCallbacks][$contains](callback)) {
-            callback(timings);
-          }
-        } catch (e) {
-          let exception = dart.getThrown(e);
-          let stack = dart.stackTrace(e);
-          if (core.Object.is(exception)) {
+      obtainCacheStatus(opts) {
+        let configuration = opts && 'configuration' in opts ? opts.configuration : null;
+        let handleError = opts && 'handleError' in opts ? opts.handleError : null;
+        if (!(configuration !== null)) dart.assertFailed(null, I[1], 383, 12, "configuration != null");
+        let completer = T$.CompleterOfImageCacheStatusN().new();
+        this[_createErrorHandlerAndKey](configuration, dart.fn((key, innerHandleError) => {
+          completer.complete(dart.nullCheck(dart.nullCheck(binding.PaintingBinding.instance).imageCache).statusForKey(key));
+        }, TAndFnTovoid()), dart.fn((key, exception, stack) => async.async(dart.void, (function*() {
+          if (handleError != null) {
+            handleError(exception, stack);
+          } else {
             let collector = null;
             if (!dart.fn(() => {
-              collector = dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new(function*() {
-                yield new (T$.DiagnosticsPropertyOfListOfFrameTimingTovoid()).new("The TimingsCallback that gets executed was", callback, {style: diagnostics.DiagnosticsTreeStyle.errorProperty});
-              }), T$.VoidToIterableOfDiagnosticsNode());
+              collector = dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new((function*() {
+                yield new (T$.DiagnosticsPropertyOfImageProviderOfObject()).new("Image provider", this);
+                yield new (T$.DiagnosticsPropertyOfImageConfiguration()).new("Image configuration", configuration);
+                yield new (DiagnosticsPropertyOfT()).new("Image key", key, {defaultValue: null});
+              }).bind(this)), T$.VoidToIterableOfDiagnosticsNode());
               return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 293, 16, "() {\r\n          collector = () sync* {\r\n            yield DiagnosticsProperty<TimingsCallback>(\r\n              'The TimingsCallback that gets executed was',\r\n              callback,\r\n              style: DiagnosticsTreeStyle.errorProperty,\r\n            );\r\n          };\r\n          return true;\r\n        }()");
-            assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: exception, stack: stack, context: new assertions.ErrorDescription.new("while executing callbacks for FrameTiming"), informationCollector: collector}));
-          } else
-            throw e;
-        }
-      }
-    }
-    initServiceExtensions() {
-      super.initServiceExtensions();
-      if (!false) {
-        this.registerNumericServiceExtension({name: "timeDilation", getter: dart.fn(() => async.async(core.double, function*() {
-            return binding$.timeDilation;
-          }), T$.VoidToFutureOfdouble()), setter: dart.fn(value => async.async(dart.void, function*() {
-            binding$.timeDilation = value;
-          }), T$.doubleToFutureOfvoid())});
-      }
-    }
-    get lifecycleState() {
-      return this[_lifecycleState];
-    }
-    handleAppLifecycleStateChanged(state) {
-      if (!(state !== null)) dart.assertFailed(null, I[0], 352, 12, "state != null");
-      this[_lifecycleState] = state;
-      switch (state) {
-        case C[8] || CT.C8:
-        case C[9] || CT.C9:
-        {
-          this[_setFramesEnabledState](true);
-          break;
-        }
-        case C[10] || CT.C10:
-        case C[11] || CT.C11:
-        {
-          this[_setFramesEnabledState](false);
-          break;
-        }
-      }
-    }
-    scheduleTask(T, task, priority, opts) {
-      let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
-      let flow = opts && 'flow' in opts ? opts.flow : null;
-      let isFirstTask = this[_taskQueue].isEmpty;
-      let entry = new (binding$._TaskEntry$(T)).new(task, priority.value, debugLabel, flow);
-      this[_taskQueue].add(entry);
-      if (isFirstTask && !this.locked) this[_ensureEventLoopCallback]();
-      return entry.completer.future;
-    }
-    unlocked() {
-      super.unlocked();
-      if (this[_taskQueue].isNotEmpty) this[_ensureEventLoopCallback]();
-    }
-    [_ensureEventLoopCallback]() {
-      if (!!this.locked) dart.assertFailed(null, I[0], 427, 12, "!locked");
-      if (!this[_taskQueue].isNotEmpty) dart.assertFailed(null, I[0], 428, 12, "_taskQueue.isNotEmpty");
-      if (this[_hasRequestedAnEventLoopCallback]) return;
-      this[_hasRequestedAnEventLoopCallback] = true;
-      async.Timer.run(dart.bind(this, _runTasks));
-    }
-    [_runTasks]() {
-      this[_hasRequestedAnEventLoopCallback] = false;
-      if (this.handleEventLoopCallback()) this[_ensureEventLoopCallback]();
-    }
-    handleEventLoopCallback() {
-      let t2;
-      if (this[_taskQueue].isEmpty || this.locked) return false;
-      let entry = this[_taskQueue].first;
-      if (t2 = entry.priority, this.schedulingStrategy({priority: t2, scheduler: this})) {
-        try {
-          this[_taskQueue].removeFirst();
-          entry.run();
-        } catch (e) {
-          let exception = dart.getThrown(e);
-          let exceptionStack = dart.stackTrace(e);
-          if (core.Object.is(exception)) {
-            let callbackStack = null;
-            if (!dart.fn(() => {
-              callbackStack = entry.debugStack;
-              return true;
-            }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 463, 16, "() {\r\n          callbackStack = entry.debugStack;\r\n          return true;\r\n        }()");
-            assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: exception, stack: exceptionStack, library: "scheduler library", context: new assertions.ErrorDescription.new("during a task callback"), informationCollector: callbackStack == null ? null : dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new(function*() {
-                yield new assertions.DiagnosticsStackTrace.new("\nThis exception was thrown in the context of a scheduler callback. " + "When the scheduler callback was _registered_ (as opposed to when the " + "exception was thrown), this was the stack", callbackStack);
-              }), T$.VoidToIterableOfDiagnosticsNode())}));
-          } else
-            throw e;
-        }
-        return this[_taskQueue].isNotEmpty;
-      }
-      return false;
-    }
-    get transientCallbackCount() {
-      return this[_transientCallbacks][$length];
-    }
-    scheduleFrameCallback(callback, opts) {
-      let rescheduling = opts && 'rescheduling' in opts ? opts.rescheduling : false;
-      this.scheduleFrame();
-      this[_nextFrameCallbackId] = this[_nextFrameCallbackId] + 1;
-      this[_transientCallbacks][$_set](this[_nextFrameCallbackId], new binding$._FrameCallbackEntry.new(callback, {rescheduling: rescheduling}));
-      return this[_nextFrameCallbackId];
-    }
-    cancelFrameCallbackWithId(id) {
-      if (!(id > 0)) dart.assertFailed(null, I[0], 535, 12, "id > 0");
-      this[_transientCallbacks][$remove](id);
-      this[_removedIds].add(id);
-    }
-    debugAssertNoTransientCallbacks(reason) {
-      if (!dart.fn(() => {
-        if (this.transientCallbackCount > 0) {
-          let count = this.transientCallbackCount;
-          let callbacks = T$.LinkedHashMapOfint$_FrameCallbackEntry().from(this[_transientCallbacks]);
-          assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: reason, library: "scheduler library", informationCollector: dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new(function*() {
-              if (count === 1) {
-                yield new assertions.ErrorDescription.new("There was one transient callback left. " + "The stack trace for when it was registered is as follows:");
-              } else {
-                yield new assertions.ErrorDescription.new("There were " + dart.str(count) + " transient callbacks left. " + "The stack traces for when they were registered are as follows:");
-              }
-              for (let id of callbacks[$keys]) {
-                let entry = dart.nullCheck(callbacks[$_get](id));
-                yield new assertions.DiagnosticsStackTrace.new("── callback " + dart.str(id) + " ──", entry.debugStack, {showSeparator: false});
-              }
-            }), T$.VoidToIterableOfDiagnosticsNode())}));
-        }
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 561, 12, "() {\r\n      if (transientCallbackCount > 0) {\r\n        // We cache the values so that we can produce them later\r\n        // even if the information collector is called after\r\n        // the problem has been resolved.\r\n        final int count = transientCallbackCount;\r\n        final Map<int, _FrameCallbackEntry> callbacks = Map<int, _FrameCallbackEntry>.from(_transientCallbacks);\r\n        FlutterError.reportError(FlutterErrorDetails(\r\n          exception: reason,\r\n          library: 'scheduler library',\r\n          informationCollector: () sync* {\r\n            if (count == 1) {\r\n              // TODO(jacobr): I have added an extra line break in this case.\r\n              yield ErrorDescription(\r\n                'There was one transient callback left. '\r\n                'The stack trace for when it was registered is as follows:',\r\n              );\r\n            } else {\r\n              yield ErrorDescription(\r\n                'There were $count transient callbacks left. '\r\n                'The stack traces for when they were registered are as follows:',\r\n              );\r\n            }\r\n            for (final int id in callbacks.keys) {\r\n              final _FrameCallbackEntry entry = callbacks[id]!;\r\n              yield DiagnosticsStackTrace('── callback $id ──', entry.debugStack, showSeparator: false);\r\n            }\r\n          },\r\n        ));\r\n      }\r\n      return true;\r\n    }()");
-      return true;
-    }
-    addPersistentFrameCallback(callback) {
-      this[_persistentCallbacks][$add](callback);
-    }
-    addPostFrameCallback(callback) {
-      this[_postFrameCallbacks][$add](callback);
-    }
-    get endOfFrame() {
-      if (this[_nextFrameCompleter] == null) {
-        if (this.schedulerPhase === binding$.SchedulerPhase.idle) this.scheduleFrame();
-        this[_nextFrameCompleter] = T$.CompleterOfvoid().new();
-        this.addPostFrameCallback(dart.fn(timeStamp => {
-          dart.nullCheck(this[_nextFrameCompleter]).complete();
-          this[_nextFrameCompleter] = null;
-        }, T$.DurationTovoid()));
-      }
-      return dart.nullCheck(this[_nextFrameCompleter]).future;
-    }
-    get hasScheduledFrame() {
-      return this[_hasScheduledFrame];
-    }
-    get schedulerPhase() {
-      return this[_schedulerPhase];
-    }
-    get framesEnabled() {
-      return this[_framesEnabled];
-    }
-    [_setFramesEnabledState](enabled) {
-      if (this[_framesEnabled] === enabled) return;
-      this[_framesEnabled] = enabled;
-      if (enabled) this.scheduleFrame();
-    }
-    ensureFrameCallbacksRegistered() {
-      let t3, t3$;
-      t3 = this.window;
-      t3.onBeginFrame == null ? t3.onBeginFrame = dart.bind(this, _handleBeginFrame) : null;
-      t3$ = this.window;
-      t3$.onDrawFrame == null ? t3$.onDrawFrame = dart.bind(this, _handleDrawFrame) : null;
-    }
-    ensureVisualUpdate() {
-      switch (this.schedulerPhase) {
-        case C[0] || CT.C0:
-        case C[4] || CT.C4:
-        {
-          this.scheduleFrame();
-          return;
-        }
-        case C[1] || CT.C1:
-        case C[2] || CT.C2:
-        case C[3] || CT.C3:
-        {
-          return;
-        }
-      }
-    }
-    scheduleFrame() {
-      if (this[_hasScheduledFrame] || !this.framesEnabled) return;
-      if (!dart.fn(() => {
-        if (debug$.debugPrintScheduleFrameStacks) assertions.debugPrintStack({label: "scheduleFrame() called. Current phase is " + dart.str(this.schedulerPhase) + "."});
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 787, 12, "() {\r\n      if (debugPrintScheduleFrameStacks)\r\n        debugPrintStack(label: 'scheduleFrame() called. Current phase is $schedulerPhase.');\r\n      return true;\r\n    }()");
-      this.ensureFrameCallbacksRegistered();
-      this.window.scheduleFrame();
-      this[_hasScheduledFrame] = true;
-    }
-    scheduleForcedFrame() {
-      if (!this.framesEnabled) return;
-      if (this[_hasScheduledFrame]) return;
-      if (!dart.fn(() => {
-        if (debug$.debugPrintScheduleFrameStacks) assertions.debugPrintStack({label: "scheduleForcedFrame() called. Current phase is " + dart.str(this.schedulerPhase) + "."});
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 825, 12, "() {\r\n      if (debugPrintScheduleFrameStacks)\r\n        debugPrintStack(label: 'scheduleForcedFrame() called. Current phase is $schedulerPhase.');\r\n      return true;\r\n    }()");
-      this.window.scheduleFrame();
-      this[_hasScheduledFrame] = true;
-    }
-    scheduleWarmUpFrame() {
-      if (this[_warmUpFrame] || this.schedulerPhase !== binding$.SchedulerPhase.idle) return;
-      this[_warmUpFrame] = true;
-      developer.Timeline.startSync("Warm-up frame");
-      let hadScheduledFrame = this[_hasScheduledFrame];
-      async.Timer.run(dart.fn(() => {
-        if (!this[_warmUpFrame]) dart.assertFailed(null, I[0], 860, 14, "_warmUpFrame");
-        this.handleBeginFrame(null);
-      }, T$.VoidTovoid()));
-      async.Timer.run(dart.fn(() => {
-        if (!this[_warmUpFrame]) dart.assertFailed(null, I[0], 864, 14, "_warmUpFrame");
-        this.handleDrawFrame();
-        this.resetEpoch();
-        this[_warmUpFrame] = false;
-        if (hadScheduledFrame) this.scheduleFrame();
-      }, T$.VoidTovoid()));
-      this.lockEvents(dart.fn(() => async.async(dart.void, (function*() {
-        yield this.endOfFrame;
-        developer.Timeline.finishSync();
-      }).bind(this)), T$.VoidToFutureOfvoid()));
-    }
-    resetEpoch() {
-      this[_epochStart] = this[_adjustForEpoch](this[_lastRawTimeStamp]);
-      this[_firstRawTimeStampInEpoch] = null;
-    }
-    [_adjustForEpoch](rawTimeStamp) {
-      let rawDurationSinceEpoch = this[_firstRawTimeStampInEpoch] == null ? core.Duration.zero : rawTimeStamp['-'](dart.nullCheck(this[_firstRawTimeStampInEpoch]));
-      return new core.Duration.new({microseconds: (rawDurationSinceEpoch.inMicroseconds / binding$.timeDilation)[$round]() + this[_epochStart].inMicroseconds});
-    }
-    get currentFrameTimeStamp() {
-      if (!(this[_currentFrameTimeStamp] != null)) dart.assertFailed(null, I[0], 933, 12, "_currentFrameTimeStamp != null");
-      return dart.nullCheck(this[_currentFrameTimeStamp]);
-    }
-    get currentSystemFrameTimeStamp() {
-      if (!(this[_lastRawTimeStamp] !== null)) dart.assertFailed(null, I[0], 951, 12, "_lastRawTimeStamp != null");
-      return this[_lastRawTimeStamp];
-    }
-    [_handleBeginFrame](rawTimeStamp) {
-      if (this[_warmUpFrame]) {
-        if (!!this[_rescheduleAfterWarmUpFrame]) dart.assertFailed(null, I[0], 973, 14, "!_rescheduleAfterWarmUpFrame");
-        this[_rescheduleAfterWarmUpFrame] = true;
-        return;
-      }
-      this.handleBeginFrame(rawTimeStamp);
-    }
-    [_handleDrawFrame]() {
-      if (this[_rescheduleAfterWarmUpFrame]) {
-        this[_rescheduleAfterWarmUpFrame] = false;
-        this.addPostFrameCallback(dart.fn(timeStamp => {
-          this[_hasScheduledFrame] = false;
-          this.scheduleFrame();
-        }, T$.DurationTovoid()));
-        return;
-      }
-      this.handleDrawFrame();
-    }
-    handleBeginFrame(rawTimeStamp) {
-      let t3;
-      developer.Timeline.startSync("Frame", {arguments: debug.timelineArgumentsIndicatingLandmarkEvent});
-      this[_firstRawTimeStampInEpoch] == null ? this[_firstRawTimeStampInEpoch] = rawTimeStamp : null;
-      this[_currentFrameTimeStamp] = this[_adjustForEpoch]((t3 = rawTimeStamp, t3 == null ? this[_lastRawTimeStamp] : t3));
-      if (rawTimeStamp != null) this[_lastRawTimeStamp] = rawTimeStamp;
-      if (!dart.fn(() => {
-        this[_debugFrameNumber] = this[_debugFrameNumber] + 1;
-        if (debug$.debugPrintBeginFrameBanner || debug$.debugPrintEndFrameBanner) {
-          let frameTimeStampDescription = new core.StringBuffer.new();
-          if (rawTimeStamp != null) {
-            binding$.SchedulerBinding._debugDescribeTimeStamp(dart.nullCheck(this[_currentFrameTimeStamp]), frameTimeStampDescription);
-          } else {
-            frameTimeStampDescription.write("(warm-up frame)");
+            }, T$.VoidTobool())()) dart.assertFailed(null, I[1], 395, 18, "() {\r\n            collector = () sync* {\r\n              yield DiagnosticsProperty<ImageProvider>('Image provider', this);\r\n              yield DiagnosticsProperty<ImageConfiguration>('Image configuration', configuration);\r\n              yield DiagnosticsProperty<T>('Image key', key, defaultValue: null);\r\n            };\r\n            return true;\r\n          }()");
+            assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({context: new assertions.ErrorDescription.new("while checking the cache location of an image"), informationCollector: collector, exception: exception, stack: stack}));
+            completer.complete(null);
           }
-          this[_debugBanner] = "▄▄▄▄▄▄▄▄ Frame " + this[_debugFrameNumber][$toString]()[$padRight](7) + "   " + frameTimeStampDescription.toString()[$padLeft](18) + " ▄▄▄▄▄▄▄▄";
-          if (debug$.debugPrintBeginFrameBanner) print.debugPrint(this[_debugBanner]);
+        }).bind(this)), TNAndObjectAndStackTraceNToFutureOfvoid()));
+        return completer.future;
+      }
+      [_createErrorHandlerAndKey](configuration, successCallback, errorCallback) {
+        let obtainedKey = null;
+        let didError = false;
+        function handleError(exception, stack) {
+          return async.async(dart.void, function* handleError() {
+            if (didError) {
+              return;
+            }
+            if (!didError) {
+              errorCallback(obtainedKey, exception, stack);
+            }
+            didError = true;
+          });
         }
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 1031, 12, "() {\r\n      _debugFrameNumber += 1;\r\n\r\n      if (debugPrintBeginFrameBanner || debugPrintEndFrameBanner) {\r\n        final StringBuffer frameTimeStampDescription = StringBuffer();\r\n        if (rawTimeStamp != null) {\r\n          _debugDescribeTimeStamp(_currentFrameTimeStamp!, frameTimeStampDescription);\r\n        } else {\r\n          frameTimeStampDescription.write('(warm-up frame)');\r\n        }\r\n        _debugBanner = '▄▄▄▄▄▄▄▄ Frame ${_debugFrameNumber.toString().padRight(7)}   ${frameTimeStampDescription.toString().padLeft(18)} ▄▄▄▄▄▄▄▄';\r\n        if (debugPrintBeginFrameBanner)\r\n          debugPrint(_debugBanner);\r\n      }\r\n      return true;\r\n    }()");
-      if (!(this.schedulerPhase === binding$.SchedulerPhase.idle)) dart.assertFailed(null, I[0], 1048, 12, "schedulerPhase == SchedulerPhase.idle");
-      this[_hasScheduledFrame] = false;
-      try {
-        developer.Timeline.startSync("Animate", {arguments: debug.timelineArgumentsIndicatingLandmarkEvent});
-        this[_schedulerPhase] = binding$.SchedulerPhase.transientCallbacks;
-        let callbacks = this[_transientCallbacks];
-        this[_transientCallbacks] = new (T$.IdentityMapOfint$_FrameCallbackEntry()).new();
-        callbacks[$forEach](dart.fn((id, callbackEntry) => {
-          if (!this[_removedIds].contains(id)) this[_invokeFrameCallback](callbackEntry.callback, dart.nullCheck(this[_currentFrameTimeStamp]), callbackEntry.debugStack);
-        }, T$.intAnd_FrameCallbackEntryTovoid()));
-        this[_removedIds].clear();
-      } finally {
-        this[_schedulerPhase] = binding$.SchedulerPhase.midFrameMicrotasks;
+        dart.fn(handleError, T$.ObjectAndStackTraceNToFutureOfvoid());
+        let dangerZone = async.Zone.current.fork({specification: new async._ZoneSpecification.new({handleUncaughtError: dart.fn((zone, delegate, parent, error, stackTrace) => {
+              handleError(error, stackTrace);
+            }, T$.ZoneAndZoneDelegateAndZone__Tovoid())})});
+        dangerZone.runGuarded(dart.fn(() => {
+          let key = null;
+          try {
+            key = this.obtainKey(configuration);
+          } catch (e) {
+            let error = dart.getThrown(e);
+            let stackTrace = dart.stackTrace(e);
+            if (core.Object.is(error)) {
+              handleError(error, stackTrace);
+              return;
+            } else
+              throw e;
+          }
+          key.then(dart.void, dart.fn(key => {
+            obtainedKey = key;
+            try {
+              successCallback(key, handleError);
+            } catch (e) {
+              let error = dart.getThrown(e);
+              let stackTrace = dart.stackTrace(e);
+              if (core.Object.is(error)) {
+                handleError(error, stackTrace);
+              } else
+                throw e;
+            }
+          }, TToNull())).catchError(handleError);
+        }, T$.VoidTovoid()));
+      }
+      resolveStreamForKey(configuration, stream, key, handleError) {
+        T.as(key);
+        if (stream.completer != null) {
+          let completer = dart.nullCheck(dart.nullCheck(binding.PaintingBinding.instance).imageCache).putIfAbsent(key, dart.fn(() => dart.nullCheck(stream.completer), T$.VoidToImageStreamCompleter()), {onError: handleError});
+          if (!(completer == stream.completer)) dart.assertFailed(null, I[1], 498, 14, "identical(completer, stream.completer)");
+          return;
+        }
+        let completer = dart.nullCheck(dart.nullCheck(binding.PaintingBinding.instance).imageCache).putIfAbsent(key, dart.fn(() => this.load(key, dart.bind(dart.nullCheck(binding.PaintingBinding.instance), 'instantiateImageCodec')), T$.VoidToImageStreamCompleter()), {onError: handleError});
+        if (completer != null) {
+          stream.setCompleter(completer);
+        }
+      }
+      evict(opts) {
+        let cache = opts && 'cache' in opts ? opts.cache : null;
+        let configuration = opts && 'configuration' in opts ? opts.configuration : C[0] || CT.C0;
+        return async.async(core.bool, (function* evict() {
+          cache == null ? cache = binding.imageCache : null;
+          let key = (yield this.obtainKey(configuration));
+          return dart.nullCheck(cache).evict(key);
+        }).bind(this));
+      }
+      toString() {
+        return object.objectRuntimeType(this, "ImageConfiguration") + "()";
       }
     }
-    handleDrawFrame() {
-      if (!(this[_schedulerPhase] === binding$.SchedulerPhase.midFrameMicrotasks)) dart.assertFailed(null, I[0], 1076, 12, "_schedulerPhase == SchedulerPhase.midFrameMicrotasks");
-      developer.Timeline.finishSync();
-      try {
-        this[_schedulerPhase] = binding$.SchedulerPhase.persistentCallbacks;
-        for (let callback of this[_persistentCallbacks])
-          this[_invokeFrameCallback](callback, dart.nullCheck(this[_currentFrameTimeStamp]));
-        this[_schedulerPhase] = binding$.SchedulerPhase.postFrameCallbacks;
-        let localPostFrameCallbacks = T$.ListOfDurationTovoid().from(this[_postFrameCallbacks]);
-        this[_postFrameCallbacks][$clear]();
-        for (let callback of localPostFrameCallbacks)
-          this[_invokeFrameCallback](callback, dart.nullCheck(this[_currentFrameTimeStamp]));
-      } finally {
-        this[_schedulerPhase] = binding$.SchedulerPhase.idle;
-        developer.Timeline.finishSync();
-        if (!dart.fn(() => {
-          if (debug$.debugPrintEndFrameBanner) print.debugPrint("▀"[$times](dart.nullCheck(this[_debugBanner]).length));
-          this[_debugBanner] = null;
-          return true;
-        }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 1094, 14, "() {\r\n        if (debugPrintEndFrameBanner)\r\n          debugPrint('▀' * _debugBanner!.length);\r\n        _debugBanner = null;\r\n        return true;\r\n      }()");
-        this[_currentFrameTimeStamp] = null;
-      }
-    }
-    [_profileFramePostEvent](frameNumber, frameTiming) {
-      this.postEvent("Flutter.Frame", new (T$.IdentityMapOfString$dynamic()).from(["number", frameNumber, "startTime", frameTiming.timestampInMicroseconds(ui.FramePhase.buildStart), "elapsed", frameTiming.totalSpan.inMicroseconds, "build", frameTiming.buildDuration.inMicroseconds, "raster", frameTiming.rasterDuration.inMicroseconds, "vsyncOverhead", frameTiming.vsyncOverhead.inMicroseconds]));
-    }
-    [_invokeFrameCallback](callback, timeStamp, callbackStack = null) {
-      if (!(callback !== null)) dart.assertFailed(null, I[0], 1137, 12, "callback != null");
-      if (!(binding$._FrameCallbackEntry.debugCurrentCallbackStack == null)) dart.assertFailed(null, I[0], 1138, 12, "_FrameCallbackEntry.debugCurrentCallbackStack == null");
-      if (!dart.fn(() => {
-        binding$._FrameCallbackEntry.debugCurrentCallbackStack = callbackStack;
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 1139, 12, "() {\r\n      _FrameCallbackEntry.debugCurrentCallbackStack = callbackStack;\r\n      return true;\r\n    }()");
-      try {
-        callback(timeStamp);
-      } catch (e) {
-        let exception = dart.getThrown(e);
-        let exceptionStack = dart.stackTrace(e);
-        if (core.Object.is(exception)) {
-          assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: exception, stack: exceptionStack, library: "scheduler library", context: new assertions.ErrorDescription.new("during a scheduler callback"), informationCollector: callbackStack == null ? null : dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new(function*() {
-              yield new assertions.DiagnosticsStackTrace.new("\nThis exception was thrown in the context of a scheduler callback. " + "When the scheduler callback was _registered_ (as opposed to when the " + "exception was thrown), this was the stack", callbackStack);
-            }), T$.VoidToIterableOfDiagnosticsNode())}));
-        } else
-          throw e;
-      }
-      if (!dart.fn(() => {
-        binding$._FrameCallbackEntry.debugCurrentCallbackStack = null;
-        return true;
-      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 1161, 12, "() {\r\n      _FrameCallbackEntry.debugCurrentCallbackStack = null;\r\n      return true;\r\n    }()");
-    }
-  };
-  (binding$.SchedulerBinding[dart.mixinNew] = function() {
-    this[_timingsCallbacks] = T$.JSArrayOfListOfFrameTimingTovoid().of([]);
-    this[_lifecycleState] = null;
-    this[schedulingStrategy] = C[6] || CT.C6;
-    this[_taskQueue] = new (T$.HeapPriorityQueueOf_TaskEntry()).new(C[7] || CT.C7);
-    this[_hasRequestedAnEventLoopCallback] = false;
-    this[_nextFrameCallbackId] = 0;
-    this[_transientCallbacks] = new (T$.IdentityMapOfint$_FrameCallbackEntry()).new();
-    this[_removedIds] = new (T$._IdentityHashSetOfint()).new();
-    this[_persistentCallbacks] = T$.JSArrayOfDurationTovoid().of([]);
-    this[_postFrameCallbacks] = T$.JSArrayOfDurationTovoid().of([]);
-    this[_nextFrameCompleter] = null;
-    this[_hasScheduledFrame] = false;
-    this[_schedulerPhase] = binding$.SchedulerPhase.idle;
-    this[_framesEnabled] = true;
-    this[_warmUpFrame] = false;
-    this[_firstRawTimeStampInEpoch] = null;
-    this[_epochStart] = core.Duration.zero;
-    this[_lastRawTimeStamp] = core.Duration.zero;
-    this[_currentFrameTimeStamp] = null;
-    this[_debugFrameNumber] = 0;
-    this[_debugBanner] = null;
-    this[_rescheduleAfterWarmUpFrame] = false;
-  }).prototype = binding$.SchedulerBinding.prototype;
-  dart.addTypeTests(binding$.SchedulerBinding);
-  dart.addTypeCaches(binding$.SchedulerBinding);
-  binding$.SchedulerBinding[dart.implements] = () => [binding.BindingBase];
-  dart.setMethodSignature(binding$.SchedulerBinding, () => ({
-    __proto__: dart.getMethods(binding$.SchedulerBinding.__proto__),
-    addTimingsCallback: dart.fnType(dart.void, [dart.fnType(dart.void, [core.List$(ui.FrameTiming)])]),
-    removeTimingsCallback: dart.fnType(dart.void, [dart.fnType(dart.void, [core.List$(ui.FrameTiming)])]),
-    [_executeTimingsCallbacks]: dart.fnType(dart.void, [core.List$(ui.FrameTiming)]),
-    handleAppLifecycleStateChanged: dart.fnType(dart.void, [ui.AppLifecycleState]),
-    scheduleTask: dart.gFnType(T => [async.Future$(T), [dart.fnType(T, []), priority$.Priority], {debugLabel: dart.nullable(core.String), flow: dart.nullable(developer.Flow)}, {}], T => [dart.nullable(core.Object)]),
-    [_ensureEventLoopCallback]: dart.fnType(dart.void, []),
-    [_runTasks]: dart.fnType(dart.void, []),
-    handleEventLoopCallback: dart.fnType(core.bool, []),
-    scheduleFrameCallback: dart.fnType(core.int, [dart.fnType(dart.void, [core.Duration])], {rescheduling: core.bool}, {}),
-    cancelFrameCallbackWithId: dart.fnType(dart.void, [core.int]),
-    debugAssertNoTransientCallbacks: dart.fnType(core.bool, [core.String]),
-    addPersistentFrameCallback: dart.fnType(dart.void, [dart.fnType(dart.void, [core.Duration])]),
-    addPostFrameCallback: dart.fnType(dart.void, [dart.fnType(dart.void, [core.Duration])]),
-    [_setFramesEnabledState]: dart.fnType(dart.void, [core.bool]),
-    ensureFrameCallbacksRegistered: dart.fnType(dart.void, []),
-    ensureVisualUpdate: dart.fnType(dart.void, []),
-    scheduleFrame: dart.fnType(dart.void, []),
-    scheduleForcedFrame: dart.fnType(dart.void, []),
-    scheduleWarmUpFrame: dart.fnType(dart.void, []),
-    resetEpoch: dart.fnType(dart.void, []),
-    [_adjustForEpoch]: dart.fnType(core.Duration, [core.Duration]),
-    [_handleBeginFrame]: dart.fnType(dart.void, [core.Duration]),
-    [_handleDrawFrame]: dart.fnType(dart.void, []),
-    handleBeginFrame: dart.fnType(dart.void, [dart.nullable(core.Duration)]),
-    handleDrawFrame: dart.fnType(dart.void, []),
-    [_profileFramePostEvent]: dart.fnType(dart.void, [core.int, ui.FrameTiming]),
-    [_invokeFrameCallback]: dart.fnType(dart.void, [dart.fnType(dart.void, [core.Duration]), core.Duration], [dart.nullable(core.StackTrace)])
-  }));
-  dart.setGetterSignature(binding$.SchedulerBinding, () => ({
-    __proto__: dart.getGetters(binding$.SchedulerBinding.__proto__),
-    lifecycleState: dart.nullable(ui.AppLifecycleState),
-    transientCallbackCount: core.int,
-    endOfFrame: async.Future$(dart.void),
-    hasScheduledFrame: core.bool,
-    schedulerPhase: binding$.SchedulerPhase,
-    framesEnabled: core.bool,
-    currentFrameTimeStamp: core.Duration,
-    currentSystemFrameTimeStamp: core.Duration
-  }));
-  dart.setLibraryUri(binding$.SchedulerBinding, I[1]);
-  dart.setFieldSignature(binding$.SchedulerBinding, () => ({
-    __proto__: dart.getFields(binding$.SchedulerBinding.__proto__),
-    [_timingsCallbacks]: dart.finalFieldType(core.List$(dart.fnType(dart.void, [core.List$(ui.FrameTiming)]))),
-    [_lifecycleState]: dart.fieldType(dart.nullable(ui.AppLifecycleState)),
-    schedulingStrategy: dart.fieldType(dart.fnType(core.bool, [], {}, {priority: core.int, scheduler: binding$.SchedulerBinding})),
-    [_taskQueue]: dart.finalFieldType(priority_queue.PriorityQueue$(binding$._TaskEntry)),
-    [_hasRequestedAnEventLoopCallback]: dart.fieldType(core.bool),
-    [_nextFrameCallbackId]: dart.fieldType(core.int),
-    [_transientCallbacks]: dart.fieldType(core.Map$(core.int, binding$._FrameCallbackEntry)),
-    [_removedIds]: dart.finalFieldType(core.Set$(core.int)),
-    [_persistentCallbacks]: dart.finalFieldType(core.List$(dart.fnType(dart.void, [core.Duration]))),
-    [_postFrameCallbacks]: dart.finalFieldType(core.List$(dart.fnType(dart.void, [core.Duration]))),
-    [_nextFrameCompleter]: dart.fieldType(dart.nullable(async.Completer$(dart.void))),
-    [_hasScheduledFrame]: dart.fieldType(core.bool),
-    [_schedulerPhase]: dart.fieldType(binding$.SchedulerPhase),
-    [_framesEnabled]: dart.fieldType(core.bool),
-    [_warmUpFrame]: dart.fieldType(core.bool),
-    [_firstRawTimeStampInEpoch]: dart.fieldType(dart.nullable(core.Duration)),
-    [_epochStart]: dart.fieldType(core.Duration),
-    [_lastRawTimeStamp]: dart.fieldType(core.Duration),
-    [_currentFrameTimeStamp]: dart.fieldType(dart.nullable(core.Duration)),
-    [_debugFrameNumber]: dart.fieldType(core.int),
-    [_debugBanner]: dart.fieldType(dart.nullable(core.String)),
-    [_rescheduleAfterWarmUpFrame]: dart.fieldType(core.bool)
-  }));
-  dart.defineLazy(binding$.SchedulerBinding, {
-    /*binding$.SchedulerBinding._instance*/get _instance() {
-      return null;
-    },
-    set _instance(_) {}
-  }, false);
-  binding$.defaultSchedulingStrategy = function defaultSchedulingStrategy(opts) {
-    let priority = opts && 'priority' in opts ? opts.priority : null;
-    let scheduler = opts && 'scheduler' in opts ? opts.scheduler : null;
-    if (scheduler.transientCallbackCount > 0) return priority >= priority$.Priority.animation.value;
-    return true;
-  };
-  dart.copyProperties(binding$, {
-    get timeDilation() {
-      return binding$._timeDilation;
-    },
-    set timeDilation(value) {
-      let t4;
-      if (!(value > 0.0)) dart.assertFailed(null, I[0], 25, 10, "value > 0.0");
-      if (binding$._timeDilation === value) return;
-      t4 = binding$.SchedulerBinding.instance;
-      t4 == null ? null : t4.resetEpoch();
-      binding$._timeDilation = value;
-    }
+    (ImageProvider.new = function() {
+      ;
+    }).prototype = ImageProvider.prototype;
+    dart.addTypeTests(ImageProvider);
+    ImageProvider.prototype[_is_ImageProvider_default] = true;
+    dart.addTypeCaches(ImageProvider);
+    dart.setMethodSignature(ImageProvider, () => ({
+      __proto__: dart.getMethods(ImageProvider.__proto__),
+      resolve: dart.fnType(image_stream.ImageStream, [image_provider.ImageConfiguration]),
+      createStream: dart.fnType(image_stream.ImageStream, [image_provider.ImageConfiguration]),
+      obtainCacheStatus: dart.fnType(async.Future$(dart.nullable(image_cache.ImageCacheStatus)), [], {handleError: dart.nullable(dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)]))}, {configuration: image_provider.ImageConfiguration}),
+      [_createErrorHandlerAndKey]: dart.fnType(dart.void, [image_provider.ImageConfiguration, dart.fnType(dart.void, [T, dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)])]), dart.fnType(async.Future$(dart.void), [dart.nullable(T), core.Object, dart.nullable(core.StackTrace)])]),
+      resolveStreamForKey: dart.fnType(dart.void, [image_provider.ImageConfiguration, image_stream.ImageStream, dart.nullable(core.Object), dart.fnType(dart.void, [core.Object, dart.nullable(core.StackTrace)])]),
+      evict: dart.fnType(async.Future$(core.bool), [], {cache: dart.nullable(image_cache.ImageCache), configuration: image_provider.ImageConfiguration}, {})
+    }));
+    dart.setLibraryUri(ImageProvider, I[2]);
+    dart.defineExtensionMethods(ImageProvider, ['toString']);
+    return ImageProvider;
   });
-  dart.defineLazy(binding$, {
-    /*binding$._timeDilation*/get _timeDilation() {
-      return 1.0;
-    },
-    set _timeDilation(_) {}
+  image_provider.ImageProvider = image_provider.ImageProvider$();
+  dart.addTypeTests(image_provider.ImageProvider, _is_ImageProvider_default);
+  image_provider.NetworkImage = class NetworkImage extends image_provider.ImageProvider {};
+  dart.addTypeTests(image_provider.NetworkImage);
+  dart.addTypeCaches(image_provider.NetworkImage);
+  dart.setLibraryUri(image_provider.NetworkImage, I[2]);
+  _network_image_web.NetworkImage = class NetworkImage extends image_provider.ImageProvider$(image_provider.NetworkImage) {
+    get url() {
+      return this[url$];
+    }
+    set url(value) {
+      super.url = value;
+    }
+    get scale() {
+      return this[scale$];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    get headers() {
+      return this[headers$];
+    }
+    set headers(value) {
+      super.headers = value;
+    }
+    obtainKey(configuration) {
+      return new (T$.SynchronousFutureOfNetworkImage()).new(this);
+    }
+    load(key, decode) {
+      image_provider.NetworkImage.as(key);
+      let chunkEvents = T$.StreamControllerOfImageChunkEvent().new();
+      return new image_stream.MultiFrameImageStreamCompleter.new({chunkEvents: chunkEvents.stream, codec: this[_loadAsync](_network_image_web.NetworkImage.as(key), decode, chunkEvents), scale: key.scale, debugLabel: key.url, informationCollector: this[_imageStreamInformationCollector](key)});
+    }
+    [_imageStreamInformationCollector](key) {
+      let collector = null;
+      if (!dart.fn(() => {
+        collector = dart.fn(() => T$.JSArrayOfDiagnosticsNode().of([new (T$.DiagnosticsPropertyOfImageProviderOfObject()).new("Image provider", this), new (T$.DiagnosticsPropertyOfNetworkImage()).new("Image key", _network_image_web.NetworkImage.as(key))]), T$.VoidToListOfDiagnosticsNode());
+        return true;
+      }, T$.VoidTobool())()) dart.assertFailed(null, I[0], 61, 12, "() {\r\n      collector = () {\r\n        return <DiagnosticsNode>[\r\n          DiagnosticsProperty<image_provider.ImageProvider>('Image provider', this),\r\n          DiagnosticsProperty<NetworkImage>('Image key', key as NetworkImage),\r\n        ];\r\n      };\r\n      return true;\r\n    }()");
+      return collector;
+    }
+    [_loadAsync](key, decode, chunkEvents) {
+      if (!key._equals(this)) dart.assertFailed(null, I[0], 84, 12, "key == this");
+      let resolved = core.Uri.base.resolve(key.url);
+      return ui.webOnlyInstantiateImageCodecFromUrl(resolved, {chunkCallback: dart.fn((bytes, total) => {
+          chunkEvents.add(new image_stream.ImageChunkEvent.new({cumulativeBytesLoaded: bytes, expectedTotalBytes: total}));
+        }, T$.intAndintTovoid())});
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) {
+        return false;
+      }
+      return _network_image_web.NetworkImage.is(other) && other.url === this.url && other.scale === this.scale;
+    }
+    get hashCode() {
+      return ui.hashValues(this.url, this.scale);
+    }
+    toString() {
+      return object.objectRuntimeType(this, "NetworkImage") + "(\"" + this.url + "\", scale: " + dart.str(this.scale) + ")";
+    }
+  };
+  (_network_image_web.NetworkImage.new = function(url, opts) {
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    let headers = opts && 'headers' in opts ? opts.headers : null;
+    this[url$] = url;
+    this[scale$] = scale;
+    this[headers$] = headers;
+    if (!(url !== null)) dart.assertFailed(null, I[0], 25, 16, "url != null");
+    if (!(scale !== null)) dart.assertFailed(null, I[0], 26, 16, "scale != null");
+    _network_image_web.NetworkImage.__proto__.new.call(this);
+    ;
+  }).prototype = _network_image_web.NetworkImage.prototype;
+  dart.addTypeTests(_network_image_web.NetworkImage);
+  dart.addTypeCaches(_network_image_web.NetworkImage);
+  _network_image_web.NetworkImage[dart.implements] = () => [image_provider.NetworkImage];
+  dart.setMethodSignature(_network_image_web.NetworkImage, () => ({
+    __proto__: dart.getMethods(_network_image_web.NetworkImage.__proto__),
+    obtainKey: dart.fnType(async.Future$(_network_image_web.NetworkImage), [image_provider.ImageConfiguration]),
+    load: dart.fnType(image_stream.ImageStreamCompleter, [dart.nullable(core.Object), dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})]),
+    [_imageStreamInformationCollector]: dart.fnType(dart.nullable(dart.fnType(core.Iterable$(diagnostics.DiagnosticsNode), [])), [image_provider.NetworkImage]),
+    [_loadAsync]: dart.fnType(async.Future$(ui.Codec), [_network_image_web.NetworkImage, dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {}), async.StreamController$(image_stream.ImageChunkEvent)])
+  }));
+  dart.setLibraryUri(_network_image_web.NetworkImage, I[3]);
+  dart.setFieldSignature(_network_image_web.NetworkImage, () => ({
+    __proto__: dart.getFields(_network_image_web.NetworkImage.__proto__),
+    url: dart.finalFieldType(core.String),
+    scale: dart.finalFieldType(core.double),
+    headers: dart.finalFieldType(dart.nullable(core.Map$(core.String, core.String)))
+  }));
+  dart.defineExtensionMethods(_network_image_web.NetworkImage, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(_network_image_web.NetworkImage, ['hashCode']);
+  const bundle$ = ImageConfiguration_bundle;
+  const devicePixelRatio$ = ImageConfiguration_devicePixelRatio;
+  const locale$ = ImageConfiguration_locale;
+  const textDirection$ = ImageConfiguration_textDirection;
+  const size$ = ImageConfiguration_size;
+  const platform$ = ImageConfiguration_platform;
+  image_provider.ImageConfiguration = class ImageConfiguration extends core.Object {
+    get bundle() {
+      return this[bundle$];
+    }
+    set bundle(value) {
+      super.bundle = value;
+    }
+    get devicePixelRatio() {
+      return this[devicePixelRatio$];
+    }
+    set devicePixelRatio(value) {
+      super.devicePixelRatio = value;
+    }
+    get locale() {
+      return this[locale$];
+    }
+    set locale(value) {
+      super.locale = value;
+    }
+    get textDirection() {
+      return this[textDirection$];
+    }
+    set textDirection(value) {
+      super.textDirection = value;
+    }
+    get size() {
+      return this[size$];
+    }
+    set size(value) {
+      super.size = value;
+    }
+    get platform() {
+      return this[platform$];
+    }
+    set platform(value) {
+      super.platform = value;
+    }
+    copyWith(opts) {
+      let t2, t2$, t2$0, t2$1, t2$2, t2$3;
+      let bundle = opts && 'bundle' in opts ? opts.bundle : null;
+      let devicePixelRatio = opts && 'devicePixelRatio' in opts ? opts.devicePixelRatio : null;
+      let locale = opts && 'locale' in opts ? opts.locale : null;
+      let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+      let size = opts && 'size' in opts ? opts.size : null;
+      let platform = opts && 'platform' in opts ? opts.platform : null;
+      return new image_provider.ImageConfiguration.new({bundle: (t2 = bundle, t2 == null ? this.bundle : t2), devicePixelRatio: (t2$ = devicePixelRatio, t2$ == null ? this.devicePixelRatio : t2$), locale: (t2$0 = locale, t2$0 == null ? this.locale : t2$0), textDirection: (t2$1 = textDirection, t2$1 == null ? this.textDirection : t2$1), size: (t2$2 = size, t2$2 == null ? this.size : t2$2), platform: (t2$3 = platform, t2$3 == null ? this.platform : t2$3)});
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return image_provider.ImageConfiguration.is(other) && dart.equals(other.bundle, this.bundle) && other.devicePixelRatio == this.devicePixelRatio && dart.equals(other.locale, this.locale) && other.textDirection == this.textDirection && dart.equals(other.size, this.size) && other.platform == this.platform;
+    }
+    get hashCode() {
+      return ui.hashValues(this.bundle, this.devicePixelRatio, this.locale, this.size, this.platform);
+    }
+    toString() {
+      let result = new core.StringBuffer.new();
+      result.write("ImageConfiguration(");
+      let hasArguments = false;
+      if (this.bundle != null) {
+        result.write("bundle: " + dart.str(this.bundle));
+        hasArguments = true;
+      }
+      if (this.devicePixelRatio != null) {
+        if (hasArguments) result.write(", ");
+        result.write("devicePixelRatio: " + dart.nullCheck(this.devicePixelRatio)[$toStringAsFixed](1));
+        hasArguments = true;
+      }
+      if (this.locale != null) {
+        if (hasArguments) result.write(", ");
+        result.write("locale: " + dart.str(this.locale));
+        hasArguments = true;
+      }
+      if (this.textDirection != null) {
+        if (hasArguments) result.write(", ");
+        result.write("textDirection: " + dart.str(this.textDirection));
+        hasArguments = true;
+      }
+      if (this.size != null) {
+        if (hasArguments) result.write(", ");
+        result.write("size: " + dart.str(this.size));
+        hasArguments = true;
+      }
+      if (this.platform != null) {
+        if (hasArguments) result.write(", ");
+        result.write("platform: " + diagnostics.describeEnum(dart.nullCheck(this.platform)));
+        hasArguments = true;
+      }
+      result.write(")");
+      return result.toString();
+    }
+  };
+  (image_provider.ImageConfiguration.new = function(opts) {
+    let bundle = opts && 'bundle' in opts ? opts.bundle : null;
+    let devicePixelRatio = opts && 'devicePixelRatio' in opts ? opts.devicePixelRatio : null;
+    let locale = opts && 'locale' in opts ? opts.locale : null;
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    let size = opts && 'size' in opts ? opts.size : null;
+    let platform = opts && 'platform' in opts ? opts.platform : null;
+    this[bundle$] = bundle;
+    this[devicePixelRatio$] = devicePixelRatio;
+    this[locale$] = locale;
+    this[textDirection$] = textDirection;
+    this[size$] = size;
+    this[platform$] = platform;
+    ;
+  }).prototype = image_provider.ImageConfiguration.prototype;
+  dart.addTypeTests(image_provider.ImageConfiguration);
+  dart.addTypeCaches(image_provider.ImageConfiguration);
+  dart.setMethodSignature(image_provider.ImageConfiguration, () => ({
+    __proto__: dart.getMethods(image_provider.ImageConfiguration.__proto__),
+    copyWith: dart.fnType(image_provider.ImageConfiguration, [], {bundle: dart.nullable(asset_bundle.AssetBundle), devicePixelRatio: dart.nullable(core.double), locale: dart.nullable(ui.Locale), platform: dart.nullable(platform.TargetPlatform), size: dart.nullable(ui.Size), textDirection: dart.nullable(ui.TextDirection)}, {})
+  }));
+  dart.setLibraryUri(image_provider.ImageConfiguration, I[2]);
+  dart.setFieldSignature(image_provider.ImageConfiguration, () => ({
+    __proto__: dart.getFields(image_provider.ImageConfiguration.__proto__),
+    bundle: dart.finalFieldType(dart.nullable(asset_bundle.AssetBundle)),
+    devicePixelRatio: dart.finalFieldType(dart.nullable(core.double)),
+    locale: dart.finalFieldType(dart.nullable(ui.Locale)),
+    textDirection: dart.finalFieldType(dart.nullable(ui.TextDirection)),
+    size: dart.finalFieldType(dart.nullable(ui.Size)),
+    platform: dart.finalFieldType(dart.nullable(platform.TargetPlatform))
+  }));
+  dart.defineExtensionMethods(image_provider.ImageConfiguration, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(image_provider.ImageConfiguration, ['hashCode']);
+  dart.defineLazy(image_provider.ImageConfiguration, {
+    /*image_provider.ImageConfiguration.empty*/get empty() {
+      return C[0] || CT.C0;
+    }
   }, false);
-  dart.trackLibraries("packages/flutter/src/scheduler/binding.dart", {
-    "package:flutter/src/scheduler/binding.dart": binding$
+  var bundle$0 = dart.privateName(image_provider, "AssetBundleImageKey.bundle");
+  var name$ = dart.privateName(image_provider, "AssetBundleImageKey.name");
+  var scale$0 = dart.privateName(image_provider, "AssetBundleImageKey.scale");
+  image_provider.AssetBundleImageKey = class AssetBundleImageKey extends core.Object {
+    get bundle() {
+      return this[bundle$0];
+    }
+    set bundle(value) {
+      super.bundle = value;
+    }
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get scale() {
+      return this[scale$0];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return image_provider.AssetBundleImageKey.is(other) && other.bundle[$_equals](this.bundle) && other.name === this.name && other.scale === this.scale;
+    }
+    get hashCode() {
+      return ui.hashValues(this.bundle, this.name, this.scale);
+    }
+    toString() {
+      return object.objectRuntimeType(this, "AssetBundleImageKey") + "(bundle: " + dart.str(this.bundle) + ", name: \"" + this.name + "\", scale: " + dart.str(this.scale) + ")";
+    }
+  };
+  (image_provider.AssetBundleImageKey.new = function(opts) {
+    let bundle = opts && 'bundle' in opts ? opts.bundle : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let scale = opts && 'scale' in opts ? opts.scale : null;
+    this[bundle$0] = bundle;
+    this[name$] = name;
+    this[scale$0] = scale;
+    if (!(bundle !== null)) dart.assertFailed(null, I[1], 599, 15, "bundle != null");
+    if (!(name !== null)) dart.assertFailed(null, I[1], 600, 15, "name != null");
+    if (!(scale !== null)) dart.assertFailed(null, I[1], 601, 15, "scale != null");
+    ;
+  }).prototype = image_provider.AssetBundleImageKey.prototype;
+  dart.addTypeTests(image_provider.AssetBundleImageKey);
+  dart.addTypeCaches(image_provider.AssetBundleImageKey);
+  dart.setLibraryUri(image_provider.AssetBundleImageKey, I[2]);
+  dart.setFieldSignature(image_provider.AssetBundleImageKey, () => ({
+    __proto__: dart.getFields(image_provider.AssetBundleImageKey.__proto__),
+    bundle: dart.finalFieldType(asset_bundle.AssetBundle),
+    name: dart.finalFieldType(core.String),
+    scale: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(image_provider.AssetBundleImageKey, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(image_provider.AssetBundleImageKey, ['hashCode']);
+  var _loadAsync$ = dart.privateName(image_provider, "_loadAsync");
+  image_provider.AssetBundleImageProvider = class AssetBundleImageProvider extends image_provider.ImageProvider$(image_provider.AssetBundleImageKey) {
+    load(key, decode) {
+      image_provider.AssetBundleImageKey.as(key);
+      let collector = null;
+      if (!dart.fn(() => {
+        collector = dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new((function*() {
+          yield new (T$.DiagnosticsPropertyOfImageProviderOfObject()).new("Image provider", this);
+          yield new (T$.DiagnosticsPropertyOfAssetBundleImageKey()).new("Image key", key);
+        }).bind(this)), T$.VoidToIterableOfDiagnosticsNode());
+        return true;
+      }, T$.VoidTobool())()) dart.assertFailed(null, I[1], 647, 12, "() {\r\n      collector = () sync* {\r\n        yield DiagnosticsProperty<ImageProvider>('Image provider', this);\r\n        yield DiagnosticsProperty<AssetBundleImageKey>('Image key', key);\r\n      };\r\n      return true;\r\n    }()");
+      return new image_stream.MultiFrameImageStreamCompleter.new({codec: this[_loadAsync$](key, decode), scale: key.scale, debugLabel: key.name, informationCollector: collector});
+    }
+    [_loadAsync$](key, decode) {
+      return async.async(ui.Codec, function* _loadAsync() {
+        let data = null;
+        try {
+          data = (yield key.bundle.load(key.name));
+        } catch (e) {
+          let ex = dart.getThrown(e);
+          if (assertions.FlutterError.is(ex)) {
+            dart.nullCheck(dart.nullCheck(binding.PaintingBinding.instance).imageCache).evict(key);
+            dart.rethrow(e);
+          } else
+            throw e;
+        }
+        if (data == null) {
+          dart.nullCheck(dart.nullCheck(binding.PaintingBinding.instance).imageCache).evict(key);
+          dart.throw(new core.StateError.new("Unable to read data"));
+        }
+        return decode(data[$buffer][$asUint8List]());
+      });
+    }
+  };
+  (image_provider.AssetBundleImageProvider.new = function() {
+    image_provider.AssetBundleImageProvider.__proto__.new.call(this);
+    ;
+  }).prototype = image_provider.AssetBundleImageProvider.prototype;
+  dart.addTypeTests(image_provider.AssetBundleImageProvider);
+  dart.addTypeCaches(image_provider.AssetBundleImageProvider);
+  dart.setMethodSignature(image_provider.AssetBundleImageProvider, () => ({
+    __proto__: dart.getMethods(image_provider.AssetBundleImageProvider.__proto__),
+    load: dart.fnType(image_stream.ImageStreamCompleter, [dart.nullable(core.Object), dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})]),
+    [_loadAsync$]: dart.fnType(async.Future$(ui.Codec), [image_provider.AssetBundleImageKey, dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})])
+  }));
+  dart.setLibraryUri(image_provider.AssetBundleImageProvider, I[2]);
+  var providerCacheKey$ = dart.privateName(image_provider, "_SizeAwareCacheKey.providerCacheKey");
+  var width$ = dart.privateName(image_provider, "_SizeAwareCacheKey.width");
+  var height$ = dart.privateName(image_provider, "_SizeAwareCacheKey.height");
+  image_provider._SizeAwareCacheKey = class _SizeAwareCacheKey extends core.Object {
+    get providerCacheKey() {
+      return this[providerCacheKey$];
+    }
+    set providerCacheKey(value) {
+      super.providerCacheKey = value;
+    }
+    get width() {
+      return this[width$];
+    }
+    set width(value) {
+      super.width = value;
+    }
+    get height() {
+      return this[height$];
+    }
+    set height(value) {
+      super.height = value;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return image_provider._SizeAwareCacheKey.is(other) && other.providerCacheKey[$_equals](this.providerCacheKey) && other.width == this.width && other.height == this.height;
+    }
+    get hashCode() {
+      return ui.hashValues(this.providerCacheKey, this.width, this.height);
+    }
+  };
+  (image_provider._SizeAwareCacheKey.new = function(providerCacheKey, width, height) {
+    this[providerCacheKey$] = providerCacheKey;
+    this[width$] = width;
+    this[height$] = height;
+    ;
+  }).prototype = image_provider._SizeAwareCacheKey.prototype;
+  dart.addTypeTests(image_provider._SizeAwareCacheKey);
+  dart.addTypeCaches(image_provider._SizeAwareCacheKey);
+  dart.setLibraryUri(image_provider._SizeAwareCacheKey, I[2]);
+  dart.setFieldSignature(image_provider._SizeAwareCacheKey, () => ({
+    __proto__: dart.getFields(image_provider._SizeAwareCacheKey.__proto__),
+    providerCacheKey: dart.finalFieldType(core.Object),
+    width: dart.finalFieldType(dart.nullable(core.int)),
+    height: dart.finalFieldType(dart.nullable(core.int))
+  }));
+  dart.defineExtensionMethods(image_provider._SizeAwareCacheKey, ['_equals']);
+  dart.defineExtensionAccessors(image_provider._SizeAwareCacheKey, ['hashCode']);
+  var imageProvider$ = dart.privateName(image_provider, "ResizeImage.imageProvider");
+  var width$0 = dart.privateName(image_provider, "ResizeImage.width");
+  var height$0 = dart.privateName(image_provider, "ResizeImage.height");
+  var allowUpscaling$ = dart.privateName(image_provider, "ResizeImage.allowUpscaling");
+  image_provider.ResizeImage = class ResizeImage extends image_provider.ImageProvider$(image_provider._SizeAwareCacheKey) {
+    get imageProvider() {
+      return this[imageProvider$];
+    }
+    set imageProvider(value) {
+      super.imageProvider = value;
+    }
+    get width() {
+      return this[width$0];
+    }
+    set width(value) {
+      super.width = value;
+    }
+    get height() {
+      return this[height$0];
+    }
+    set height(value) {
+      super.height = value;
+    }
+    get allowUpscaling() {
+      return this[allowUpscaling$];
+    }
+    set allowUpscaling(value) {
+      super.allowUpscaling = value;
+    }
+    static resizeIfNeeded(cacheWidth, cacheHeight, provider) {
+      if (cacheWidth != null || cacheHeight != null) {
+        return new image_provider.ResizeImage.new(provider, {width: cacheWidth, height: cacheHeight});
+      }
+      return provider;
+    }
+    load(key, decode) {
+      image_provider._SizeAwareCacheKey.as(key);
+      const decodeResize = (bytes, opts) => {
+        let allowUpscaling = opts && 'allowUpscaling' in opts ? opts.allowUpscaling : null;
+        let cacheHeight = opts && 'cacheHeight' in opts ? opts.cacheHeight : null;
+        let cacheWidth = opts && 'cacheWidth' in opts ? opts.cacheWidth : null;
+        if (!(cacheWidth == null && cacheHeight == null && allowUpscaling == null)) dart.assertFailed("ResizeImage cannot be composed with another ImageProvider that applies " + "cacheWidth, cacheHeight, or allowUpscaling.", I[1], 765, 9, "cacheWidth == null && cacheHeight == null && allowUpscaling == null");
+        return decode(bytes, {cacheWidth: this.width, cacheHeight: this.height, allowUpscaling: this.allowUpscaling});
+      };
+      dart.fn(decodeResize, T$.Uint8List__ToFutureOfCodec());
+      let completer = this.imageProvider.load(key.providerCacheKey, decodeResize);
+      if (!false) {
+        completer.debugLabel = dart.str(completer.debugLabel) + " - Resized(" + dart.str(key.width) + "×" + dart.str(key.height) + ")";
+      }
+      return completer;
+    }
+    obtainKey(configuration) {
+      let completer = null;
+      let result = null;
+      this.imageProvider.obtainKey(configuration).then(core.Null, dart.fn(key => {
+        if (completer == null) {
+          result = new (T$.SynchronousFutureOf_SizeAwareCacheKey()).new(new image_provider._SizeAwareCacheKey.new(key, this.width, this.height));
+        } else {
+          completer.complete(new image_provider._SizeAwareCacheKey.new(key, this.width, this.height));
+        }
+      }, T$.ObjectToNull()));
+      if (result != null) {
+        return dart.nullCheck(result);
+      }
+      completer = T$.CompleterOf_SizeAwareCacheKey().new();
+      return completer.future;
+    }
+  };
+  (image_provider.ResizeImage.new = function(imageProvider, opts) {
+    let width = opts && 'width' in opts ? opts.width : null;
+    let height = opts && 'height' in opts ? opts.height : null;
+    let allowUpscaling = opts && 'allowUpscaling' in opts ? opts.allowUpscaling : false;
+    this[imageProvider$] = imageProvider;
+    this[width$0] = width;
+    this[height$0] = height;
+    this[allowUpscaling$] = allowUpscaling;
+    if (!(width != null || height != null)) dart.assertFailed(null, I[1], 728, 15, "width != null || height != null");
+    if (!(allowUpscaling !== null)) dart.assertFailed(null, I[1], 729, 15, "allowUpscaling != null");
+    image_provider.ResizeImage.__proto__.new.call(this);
+    ;
+  }).prototype = image_provider.ResizeImage.prototype;
+  dart.addTypeTests(image_provider.ResizeImage);
+  dart.addTypeCaches(image_provider.ResizeImage);
+  dart.setMethodSignature(image_provider.ResizeImage, () => ({
+    __proto__: dart.getMethods(image_provider.ResizeImage.__proto__),
+    load: dart.fnType(image_stream.ImageStreamCompleter, [dart.nullable(core.Object), dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})]),
+    obtainKey: dart.fnType(async.Future$(image_provider._SizeAwareCacheKey), [image_provider.ImageConfiguration])
+  }));
+  dart.setLibraryUri(image_provider.ResizeImage, I[2]);
+  dart.setFieldSignature(image_provider.ResizeImage, () => ({
+    __proto__: dart.getFields(image_provider.ResizeImage.__proto__),
+    imageProvider: dart.finalFieldType(image_provider.ImageProvider$(core.Object)),
+    width: dart.finalFieldType(dart.nullable(core.int)),
+    height: dart.finalFieldType(dart.nullable(core.int)),
+    allowUpscaling: dart.finalFieldType(core.bool)
+  }));
+  var file$ = dart.privateName(image_provider, "FileImage.file");
+  var scale$1 = dart.privateName(image_provider, "FileImage.scale");
+  image_provider.FileImage = class FileImage extends image_provider.ImageProvider {
+    get file() {
+      return this[file$];
+    }
+    set file(value) {
+      super.file = value;
+    }
+    get scale() {
+      return this[scale$1];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    obtainKey(configuration) {
+      return new (T$.SynchronousFutureOfFileImage()).new(this);
+    }
+    load(key, decode) {
+      image_provider.FileImage.as(key);
+      return new image_stream.MultiFrameImageStreamCompleter.new({codec: this[_loadAsync$](key, decode), scale: key.scale, debugLabel: key.file.path, informationCollector: dart.fn(() => new (T$.SyncIterableOfDiagnosticsNode()).new((function*() {
+          yield new assertions.ErrorDescription.new("Path: " + this.file.path);
+        }).bind(this)), T$.VoidToIterableOfDiagnosticsNode())});
+    }
+    [_loadAsync$](key, decode) {
+      return async.async(ui.Codec, (function* _loadAsync() {
+        if (!key._equals(this)) dart.assertFailed(null, I[1], 882, 12, "key == this");
+        let bytes = (yield this.file.readAsBytes());
+        if (bytes[$lengthInBytes] === 0) {
+          dart.nullCheck(dart.nullCheck(binding.PaintingBinding.instance).imageCache).evict(key);
+          dart.throw(new core.StateError.new(dart.str(this.file) + " is empty and cannot be loaded as an image."));
+        }
+        return decode(bytes);
+      }).bind(this));
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return image_provider.FileImage.is(other) && other.file.path === this.file.path && other.scale === this.scale;
+    }
+    get hashCode() {
+      return ui.hashValues(this.file.path, this.scale);
+    }
+    toString() {
+      return object.objectRuntimeType(this, "FileImage") + "(\"" + this.file.path + "\", scale: " + dart.str(this.scale) + ")";
+    }
+  };
+  (image_provider.FileImage.new = function(file, opts) {
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    this[file$] = file;
+    this[scale$1] = scale;
+    if (!(file !== null)) dart.assertFailed(null, I[1], 855, 14, "file != null");
+    if (!(scale !== null)) dart.assertFailed(null, I[1], 856, 14, "scale != null");
+    image_provider.FileImage.__proto__.new.call(this);
+    ;
+  }).prototype = image_provider.FileImage.prototype;
+  dart.addTypeTests(image_provider.FileImage);
+  dart.addTypeCaches(image_provider.FileImage);
+  dart.setMethodSignature(image_provider.FileImage, () => ({
+    __proto__: dart.getMethods(image_provider.FileImage.__proto__),
+    obtainKey: dart.fnType(async.Future$(image_provider.FileImage), [image_provider.ImageConfiguration]),
+    load: dart.fnType(image_stream.ImageStreamCompleter, [dart.nullable(core.Object), dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})]),
+    [_loadAsync$]: dart.fnType(async.Future$(ui.Codec), [image_provider.FileImage, dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})])
+  }));
+  dart.setLibraryUri(image_provider.FileImage, I[2]);
+  dart.setFieldSignature(image_provider.FileImage, () => ({
+    __proto__: dart.getFields(image_provider.FileImage.__proto__),
+    file: dart.finalFieldType(io.File),
+    scale: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(image_provider.FileImage, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(image_provider.FileImage, ['hashCode']);
+  var bytes$ = dart.privateName(image_provider, "MemoryImage.bytes");
+  var scale$2 = dart.privateName(image_provider, "MemoryImage.scale");
+  image_provider.MemoryImage = class MemoryImage extends image_provider.ImageProvider {
+    get bytes() {
+      return this[bytes$];
+    }
+    set bytes(value) {
+      super.bytes = value;
+    }
+    get scale() {
+      return this[scale$2];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    obtainKey(configuration) {
+      return new (T$.SynchronousFutureOfMemoryImage()).new(this);
+    }
+    load(key, decode) {
+      image_provider.MemoryImage.as(key);
+      return new image_stream.MultiFrameImageStreamCompleter.new({codec: this[_loadAsync$](key, decode), scale: key.scale, debugLabel: "MemoryImage(" + diagnostics.describeIdentity(key.bytes) + ")"});
+    }
+    [_loadAsync$](key, decode) {
+      if (!key._equals(this)) dart.assertFailed(null, I[1], 965, 12, "key == this");
+      return decode(this.bytes);
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return image_provider.MemoryImage.is(other) && other.bytes[$_equals](this.bytes) && other.scale === this.scale;
+    }
+    get hashCode() {
+      return ui.hashValues(this.bytes[$hashCode], this.scale);
+    }
+    toString() {
+      return object.objectRuntimeType(this, "MemoryImage") + "(" + diagnostics.describeIdentity(this.bytes) + ", scale: " + dart.str(this.scale) + ")";
+    }
+  };
+  (image_provider.MemoryImage.new = function(bytes, opts) {
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    this[bytes$] = bytes;
+    this[scale$2] = scale;
+    if (!(bytes !== null)) dart.assertFailed(null, I[1], 929, 14, "bytes != null");
+    if (!(scale !== null)) dart.assertFailed(null, I[1], 930, 14, "scale != null");
+    image_provider.MemoryImage.__proto__.new.call(this);
+    ;
+  }).prototype = image_provider.MemoryImage.prototype;
+  dart.addTypeTests(image_provider.MemoryImage);
+  dart.addTypeCaches(image_provider.MemoryImage);
+  dart.setMethodSignature(image_provider.MemoryImage, () => ({
+    __proto__: dart.getMethods(image_provider.MemoryImage.__proto__),
+    obtainKey: dart.fnType(async.Future$(image_provider.MemoryImage), [image_provider.ImageConfiguration]),
+    load: dart.fnType(image_stream.ImageStreamCompleter, [dart.nullable(core.Object), dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})]),
+    [_loadAsync$]: dart.fnType(async.Future$(ui.Codec), [image_provider.MemoryImage, dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})])
+  }));
+  dart.setLibraryUri(image_provider.MemoryImage, I[2]);
+  dart.setFieldSignature(image_provider.MemoryImage, () => ({
+    __proto__: dart.getFields(image_provider.MemoryImage.__proto__),
+    bytes: dart.finalFieldType(typed_data.Uint8List),
+    scale: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(image_provider.MemoryImage, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(image_provider.MemoryImage, ['hashCode']);
+  var assetName$ = dart.privateName(image_provider, "ExactAssetImage.assetName");
+  var scale$3 = dart.privateName(image_provider, "ExactAssetImage.scale");
+  var bundle$1 = dart.privateName(image_provider, "ExactAssetImage.bundle");
+  var $package$ = dart.privateName(image_provider, "ExactAssetImage.package");
+  image_provider.ExactAssetImage = class ExactAssetImage extends image_provider.AssetBundleImageProvider {
+    get assetName() {
+      return this[assetName$];
+    }
+    set assetName(value) {
+      super.assetName = value;
+    }
+    get scale() {
+      return this[scale$3];
+    }
+    set scale(value) {
+      super.scale = value;
+    }
+    get bundle() {
+      return this[bundle$1];
+    }
+    set bundle(value) {
+      super.bundle = value;
+    }
+    get package() {
+      return this[$package$];
+    }
+    set package(value) {
+      super.package = value;
+    }
+    get keyName() {
+      return this.package == null ? this.assetName : "packages/" + dart.str(this.package) + "/" + this.assetName;
+    }
+    obtainKey(configuration) {
+      let t4, t4$;
+      return new (T$.SynchronousFutureOfAssetBundleImageKey()).new(new image_provider.AssetBundleImageKey.new({bundle: (t4$ = (t4 = this.bundle, t4 == null ? configuration.bundle : t4), t4$ == null ? asset_bundle.rootBundle : t4$), name: this.keyName, scale: this.scale}));
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) return false;
+      return image_provider.ExactAssetImage.is(other) && other.keyName === this.keyName && other.scale === this.scale && dart.equals(other.bundle, this.bundle);
+    }
+    get hashCode() {
+      return ui.hashValues(this.keyName, this.scale, this.bundle);
+    }
+    toString() {
+      return object.objectRuntimeType(this, "ExactAssetImage") + "(name: \"" + this.keyName + "\", scale: " + dart.str(this.scale) + ", bundle: " + dart.str(this.bundle) + ")";
+    }
+  };
+  (image_provider.ExactAssetImage.new = function(assetName, opts) {
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    let bundle = opts && 'bundle' in opts ? opts.bundle : null;
+    let $package = opts && 'package' in opts ? opts.package : null;
+    this[assetName$] = assetName;
+    this[scale$3] = scale;
+    this[bundle$1] = bundle;
+    this[$package$] = $package;
+    if (!(assetName !== null)) dart.assertFailed(null, I[1], 1072, 15, "assetName != null");
+    if (!(scale !== null)) dart.assertFailed(null, I[1], 1073, 15, "scale != null");
+    image_provider.ExactAssetImage.__proto__.new.call(this);
+    ;
+  }).prototype = image_provider.ExactAssetImage.prototype;
+  dart.addTypeTests(image_provider.ExactAssetImage);
+  dart.addTypeCaches(image_provider.ExactAssetImage);
+  dart.setMethodSignature(image_provider.ExactAssetImage, () => ({
+    __proto__: dart.getMethods(image_provider.ExactAssetImage.__proto__),
+    obtainKey: dart.fnType(async.Future$(image_provider.AssetBundleImageKey), [image_provider.ImageConfiguration])
+  }));
+  dart.setGetterSignature(image_provider.ExactAssetImage, () => ({
+    __proto__: dart.getGetters(image_provider.ExactAssetImage.__proto__),
+    keyName: core.String
+  }));
+  dart.setLibraryUri(image_provider.ExactAssetImage, I[2]);
+  dart.setFieldSignature(image_provider.ExactAssetImage, () => ({
+    __proto__: dart.getFields(image_provider.ExactAssetImage.__proto__),
+    assetName: dart.finalFieldType(core.String),
+    scale: dart.finalFieldType(core.double),
+    bundle: dart.finalFieldType(dart.nullable(asset_bundle.AssetBundle)),
+    package: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(image_provider.ExactAssetImage, ['_equals', 'toString']);
+  dart.defineExtensionAccessors(image_provider.ExactAssetImage, ['hashCode']);
+  image_provider._ErrorImageCompleter = class _ErrorImageCompleter extends image_stream.ImageStreamCompleter {
+    setError(opts) {
+      let context = opts && 'context' in opts ? opts.context : null;
+      let exception = opts && 'exception' in opts ? opts.exception : null;
+      let stack = opts && 'stack' in opts ? opts.stack : null;
+      let informationCollector = opts && 'informationCollector' in opts ? opts.informationCollector : null;
+      let silent = opts && 'silent' in opts ? opts.silent : false;
+      this.reportError({context: context, exception: exception, stack: stack, informationCollector: informationCollector, silent: silent});
+    }
+  };
+  (image_provider._ErrorImageCompleter.new = function() {
+    image_provider._ErrorImageCompleter.__proto__.new.call(this);
+    ;
+  }).prototype = image_provider._ErrorImageCompleter.prototype;
+  dart.addTypeTests(image_provider._ErrorImageCompleter);
+  dart.addTypeCaches(image_provider._ErrorImageCompleter);
+  dart.setMethodSignature(image_provider._ErrorImageCompleter, () => ({
+    __proto__: dart.getMethods(image_provider._ErrorImageCompleter.__proto__),
+    setError: dart.fnType(dart.void, [], {context: dart.nullable(diagnostics.DiagnosticsNode), informationCollector: dart.nullable(dart.fnType(core.Iterable$(diagnostics.DiagnosticsNode), [])), silent: core.bool, stack: dart.nullable(core.StackTrace)}, {exception: core.Object})
+  }));
+  dart.setLibraryUri(image_provider._ErrorImageCompleter, I[2]);
+  var statusCode$ = dart.privateName(image_provider, "NetworkImageLoadException.statusCode");
+  var uri$ = dart.privateName(image_provider, "NetworkImageLoadException.uri");
+  var _message = dart.privateName(image_provider, "_message");
+  image_provider.NetworkImageLoadException = class NetworkImageLoadException extends core.Object {
+    get statusCode() {
+      return this[statusCode$];
+    }
+    set statusCode(value) {
+      super.statusCode = value;
+    }
+    get uri() {
+      return this[uri$];
+    }
+    set uri(value) {
+      super.uri = value;
+    }
+    toString() {
+      return this[_message];
+    }
+  };
+  (image_provider.NetworkImageLoadException.new = function(opts) {
+    let statusCode = opts && 'statusCode' in opts ? opts.statusCode : null;
+    let uri = opts && 'uri' in opts ? opts.uri : null;
+    this[statusCode$] = statusCode;
+    this[uri$] = uri;
+    if (!(uri !== null)) dart.assertFailed(null, I[1], 1151, 16, "uri != null");
+    if (!(statusCode !== null)) dart.assertFailed(null, I[1], 1152, 16, "statusCode != null");
+    this[_message] = "HTTP request failed, statusCode: " + dart.str(statusCode) + ", " + dart.str(uri);
+    ;
+  }).prototype = image_provider.NetworkImageLoadException.prototype;
+  dart.addTypeTests(image_provider.NetworkImageLoadException);
+  dart.addTypeCaches(image_provider.NetworkImageLoadException);
+  image_provider.NetworkImageLoadException[dart.implements] = () => [core.Exception];
+  dart.setLibraryUri(image_provider.NetworkImageLoadException, I[2]);
+  dart.setFieldSignature(image_provider.NetworkImageLoadException, () => ({
+    __proto__: dart.getFields(image_provider.NetworkImageLoadException.__proto__),
+    statusCode: dart.finalFieldType(core.int),
+    [_message]: dart.finalFieldType(core.String),
+    uri: dart.finalFieldType(core.Uri)
+  }));
+  dart.defineExtensionMethods(image_provider.NetworkImageLoadException, ['toString']);
+  dart.setBaseClass(image_provider.NetworkImage, image_provider.ImageProvider$(image_provider.NetworkImage));
+  dart.setBaseClass(image_provider.FileImage, image_provider.ImageProvider$(image_provider.FileImage));
+  dart.setBaseClass(image_provider.MemoryImage, image_provider.ImageProvider$(image_provider.MemoryImage));
+  dart.trackLibraries("packages/flutter/src/painting/_network_image_web.dart", {
+    "package:flutter/src/painting/_network_image_web.dart": _network_image_web,
+    "package:flutter/src/painting/image_provider.dart": image_provider
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["binding.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/scheduler/binding.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["image_provider.dart","_network_image_web.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/painting/_network_image_web.dart.lib.js"}');
   // Exports:
   return {
-    src__scheduler__binding: binding$
+    src__painting___network_image_web: _network_image_web,
+    src__painting__image_provider: image_provider
   };
 }));
 
-//# sourceMappingURL=binding.dart.lib.js.map
+//# sourceMappingURL=_network_image_web.dart.lib.js.map
