@@ -6,9 +6,8 @@ class Cadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: FormularioCadastro(),
-      ),
+      theme: ThemeData.dark(),
+      home: FormularioCadastro(),
     );
   }
 }
@@ -19,7 +18,6 @@ class FormularioCadastro extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 40, left: 40, right: 40),
-        color: Colors.black,
         child: ListView(
           children: <Widget>[
             SizedBox(
@@ -30,9 +28,7 @@ class FormularioCadastro extends StatelessWidget {
                         child: Text('Cadastro',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold))))),
+                                fontSize: 30, fontWeight: FontWeight.bold))))),
             TextFormField(
               //cursorColor: Colors.yellow,
               // autofocus: true,
@@ -66,12 +62,11 @@ class FormularioCadastro extends StatelessWidget {
                 //borderSide: BorderSide(color: Colors.white)),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
-                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 25,
@@ -88,12 +83,11 @@ class FormularioCadastro extends StatelessWidget {
                 //borderSide: BorderSide(color: Colors.white)),
                 labelText: "Senha",
                 labelStyle: TextStyle(
-                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 25,
@@ -110,12 +104,11 @@ class FormularioCadastro extends StatelessWidget {
                 //borderSide: BorderSide(color: Colors.white)),
                 labelText: "Repetir Senha",
                 labelStyle: TextStyle(
-                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20, color: Colors.white),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: 40,
@@ -124,7 +117,7 @@ class FormularioCadastro extends StatelessWidget {
               height: 60,
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                /*gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   stops: [0.3, 1],
@@ -132,7 +125,7 @@ class FormularioCadastro extends StatelessWidget {
                     Colors.black.withBlue(60),
                     Colors.black.withBlue(20)
                   ],
-                ),
+                ),*/
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),
@@ -147,7 +140,6 @@ class FormularioCadastro extends StatelessWidget {
                         'Finalizar Cadastro',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Colors.white,
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.center,
