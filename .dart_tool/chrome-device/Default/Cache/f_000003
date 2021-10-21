@@ -19,16 +19,28 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
+<<<<<<< HEAD
     window.$dartAppId = "xTlEdYSDPHRvnF5rd6L4lw==";
+=======
+    window.$dartAppId = "lyfpZXHhHZEYssj1X57Vtg==";
+>>>>>>> f328dd0bb65c1607d89f0ba7207434a99e478358
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
+<<<<<<< HEAD
 window.$dwdsDevHandlerPath = "http://localhost:53668/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
 window.$dartExtensionUri = "http://127.0.0.1:53670/$debug";
+=======
+window.$dwdsDevHandlerPath = "http://localhost:49760/$dwdsSseHandler";
+window.$dwdsEnableDevtoolsLaunch = true;
+window.$dartEntrypointPath = "main_module.bootstrap.js";
+window.$requireLoader.forceLoadModule("dwds/src/injected/client");
+window.$dartExtensionUri = "http://127.0.0.1:49762/$debug";
+>>>>>>> f328dd0bb65c1607d89f0ba7207434a99e478358
 
   } else {
     if(window.$dartMainExecuted){
@@ -83,8 +95,8 @@ var baseUrl = (function () {
 let modulePaths = {
  "web_entrypoint.dart": "web_entrypoint.dart.lib",
  "packages/games_connect_project/main.dart": "packages/games_connect_project/main.dart.lib",
- "packages/games_connect_project/home.dart": "packages/games_connect_project/home.dart.lib",
- "packages/games_connect_project/widget_function.dart": "packages/games_connect_project/widget_function.dart.lib",
+ "packages/games_connect_project/cadastro.dart": "packages/games_connect_project/cadastro.dart.lib",
+ "packages/games_connect_project/sobre.dart": "packages/games_connect_project/sobre.dart.lib",
  "packages/flutter/material.dart": "packages/flutter/material.dart.lib",
  "packages/flutter/widgets.dart": "packages/flutter/widgets.dart.lib",
  "packages/flutter/src/widgets/will_pop_scope.dart": "packages/flutter/src/widgets/will_pop_scope.dart.lib",
@@ -440,13 +452,15 @@ let modulePaths = {
  "packages/flutter/src/material/arc.dart": "packages/flutter/src/material/arc.dart.lib",
  "packages/flutter/src/material/app.dart": "packages/flutter/src/material/app.dart.lib",
  "packages/flutter/src/material/animated_icons.dart": "packages/flutter/src/material/animated_icons.dart.lib",
- "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib"
+ "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib",
+ "packages/games_connect_project/home.dart": "packages/games_connect_project/home.dart.lib",
+ "packages/games_connect_project/widget_function.dart": "packages/games_connect_project/widget_function.dart.lib"
 };
 let moduleNames = {
  "web_entrypoint.dart.lib": "web_entrypoint.dart",
  "packages/games_connect_project/main.dart.lib": "packages/games_connect_project/main.dart",
- "packages/games_connect_project/home.dart.lib": "packages/games_connect_project/home.dart",
- "packages/games_connect_project/widget_function.dart.lib": "packages/games_connect_project/widget_function.dart",
+ "packages/games_connect_project/cadastro.dart.lib": "packages/games_connect_project/cadastro.dart",
+ "packages/games_connect_project/sobre.dart.lib": "packages/games_connect_project/sobre.dart",
  "packages/flutter/material.dart.lib": "packages/flutter/material.dart",
  "packages/flutter/widgets.dart.lib": "packages/flutter/widgets.dart",
  "packages/flutter/src/widgets/will_pop_scope.dart.lib": "packages/flutter/src/widgets/will_pop_scope.dart",
@@ -802,7 +816,9 @@ let moduleNames = {
  "packages/flutter/src/material/arc.dart.lib": "packages/flutter/src/material/arc.dart",
  "packages/flutter/src/material/app.dart.lib": "packages/flutter/src/material/app.dart",
  "packages/flutter/src/material/animated_icons.dart.lib": "packages/flutter/src/material/animated_icons.dart",
- "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart"
+ "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart",
+ "packages/games_connect_project/home.dart.lib": "packages/games_connect_project/home.dart",
+ "packages/games_connect_project/widget_function.dart.lib": "packages/games_connect_project/widget_function.dart"
 };
 if(!window.$requireLoader) {
    window.$requireLoader = {

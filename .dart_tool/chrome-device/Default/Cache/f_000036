@@ -1,403 +1,659 @@
-define(['dart_sdk', 'packages/flutter/src/scheduler/binding.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__scheduler__ticker_dart(dart_sdk, packages__flutter__src__scheduler__binding$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__object$46dart) {
+define(['dart_sdk', 'packages/flutter/src/foundation/object.dart'], (function load__packages__flutter__src__painting__alignment_dart(dart_sdk, packages__flutter__src__foundation__object$46dart) {
   'use strict';
   const core = dart_sdk.core;
-  const _interceptors = dart_sdk._interceptors;
-  const _internal = dart_sdk._internal;
-  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
-  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
-  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
   const object = packages__flutter__src__foundation__object$46dart.src__foundation__object;
-  var ticker$ = Object.create(dart.library);
+  var alignment = Object.create(dart.library);
+  var $truncate = dartx.truncate;
+  var $toDouble = dartx.toDouble;
+  var $modulo = dartx['%'];
+  var $toStringAsFixed = dartx.toStringAsFixed;
   var $runtimeType = dartx.runtimeType;
-  var $trimRight = dartx.trimRight;
-  var $split = dartx.split;
-  var $forEach = dartx.forEach;
-  var $toString = dartx.toString;
   dart._checkModuleNullSafetyMode(true);
-  var T = {
-    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
-    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
-    DiagnosticsPropertyOfTicker: () => (T.DiagnosticsPropertyOfTicker = dart.constFn(diagnostics.DiagnosticsProperty$(ticker$.Ticker)))(),
-    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
-    dynamicTovoid: () => (T.dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))(),
-    VoidToFutureOrOfvoid: () => (T.VoidToFutureOrOfvoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    VoidToNFutureOrOfvoid: () => (T.VoidToNFutureOrOfvoid = dart.constFn(dart.nullable(T.VoidToFutureOrOfvoid())))()
-  };
   const CT = Object.create({
     _: () => (C, CT)
   });
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.const({
-        __proto__: ticker$.TickerCanceled.prototype,
-        [TickerCanceled_ticker]: null
+        __proto__: alignment.Alignment.prototype,
+        [y$]: -1,
+        [x$]: -1
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: -1,
+        [x$]: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: -1,
+        [x$]: 1
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 0,
+        [x$]: -1
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 0,
+        [x$]: 0
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 0,
+        [x$]: 1
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 1,
+        [x$]: -1
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 1,
+        [x$]: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [y$]: 1,
+        [x$]: 1
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name]: "TextDirection.rtl",
+        index: 0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: ui.TextDirection.prototype,
+        [_name]: "TextDirection.ltr",
+        index: 1
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: -1,
+        [start$]: -1
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: -1,
+        [start$]: 0
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: -1,
+        [start$]: 1
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 0,
+        [start$]: -1
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 0,
+        [start$]: 0
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 0,
+        [start$]: 1
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 1,
+        [start$]: -1
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 1,
+        [start$]: 0
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: alignment.AlignmentDirectional.prototype,
+        [y$0]: 1,
+        [start$]: 1
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: alignment.TextAlignVertical.prototype,
+        [y$1]: -1
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: alignment.TextAlignVertical.prototype,
+        [y$1]: 0
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: alignment.TextAlignVertical.prototype,
+        [y$1]: 1
       });
     }
   }, false);
-  var C = [void 0];
+  var C = Array(23).fill(void 0);
   var I = [
-    "package:flutter/src/scheduler/ticker.dart",
-    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/scheduler/ticker.dart"
+    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/painting/alignment.dart",
+    "package:flutter/src/painting/alignment.dart"
   ];
-  ticker$.TickerProvider = class TickerProvider extends core.Object {};
-  (ticker$.TickerProvider.new = function() {
-    ;
-  }).prototype = ticker$.TickerProvider.prototype;
-  dart.addTypeTests(ticker$.TickerProvider);
-  dart.addTypeCaches(ticker$.TickerProvider);
-  dart.setLibraryUri(ticker$.TickerProvider, I[0]);
-  var debugLabel$ = dart.privateName(ticker$, "Ticker.debugLabel");
-  var _future = dart.privateName(ticker$, "_future");
-  var _muted = dart.privateName(ticker$, "_muted");
-  var _startTime = dart.privateName(ticker$, "_startTime");
-  var _animationId = dart.privateName(ticker$, "_animationId");
-  var __Ticker__debugCreationStack = dart.privateName(ticker$, "_#Ticker#_debugCreationStack");
-  var _onTick$ = dart.privateName(ticker$, "_onTick");
-  var _debugCreationStack = dart.privateName(ticker$, "_debugCreationStack");
-  var _cancel = dart.privateName(ticker$, "_cancel");
-  var _complete = dart.privateName(ticker$, "_complete");
-  var _tick = dart.privateName(ticker$, "_tick");
-  ticker$.Ticker = class Ticker extends core.Object {
-    get debugLabel() {
-      return this[debugLabel$];
+  var _x = dart.privateName(alignment, "_x");
+  var _start = dart.privateName(alignment, "_start");
+  var _y = dart.privateName(alignment, "_y");
+  alignment.AlignmentGeometry = class AlignmentGeometry extends core.Object {
+    add(other) {
+      return new alignment._MixedAlignment.new(this[_x] + other[_x], this[_start] + other[_start], this[_y] + other[_y]);
     }
-    set debugLabel(value) {
-      super.debugLabel = value;
-    }
-    get muted() {
-      return this[_muted];
-    }
-    set muted(value) {
-      if (value === this.muted) return;
-      this[_muted] = value;
-      if (value) {
-        this.unscheduleTick();
-      } else if (this.shouldScheduleTick) {
-        this.scheduleTick();
-      }
-    }
-    get isTicking() {
-      if (this[_future] == null) return false;
-      if (this.muted) return false;
-      if (dart.nullCheck(binding.SchedulerBinding.instance).framesEnabled) return true;
-      if (dart.nullCheck(binding.SchedulerBinding.instance).schedulerPhase !== binding.SchedulerPhase.idle) return true;
-      return false;
-    }
-    get isActive() {
-      return this[_future] != null;
-    }
-    start() {
-      if (!dart.fn(() => {
-        if (this.isActive) {
-          dart.throw(new assertions.FlutterError.fromParts(T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("A ticker was started twice."), new assertions.ErrorDescription.new("A ticker that is already active cannot be started again without first stopping it."), this.describeForError("The affected ticker was")])));
-        }
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 149, 12, "() {\r\n      if (isActive) {\r\n        throw FlutterError.fromParts(<DiagnosticsNode>[\r\n          ErrorSummary('A ticker was started twice.'),\r\n          ErrorDescription('A ticker that is already active cannot be started again without first stopping it.'),\r\n          describeForError('The affected ticker was'),\r\n        ]);\r\n      }\r\n      return true;\r\n    }()");
-      if (!(this[_startTime] == null)) dart.assertFailed(null, I[1], 159, 12, "_startTime == null");
-      this[_future] = new ticker$.TickerFuture.__();
-      if (this.shouldScheduleTick) {
-        this.scheduleTick();
-      }
-      if (dart.nullCheck(binding.SchedulerBinding.instance).schedulerPhase.index > binding.SchedulerPhase.idle.index && dart.nullCheck(binding.SchedulerBinding.instance).schedulerPhase.index < binding.SchedulerPhase.postFrameCallbacks.index) this[_startTime] = dart.nullCheck(binding.SchedulerBinding.instance).currentFrameTimeStamp;
-      return dart.nullCheck(this[_future]);
-    }
-    describeForError(name) {
-      return new (T.DiagnosticsPropertyOfTicker()).new(name, this, {description: this.toString({debugIncludeStack: true})});
-    }
-    stop(opts) {
-      let canceled = opts && 'canceled' in opts ? opts.canceled : false;
-      if (!this.isActive) return;
-      let localFuture = dart.nullCheck(this[_future]);
-      this[_future] = null;
-      this[_startTime] = null;
-      if (!!this.isActive) dart.assertFailed(null, I[1], 201, 12, "!isActive");
-      this.unscheduleTick();
-      if (canceled) {
-        localFuture[_cancel](this);
-      } else {
-        localFuture[_complete]();
-      }
-    }
-    get scheduled() {
-      return this[_animationId] != null;
-    }
-    get shouldScheduleTick() {
-      return !this.muted && this.isActive && !this.scheduled;
-    }
-    [_tick](timeStamp) {
-      let t0;
-      if (!this.isTicking) dart.assertFailed(null, I[1], 233, 12, "isTicking");
-      if (!this.scheduled) dart.assertFailed(null, I[1], 234, 12, "scheduled");
-      this[_animationId] = null;
-      this[_startTime] == null ? this[_startTime] = timeStamp : null;
-      t0 = timeStamp['-'](dart.nullCheck(this[_startTime]));
-      this[_onTick$](t0);
-      if (this.shouldScheduleTick) this.scheduleTick({rescheduling: true});
-    }
-    scheduleTick(opts) {
-      let rescheduling = opts && 'rescheduling' in opts ? opts.rescheduling : false;
-      if (!!this.scheduled) dart.assertFailed(null, I[1], 251, 12, "!scheduled");
-      if (!this.shouldScheduleTick) dart.assertFailed(null, I[1], 252, 12, "shouldScheduleTick");
-      this[_animationId] = dart.nullCheck(binding.SchedulerBinding.instance).scheduleFrameCallback(dart.bind(this, _tick), {rescheduling: rescheduling});
-    }
-    unscheduleTick() {
-      if (this.scheduled) {
-        dart.nullCheck(binding.SchedulerBinding.instance).cancelFrameCallbackWithId(dart.nullCheck(this[_animationId]));
-        this[_animationId] = null;
-      }
-      if (!!this.shouldScheduleTick) dart.assertFailed(null, I[1], 268, 12, "!shouldScheduleTick");
-    }
-    absorbTicker(originalTicker) {
-      if (!!this.isActive) dart.assertFailed(null, I[1], 281, 12, "!isActive");
-      if (!(this[_future] == null)) dart.assertFailed(null, I[1], 282, 12, "_future == null");
-      if (!(this[_startTime] == null)) dart.assertFailed(null, I[1], 283, 12, "_startTime == null");
-      if (!(this[_animationId] == null)) dart.assertFailed(null, I[1], 284, 12, "_animationId == null");
-      if (!(originalTicker[_future] == null === (originalTicker[_startTime] == null))) dart.assertFailed("Cannot absorb Ticker after it has been disposed.", I[1], 285, 12, "(originalTicker._future == null) == (originalTicker._startTime == null)");
-      if (originalTicker[_future] != null) {
-        this[_future] = originalTicker[_future];
-        this[_startTime] = originalTicker[_startTime];
-        if (this.shouldScheduleTick) this.scheduleTick();
-        originalTicker[_future] = null;
-        originalTicker.unscheduleTick();
-      }
-      originalTicker.dispose();
-    }
-    dispose() {
-      if (this[_future] != null) {
-        let localFuture = dart.nullCheck(this[_future]);
-        this[_future] = null;
-        if (!!this.isActive) dart.assertFailed(null, I[1], 312, 14, "!isActive");
-        this.unscheduleTick();
-        localFuture[_cancel](this);
-      }
-      if (!dart.fn(() => {
-        this[_startTime] = core.Duration.zero;
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 316, 12, "() {\r\n      // We intentionally don't null out _startTime. This means that if start()\r\n      // was ever called, the object is now in a bogus state. This weakly helps\r\n      // catch cases of use-after-dispose.\r\n      _startTime = Duration.zero;\r\n      return true;\r\n    }()");
-    }
-    get [_debugCreationStack]() {
-      let t0;
-      t0 = this[__Ticker__debugCreationStack];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_debugCreationStack")) : t0;
-    }
-    set [_debugCreationStack](t0) {
-      this[__Ticker__debugCreationStack] = t0;
-    }
-    toString(opts) {
-      let debugIncludeStack = opts && 'debugIncludeStack' in opts ? opts.debugIncludeStack : false;
-      let buffer = new core.StringBuffer.new();
-      buffer.write(object.objectRuntimeType(this, "Ticker") + "(");
-      if (!dart.fn(() => {
-        let t1;
-        buffer.write((t1 = this.debugLabel, t1 == null ? "" : t1));
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 335, 12, "() {\r\n      buffer.write(debugLabel ?? '');\r\n      return true;\r\n    }()");
-      buffer.write(")");
-      if (!dart.fn(() => {
-        if (debugIncludeStack) {
-          buffer.writeln();
-          buffer.writeln("The stack trace when the " + dart.str(this[$runtimeType]) + " was actually created was:");
-          assertions.FlutterError.defaultStackFilter(this[_debugCreationStack].toString()[$trimRight]()[$split]("\n"))[$forEach](dart.bind(buffer, 'writeln'));
-        }
-        return true;
-      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 340, 12, "() {\r\n      if (debugIncludeStack) {\r\n        buffer.writeln();\r\n        buffer.writeln('The stack trace when the $runtimeType was actually created was:');\r\n        FlutterError.defaultStackFilter(_debugCreationStack.toString().trimRight().split('\\n')).forEach(buffer.writeln);\r\n      }\r\n      return true;\r\n    }()");
-      return buffer.toString();
-    }
-  };
-  (ticker$.Ticker.new = function(_onTick, opts) {
-    let debugLabel = opts && 'debugLabel' in opts ? opts.debugLabel : null;
-    this[_future] = null;
-    this[_muted] = false;
-    this[_startTime] = null;
-    this[_animationId] = null;
-    this[__Ticker__debugCreationStack] = null;
-    this[_onTick$] = _onTick;
-    this[debugLabel$] = debugLabel;
-    if (!dart.fn(() => {
-      this[_debugCreationStack] = core.StackTrace.current;
-      return true;
-    }, T.VoidTobool())()) dart.assertFailed(null, I[1], 66, 12, "() {\r\n      _debugCreationStack = StackTrace.current;\r\n      return true;\r\n    }()");
-  }).prototype = ticker$.Ticker.prototype;
-  dart.addTypeTests(ticker$.Ticker);
-  dart.addTypeCaches(ticker$.Ticker);
-  dart.setMethodSignature(ticker$.Ticker, () => ({
-    __proto__: dart.getMethods(ticker$.Ticker.__proto__),
-    start: dart.fnType(ticker$.TickerFuture, []),
-    describeForError: dart.fnType(diagnostics.DiagnosticsNode, [core.String]),
-    stop: dart.fnType(dart.void, [], {canceled: core.bool}, {}),
-    [_tick]: dart.fnType(dart.void, [core.Duration]),
-    scheduleTick: dart.fnType(dart.void, [], {rescheduling: core.bool}, {}),
-    unscheduleTick: dart.fnType(dart.void, []),
-    absorbTicker: dart.fnType(dart.void, [ticker$.Ticker]),
-    dispose: dart.fnType(dart.void, []),
-    toString: dart.fnType(core.String, [], {debugIncludeStack: core.bool}, {}),
-    [$toString]: dart.fnType(core.String, [], {debugIncludeStack: core.bool}, {})
-  }));
-  dart.setGetterSignature(ticker$.Ticker, () => ({
-    __proto__: dart.getGetters(ticker$.Ticker.__proto__),
-    muted: core.bool,
-    isTicking: core.bool,
-    isActive: core.bool,
-    scheduled: core.bool,
-    shouldScheduleTick: core.bool,
-    [_debugCreationStack]: core.StackTrace
-  }));
-  dart.setSetterSignature(ticker$.Ticker, () => ({
-    __proto__: dart.getSetters(ticker$.Ticker.__proto__),
-    muted: core.bool,
-    [_debugCreationStack]: core.StackTrace
-  }));
-  dart.setLibraryUri(ticker$.Ticker, I[0]);
-  dart.setFieldSignature(ticker$.Ticker, () => ({
-    __proto__: dart.getFields(ticker$.Ticker.__proto__),
-    [_future]: dart.fieldType(dart.nullable(ticker$.TickerFuture)),
-    [_muted]: dart.fieldType(core.bool),
-    [_startTime]: dart.fieldType(dart.nullable(core.Duration)),
-    [_onTick$]: dart.finalFieldType(dart.fnType(dart.void, [core.Duration])),
-    [_animationId]: dart.fieldType(dart.nullable(core.int)),
-    debugLabel: dart.finalFieldType(dart.nullable(core.String)),
-    [__Ticker__debugCreationStack]: dart.fieldType(dart.nullable(core.StackTrace))
-  }));
-  dart.defineExtensionMethods(ticker$.Ticker, ['toString']);
-  var _primaryCompleter = dart.privateName(ticker$, "_primaryCompleter");
-  var _secondaryCompleter = dart.privateName(ticker$, "_secondaryCompleter");
-  var _completed = dart.privateName(ticker$, "_completed");
-  var TickerCanceled_ticker = dart.privateName(ticker$, "TickerCanceled.ticker");
-  ticker$.TickerFuture = class TickerFuture extends core.Object {
-    [_complete]() {
-      let t1;
-      if (!(this[_completed] == null)) dart.assertFailed(null, I[1], 387, 12, "_completed == null");
-      this[_completed] = true;
-      this[_primaryCompleter].complete();
-      t1 = this[_secondaryCompleter];
-      t1 == null ? null : t1.complete();
-    }
-    [_cancel](ticker) {
-      let t1;
-      if (!(this[_completed] == null)) dart.assertFailed(null, I[1], 394, 12, "_completed == null");
-      this[_completed] = false;
-      t1 = this[_secondaryCompleter];
-      t1 == null ? null : t1.completeError(new ticker$.TickerCanceled.new(ticker));
-    }
-    whenCompleteOrCancel(callback) {
-      function thunk(value) {
-        callback();
-      }
-      dart.fn(thunk, T.dynamicTovoid());
-      this.orCancel.then(dart.void, thunk, {onError: thunk});
-    }
-    get orCancel() {
-      if (this[_secondaryCompleter] == null) {
-        this[_secondaryCompleter] = T.CompleterOfvoid().new();
-        if (this[_completed] != null) {
-          if (dart.nullCheck(this[_completed])) {
-            dart.nullCheck(this[_secondaryCompleter]).complete();
-          } else {
-            dart.nullCheck(this[_secondaryCompleter]).completeError(C[0] || CT.C0);
-          }
-        }
-      }
-      return dart.nullCheck(this[_secondaryCompleter]).future;
-    }
-    asStream() {
-      return this[_primaryCompleter].future.asStream();
-    }
-    catchError(onError, opts) {
-      let test = opts && 'test' in opts ? opts.test : null;
-      return this[_primaryCompleter].future.catchError(onError, {test: test});
-    }
-    then(R, onValue, opts) {
-      let onError = opts && 'onError' in opts ? opts.onError : null;
-      return this[_primaryCompleter].future.then(R, onValue, {onError: onError});
-    }
-    timeout(timeLimit, opts) {
-      let onTimeout = opts && 'onTimeout' in opts ? opts.onTimeout : null;
-      T.VoidToNFutureOrOfvoid().as(onTimeout);
-      return this[_primaryCompleter].future.timeout(timeLimit, {onTimeout: onTimeout});
-    }
-    whenComplete(action) {
-      return this[_primaryCompleter].future.whenComplete(action);
+    static lerp(a, b, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 91, 12, "t != null");
+      if (a == null && b == null) return null;
+      if (a == null) return dart.nullCheck(b)['*'](t);
+      if (b == null) return a['*'](1.0 - t);
+      if (alignment.Alignment.is(a) && alignment.Alignment.is(b)) return alignment.Alignment.lerp(a, b, t);
+      if (alignment.AlignmentDirectional.is(a) && alignment.AlignmentDirectional.is(b)) return alignment.AlignmentDirectional.lerp(a, b, t);
+      return new alignment._MixedAlignment.new(dart.nullCheck(ui.lerpDouble(a[_x], b[_x], t)), dart.nullCheck(ui.lerpDouble(a[_start], b[_start], t)), dart.nullCheck(ui.lerpDouble(a[_y], b[_y], t)));
     }
     toString() {
-      return diagnostics.describeIdentity(this) + "(" + (this[_completed] == null ? "active" : dart.nullCheck(this[_completed]) ? "complete" : "canceled") + ")";
+      if (this[_start] === 0.0) return alignment.Alignment._stringify(this[_x], this[_y]);
+      if (this[_x] === 0.0) return alignment.AlignmentDirectional._stringify(this[_start], this[_y]);
+      return alignment.Alignment._stringify(this[_x], this[_y]) + " + " + alignment.AlignmentDirectional._stringify(this[_start], 0.0);
+    }
+    _equals(other) {
+      if (other == null) return false;
+      return alignment.AlignmentGeometry.is(other) && other[_x] === this[_x] && other[_start] === this[_start] && other[_y] === this[_y];
+    }
+    get hashCode() {
+      return ui.hashValues(this[_x], this[_start], this[_y]);
     }
   };
-  (ticker$.TickerFuture.__ = function() {
-    this[_primaryCompleter] = T.CompleterOfvoid().new();
-    this[_secondaryCompleter] = null;
-    this[_completed] = null;
+  (alignment.AlignmentGeometry.new = function() {
     ;
-  }).prototype = ticker$.TickerFuture.prototype;
-  (ticker$.TickerFuture.complete = function() {
-    this[_primaryCompleter] = T.CompleterOfvoid().new();
-    this[_secondaryCompleter] = null;
-    this[_completed] = null;
-    this[_complete]();
-  }).prototype = ticker$.TickerFuture.prototype;
-  ticker$.TickerFuture.prototype[dart.isFuture] = true;
-  dart.addTypeTests(ticker$.TickerFuture);
-  dart.addTypeCaches(ticker$.TickerFuture);
-  ticker$.TickerFuture[dart.implements] = () => [async.Future$(dart.void)];
-  dart.setMethodSignature(ticker$.TickerFuture, () => ({
-    __proto__: dart.getMethods(ticker$.TickerFuture.__proto__),
-    [_complete]: dart.fnType(dart.void, []),
-    [_cancel]: dart.fnType(dart.void, [ticker$.Ticker]),
-    whenCompleteOrCancel: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
-    asStream: dart.fnType(async.Stream$(dart.void), []),
-    catchError: dart.fnType(async.Future$(dart.void), [core.Function], {test: dart.nullable(dart.fnType(core.bool, [core.Object]))}, {}),
-    then: dart.gFnType(R => [async.Future$(R), [dart.fnType(async.FutureOr$(R), [dart.void])], {onError: dart.nullable(core.Function)}, {}], R => [dart.nullable(core.Object)]),
-    timeout: dart.fnType(async.Future$(dart.void), [core.Duration], {onTimeout: dart.nullable(core.Object)}, {}),
-    whenComplete: dart.fnType(async.Future$(dart.void), [dart.fnType(dart.dynamic, [])])
+  }).prototype = alignment.AlignmentGeometry.prototype;
+  dart.addTypeTests(alignment.AlignmentGeometry);
+  dart.addTypeCaches(alignment.AlignmentGeometry);
+  dart.setMethodSignature(alignment.AlignmentGeometry, () => ({
+    __proto__: dart.getMethods(alignment.AlignmentGeometry.__proto__),
+    add: dart.fnType(alignment.AlignmentGeometry, [alignment.AlignmentGeometry])
   }));
-  dart.setGetterSignature(ticker$.TickerFuture, () => ({
-    __proto__: dart.getGetters(ticker$.TickerFuture.__proto__),
-    orCancel: async.Future$(dart.void)
-  }));
-  dart.setLibraryUri(ticker$.TickerFuture, I[0]);
-  dart.setFieldSignature(ticker$.TickerFuture, () => ({
-    __proto__: dart.getFields(ticker$.TickerFuture.__proto__),
-    [_primaryCompleter]: dart.finalFieldType(async.Completer$(dart.void)),
-    [_secondaryCompleter]: dart.fieldType(dart.nullable(async.Completer$(dart.void))),
-    [_completed]: dart.fieldType(dart.nullable(core.bool))
-  }));
-  dart.defineExtensionMethods(ticker$.TickerFuture, ['toString']);
-  const ticker$0 = TickerCanceled_ticker;
-  ticker$.TickerCanceled = class TickerCanceled extends core.Object {
-    get ticker() {
-      return this[ticker$0];
+  dart.setLibraryUri(alignment.AlignmentGeometry, I[1]);
+  dart.defineExtensionMethods(alignment.AlignmentGeometry, ['toString', '_equals']);
+  dart.defineExtensionAccessors(alignment.AlignmentGeometry, ['hashCode']);
+  var x$ = dart.privateName(alignment, "Alignment.x");
+  var y$ = dart.privateName(alignment, "Alignment.y");
+  alignment.Alignment = class Alignment extends alignment.AlignmentGeometry {
+    get x() {
+      return this[x$];
     }
-    set ticker(value) {
-      super.ticker = value;
+    set x(value) {
+      super.x = value;
+    }
+    get y() {
+      return this[y$];
+    }
+    set y(value) {
+      super.y = value;
+    }
+    get [_x]() {
+      return this.x;
+    }
+    get [_start]() {
+      return 0.0;
+    }
+    get [_y]() {
+      return this.y;
+    }
+    add(other) {
+      if (alignment.Alignment.is(other)) return this['+'](other);
+      return super.add(other);
+    }
+    ['-'](other) {
+      return new alignment.Alignment.new(this.x - other.x, this.y - other.y);
+    }
+    ['+'](other) {
+      return new alignment.Alignment.new(this.x + other.x, this.y + other.y);
+    }
+    _negate() {
+      return new alignment.Alignment.new(-this.x, -this.y);
+    }
+    ['*'](other) {
+      return new alignment.Alignment.new(this.x * other, this.y * other);
+    }
+    ['/'](other) {
+      return new alignment.Alignment.new(this.x / other, this.y / other);
+    }
+    ['~/'](other) {
+      return new alignment.Alignment.new((this.x / other)[$truncate]()[$toDouble](), (this.y / other)[$truncate]()[$toDouble]());
+    }
+    ['%'](other) {
+      return new alignment.Alignment.new(this.x[$modulo](other), this.y[$modulo](other));
+    }
+    alongOffset(other) {
+      let centerX = other.dx / 2.0;
+      let centerY = other.dy / 2.0;
+      return new ui.Offset.new(centerX + this.x * centerX, centerY + this.y * centerY);
+    }
+    alongSize(other) {
+      let centerX = other.width / 2.0;
+      let centerY = other.height / 2.0;
+      return new ui.Offset.new(centerX + this.x * centerX, centerY + this.y * centerY);
+    }
+    withinRect(rect) {
+      let halfWidth = rect.width / 2.0;
+      let halfHeight = rect.height / 2.0;
+      return new ui.Offset.new(rect.left + halfWidth + this.x * halfWidth, rect.top + halfHeight + this.y * halfHeight);
+    }
+    inscribe(size, rect) {
+      let halfWidthDelta = (rect.width - size.width) / 2.0;
+      let halfHeightDelta = (rect.height - size.height) / 2.0;
+      return new ui.Rect.fromLTWH(rect.left + halfWidthDelta + this.x * halfWidthDelta, rect.top + halfHeightDelta + this.y * halfHeightDelta, size.width, size.height);
+    }
+    static lerp(a, b, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 336, 12, "t != null");
+      if (a == null && b == null) return null;
+      if (a == null) return new alignment.Alignment.new(dart.nullCheck(ui.lerpDouble(0.0, dart.nullCheck(b).x, t)), dart.nullCheck(ui.lerpDouble(0.0, b.y, t)));
+      if (b == null) return new alignment.Alignment.new(dart.nullCheck(ui.lerpDouble(a.x, 0.0, t)), dart.nullCheck(ui.lerpDouble(a.y, 0.0, t)));
+      return new alignment.Alignment.new(dart.nullCheck(ui.lerpDouble(a.x, b.x, t)), dart.nullCheck(ui.lerpDouble(a.y, b.y, t)));
+    }
+    resolve(direction) {
+      return this;
+    }
+    static _stringify(x, y) {
+      if (x === -1.0 && y === -1.0) return "Alignment.topLeft";
+      if (x === 0.0 && y === -1.0) return "Alignment.topCenter";
+      if (x === 1.0 && y === -1.0) return "Alignment.topRight";
+      if (x === -1.0 && y === 0.0) return "Alignment.centerLeft";
+      if (x === 0.0 && y === 0.0) return "Alignment.center";
+      if (x === 1.0 && y === 0.0) return "Alignment.centerRight";
+      if (x === -1.0 && y === 1.0) return "Alignment.bottomLeft";
+      if (x === 0.0 && y === 1.0) return "Alignment.bottomCenter";
+      if (x === 1.0 && y === 1.0) return "Alignment.bottomRight";
+      return "Alignment(" + x[$toStringAsFixed](1) + ", " + y[$toStringAsFixed](1) + ")";
     }
     toString() {
-      if (this.ticker != null) return "This ticker was canceled: " + dart.str(this.ticker);
-      return "The ticker was canceled before the \"orCancel\" property was first used.";
+      return alignment.Alignment._stringify(this.x, this.y);
     }
   };
-  (ticker$.TickerCanceled.new = function(ticker = null) {
-    this[ticker$0] = ticker;
+  (alignment.Alignment.new = function(x, y) {
+    this[x$] = x;
+    this[y$] = y;
+    if (!(x !== null)) dart.assertFailed(null, I[0], 186, 14, "x != null");
+    if (!(y !== null)) dart.assertFailed(null, I[0], 187, 14, "y != null");
+    alignment.Alignment.__proto__.new.call(this);
     ;
-  }).prototype = ticker$.TickerCanceled.prototype;
-  dart.addTypeTests(ticker$.TickerCanceled);
-  dart.addTypeCaches(ticker$.TickerCanceled);
-  ticker$.TickerCanceled[dart.implements] = () => [core.Exception];
-  dart.setLibraryUri(ticker$.TickerCanceled, I[0]);
-  dart.setFieldSignature(ticker$.TickerCanceled, () => ({
-    __proto__: dart.getFields(ticker$.TickerCanceled.__proto__),
-    ticker: dart.finalFieldType(dart.nullable(ticker$.Ticker))
+  }).prototype = alignment.Alignment.prototype;
+  dart.addTypeTests(alignment.Alignment);
+  dart.addTypeCaches(alignment.Alignment);
+  dart.setMethodSignature(alignment.Alignment, () => ({
+    __proto__: dart.getMethods(alignment.Alignment.__proto__),
+    '-': dart.fnType(alignment.Alignment, [alignment.Alignment]),
+    '+': dart.fnType(alignment.Alignment, [alignment.Alignment]),
+    _negate: dart.fnType(alignment.Alignment, []),
+    '*': dart.fnType(alignment.Alignment, [core.double]),
+    '/': dart.fnType(alignment.Alignment, [core.double]),
+    '~/': dart.fnType(alignment.Alignment, [core.double]),
+    '%': dart.fnType(alignment.Alignment, [core.double]),
+    alongOffset: dart.fnType(ui.Offset, [ui.Offset]),
+    alongSize: dart.fnType(ui.Offset, [ui.Size]),
+    withinRect: dart.fnType(ui.Offset, [ui.Rect]),
+    inscribe: dart.fnType(ui.Rect, [ui.Size, ui.Rect]),
+    resolve: dart.fnType(alignment.Alignment, [dart.nullable(ui.TextDirection)])
   }));
-  dart.defineExtensionMethods(ticker$.TickerCanceled, ['toString']);
-  dart.trackLibraries("packages/flutter/src/scheduler/ticker.dart", {
-    "package:flutter/src/scheduler/ticker.dart": ticker$
+  dart.setGetterSignature(alignment.Alignment, () => ({
+    __proto__: dart.getGetters(alignment.Alignment.__proto__),
+    [_x]: core.double,
+    [_start]: core.double,
+    [_y]: core.double
+  }));
+  dart.setLibraryUri(alignment.Alignment, I[1]);
+  dart.setFieldSignature(alignment.Alignment, () => ({
+    __proto__: dart.getFields(alignment.Alignment.__proto__),
+    x: dart.finalFieldType(core.double),
+    y: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(alignment.Alignment, ['toString']);
+  dart.defineLazy(alignment.Alignment, {
+    /*alignment.Alignment.topLeft*/get topLeft() {
+      return C[0] || CT.C0;
+    },
+    /*alignment.Alignment.topCenter*/get topCenter() {
+      return C[1] || CT.C1;
+    },
+    /*alignment.Alignment.topRight*/get topRight() {
+      return C[2] || CT.C2;
+    },
+    /*alignment.Alignment.centerLeft*/get centerLeft() {
+      return C[3] || CT.C3;
+    },
+    /*alignment.Alignment.center*/get center() {
+      return C[4] || CT.C4;
+    },
+    /*alignment.Alignment.centerRight*/get centerRight() {
+      return C[5] || CT.C5;
+    },
+    /*alignment.Alignment.bottomLeft*/get bottomLeft() {
+      return C[6] || CT.C6;
+    },
+    /*alignment.Alignment.bottomCenter*/get bottomCenter() {
+      return C[7] || CT.C7;
+    },
+    /*alignment.Alignment.bottomRight*/get bottomRight() {
+      return C[8] || CT.C8;
+    }
+  }, false);
+  var start$ = dart.privateName(alignment, "AlignmentDirectional.start");
+  var y$0 = dart.privateName(alignment, "AlignmentDirectional.y");
+  var _name = dart.privateName(ui, "_name");
+  alignment.AlignmentDirectional = class AlignmentDirectional extends alignment.AlignmentGeometry {
+    get start() {
+      return this[start$];
+    }
+    set start(value) {
+      super.start = value;
+    }
+    get y() {
+      return this[y$0];
+    }
+    set y(value) {
+      super.y = value;
+    }
+    get [_x]() {
+      return 0.0;
+    }
+    get [_start]() {
+      return this.start;
+    }
+    get [_y]() {
+      return this.y;
+    }
+    add(other) {
+      if (alignment.AlignmentDirectional.is(other)) return this['+'](other);
+      return super.add(other);
+    }
+    ['-'](other) {
+      return new alignment.AlignmentDirectional.new(this.start - other.start, this.y - other.y);
+    }
+    ['+'](other) {
+      return new alignment.AlignmentDirectional.new(this.start + other.start, this.y + other.y);
+    }
+    _negate() {
+      return new alignment.AlignmentDirectional.new(-this.start, -this.y);
+    }
+    ['*'](other) {
+      return new alignment.AlignmentDirectional.new(this.start * other, this.y * other);
+    }
+    ['/'](other) {
+      return new alignment.AlignmentDirectional.new(this.start / other, this.y / other);
+    }
+    ['~/'](other) {
+      return new alignment.AlignmentDirectional.new((this.start / other)[$truncate]()[$toDouble](), (this.y / other)[$truncate]()[$toDouble]());
+    }
+    ['%'](other) {
+      return new alignment.AlignmentDirectional.new(this.start[$modulo](other), this.y[$modulo](other));
+    }
+    static lerp(a, b, t) {
+      if (!(t !== null)) dart.assertFailed(null, I[0], 517, 12, "t != null");
+      if (a == null && b == null) return null;
+      if (a == null) return new alignment.AlignmentDirectional.new(dart.nullCheck(ui.lerpDouble(0.0, dart.nullCheck(b).start, t)), dart.nullCheck(ui.lerpDouble(0.0, b.y, t)));
+      if (b == null) return new alignment.AlignmentDirectional.new(dart.nullCheck(ui.lerpDouble(a.start, 0.0, t)), dart.nullCheck(ui.lerpDouble(a.y, 0.0, t)));
+      return new alignment.AlignmentDirectional.new(dart.nullCheck(ui.lerpDouble(a.start, b.start, t)), dart.nullCheck(ui.lerpDouble(a.y, b.y, t)));
+    }
+    resolve(direction) {
+      if (!(direction != null)) dart.assertFailed("Cannot resolve " + dart.str(this[$runtimeType]) + " without a TextDirection.", I[0], 529, 12, "direction != null");
+      switch (dart.nullCheck(direction)) {
+        case C[9] || CT.C9:
+        {
+          return new alignment.Alignment.new(-this.start, this.y);
+        }
+        case C[10] || CT.C10:
+        {
+          return new alignment.Alignment.new(this.start, this.y);
+        }
+      }
+    }
+    static _stringify(start, y) {
+      if (start === -1.0 && y === -1.0) return "AlignmentDirectional.topStart";
+      if (start === 0.0 && y === -1.0) return "AlignmentDirectional.topCenter";
+      if (start === 1.0 && y === -1.0) return "AlignmentDirectional.topEnd";
+      if (start === -1.0 && y === 0.0) return "AlignmentDirectional.centerStart";
+      if (start === 0.0 && y === 0.0) return "AlignmentDirectional.center";
+      if (start === 1.0 && y === 0.0) return "AlignmentDirectional.centerEnd";
+      if (start === -1.0 && y === 1.0) return "AlignmentDirectional.bottomStart";
+      if (start === 0.0 && y === 1.0) return "AlignmentDirectional.bottomCenter";
+      if (start === 1.0 && y === 1.0) return "AlignmentDirectional.bottomEnd";
+      return "AlignmentDirectional(" + start[$toStringAsFixed](1) + ", " + y[$toStringAsFixed](1) + ")";
+    }
+    toString() {
+      return alignment.AlignmentDirectional._stringify(this.start, this.y);
+    }
+  };
+  (alignment.AlignmentDirectional.new = function(start, y) {
+    this[start$] = start;
+    this[y$0] = y;
+    if (!(start !== null)) dart.assertFailed(null, I[0], 392, 14, "start != null");
+    if (!(y !== null)) dart.assertFailed(null, I[0], 393, 14, "y != null");
+    alignment.AlignmentDirectional.__proto__.new.call(this);
+    ;
+  }).prototype = alignment.AlignmentDirectional.prototype;
+  dart.addTypeTests(alignment.AlignmentDirectional);
+  dart.addTypeCaches(alignment.AlignmentDirectional);
+  dart.setMethodSignature(alignment.AlignmentDirectional, () => ({
+    __proto__: dart.getMethods(alignment.AlignmentDirectional.__proto__),
+    '-': dart.fnType(alignment.AlignmentDirectional, [alignment.AlignmentDirectional]),
+    '+': dart.fnType(alignment.AlignmentDirectional, [alignment.AlignmentDirectional]),
+    _negate: dart.fnType(alignment.AlignmentDirectional, []),
+    '*': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    '/': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    '~/': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    '%': dart.fnType(alignment.AlignmentDirectional, [core.double]),
+    resolve: dart.fnType(alignment.Alignment, [dart.nullable(ui.TextDirection)])
+  }));
+  dart.setGetterSignature(alignment.AlignmentDirectional, () => ({
+    __proto__: dart.getGetters(alignment.AlignmentDirectional.__proto__),
+    [_x]: core.double,
+    [_start]: core.double,
+    [_y]: core.double
+  }));
+  dart.setLibraryUri(alignment.AlignmentDirectional, I[1]);
+  dart.setFieldSignature(alignment.AlignmentDirectional, () => ({
+    __proto__: dart.getFields(alignment.AlignmentDirectional.__proto__),
+    start: dart.finalFieldType(core.double),
+    y: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(alignment.AlignmentDirectional, ['toString']);
+  dart.defineLazy(alignment.AlignmentDirectional, {
+    /*alignment.AlignmentDirectional.topStart*/get topStart() {
+      return C[11] || CT.C11;
+    },
+    /*alignment.AlignmentDirectional.topCenter*/get topCenter() {
+      return C[12] || CT.C12;
+    },
+    /*alignment.AlignmentDirectional.topEnd*/get topEnd() {
+      return C[13] || CT.C13;
+    },
+    /*alignment.AlignmentDirectional.centerStart*/get centerStart() {
+      return C[14] || CT.C14;
+    },
+    /*alignment.AlignmentDirectional.center*/get center() {
+      return C[15] || CT.C15;
+    },
+    /*alignment.AlignmentDirectional.centerEnd*/get centerEnd() {
+      return C[16] || CT.C16;
+    },
+    /*alignment.AlignmentDirectional.bottomStart*/get bottomStart() {
+      return C[17] || CT.C17;
+    },
+    /*alignment.AlignmentDirectional.bottomCenter*/get bottomCenter() {
+      return C[18] || CT.C18;
+    },
+    /*alignment.AlignmentDirectional.bottomEnd*/get bottomEnd() {
+      return C[19] || CT.C19;
+    }
+  }, false);
+  var _x$ = dart.privateName(alignment, "_MixedAlignment._x");
+  var _start$ = dart.privateName(alignment, "_MixedAlignment._start");
+  var _y$ = dart.privateName(alignment, "_MixedAlignment._y");
+  alignment._MixedAlignment = class _MixedAlignment extends alignment.AlignmentGeometry {
+    get [_x]() {
+      return this[_x$];
+    }
+    set [_x](value) {
+      super[_x] = value;
+    }
+    get [_start]() {
+      return this[_start$];
+    }
+    set [_start](value) {
+      super[_start] = value;
+    }
+    get [_y]() {
+      return this[_y$];
+    }
+    set [_y](value) {
+      super[_y] = value;
+    }
+    _negate() {
+      return new alignment._MixedAlignment.new(-this[_x], -this[_start], -this[_y]);
+    }
+    ['*'](other) {
+      return new alignment._MixedAlignment.new(this[_x] * other, this[_start] * other, this[_y] * other);
+    }
+    ['/'](other) {
+      return new alignment._MixedAlignment.new(this[_x] / other, this[_start] / other, this[_y] / other);
+    }
+    ['~/'](other) {
+      return new alignment._MixedAlignment.new((this[_x] / other)[$truncate]()[$toDouble](), (this[_start] / other)[$truncate]()[$toDouble](), (this[_y] / other)[$truncate]()[$toDouble]());
+    }
+    ['%'](other) {
+      return new alignment._MixedAlignment.new(this[_x][$modulo](other), this[_start][$modulo](other), this[_y][$modulo](other));
+    }
+    resolve(direction) {
+      if (!(direction != null)) dart.assertFailed("Cannot resolve " + dart.str(this[$runtimeType]) + " without a TextDirection.", I[0], 624, 12, "direction != null");
+      switch (dart.nullCheck(direction)) {
+        case C[9] || CT.C9:
+        {
+          return new alignment.Alignment.new(this[_x] - this[_start], this[_y]);
+        }
+        case C[10] || CT.C10:
+        {
+          return new alignment.Alignment.new(this[_x] + this[_start], this[_y]);
+        }
+      }
+    }
+  };
+  (alignment._MixedAlignment.new = function(_x, _start, _y) {
+    this[_x$] = _x;
+    this[_start$] = _start;
+    this[_y$] = _y;
+    alignment._MixedAlignment.__proto__.new.call(this);
+    ;
+  }).prototype = alignment._MixedAlignment.prototype;
+  dart.addTypeTests(alignment._MixedAlignment);
+  dart.addTypeCaches(alignment._MixedAlignment);
+  dart.setMethodSignature(alignment._MixedAlignment, () => ({
+    __proto__: dart.getMethods(alignment._MixedAlignment.__proto__),
+    _negate: dart.fnType(alignment._MixedAlignment, []),
+    '*': dart.fnType(alignment._MixedAlignment, [core.double]),
+    '/': dart.fnType(alignment._MixedAlignment, [core.double]),
+    '~/': dart.fnType(alignment._MixedAlignment, [core.double]),
+    '%': dart.fnType(alignment._MixedAlignment, [core.double]),
+    resolve: dart.fnType(alignment.Alignment, [dart.nullable(ui.TextDirection)])
+  }));
+  dart.setLibraryUri(alignment._MixedAlignment, I[1]);
+  dart.setFieldSignature(alignment._MixedAlignment, () => ({
+    __proto__: dart.getFields(alignment._MixedAlignment.__proto__),
+    [_x]: dart.finalFieldType(core.double),
+    [_start]: dart.finalFieldType(core.double),
+    [_y]: dart.finalFieldType(core.double)
+  }));
+  var y$1 = dart.privateName(alignment, "TextAlignVertical.y");
+  alignment.TextAlignVertical = class TextAlignVertical extends core.Object {
+    get y() {
+      return this[y$1];
+    }
+    set y(value) {
+      super.y = value;
+    }
+    toString() {
+      return object.objectRuntimeType(this, "TextAlignVertical") + "(y: " + dart.str(this.y) + ")";
+    }
+  };
+  (alignment.TextAlignVertical.new = function(opts) {
+    let y = opts && 'y' in opts ? opts.y : null;
+    this[y$1] = y;
+    if (!(y !== null)) dart.assertFailed(null, I[0], 653, 15, "y != null");
+    if (!(y >= -1.0 && y <= 1.0)) dart.assertFailed(null, I[0], 654, 15, "y >= -1.0 && y <= 1.0");
+    ;
+  }).prototype = alignment.TextAlignVertical.prototype;
+  dart.addTypeTests(alignment.TextAlignVertical);
+  dart.addTypeCaches(alignment.TextAlignVertical);
+  dart.setLibraryUri(alignment.TextAlignVertical, I[1]);
+  dart.setFieldSignature(alignment.TextAlignVertical, () => ({
+    __proto__: dart.getFields(alignment.TextAlignVertical.__proto__),
+    y: dart.finalFieldType(core.double)
+  }));
+  dart.defineExtensionMethods(alignment.TextAlignVertical, ['toString']);
+  dart.defineLazy(alignment.TextAlignVertical, {
+    /*alignment.TextAlignVertical.top*/get top() {
+      return C[20] || CT.C20;
+    },
+    /*alignment.TextAlignVertical.center*/get center() {
+      return C[21] || CT.C21;
+    },
+    /*alignment.TextAlignVertical.bottom*/get bottom() {
+      return C[22] || CT.C22;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/painting/alignment.dart", {
+    "package:flutter/src/painting/alignment.dart": alignment
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["ticker.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/scheduler/ticker.dart.lib.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["alignment.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/painting/alignment.dart.lib.js"}');
   // Exports:
   return {
-    src__scheduler__ticker: ticker$
+    src__painting__alignment: alignment
   };
 }));
 
-//# sourceMappingURL=ticker.dart.lib.js.map
+//# sourceMappingURL=alignment.dart.lib.js.map

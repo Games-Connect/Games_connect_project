@@ -1,1 +1,386 @@
-{"web_entrypoint.dart":"296469689","packages/games_connect_project/main.dart":"585038287","packages/games_connect_project/home.dart":"777921489","packages/games_connect_project/widget_function.dart":"120140141","packages/flutter/material.dart":"617458079","packages/flutter/widgets.dart":"63006018","packages/flutter/src/widgets/will_pop_scope.dart":"646451289","packages/flutter/src/widgets/widget_span.dart":"1000942572","packages/flutter/rendering.dart":"999327711","packages/flutter/src/rendering/wrap.dart":"392373449","packages/flutter/src/rendering/layer.dart":"14900753","packages/flutter/painting.dart":"789366134","packages/flutter/src/painting/strut_style.dart":"734037972","packages/flutter/src/painting/basic_types.dart":"491360721","packages/flutter/foundation.dart":"682341699","packages/flutter/src/foundation/unicode.dart":"210551604","packages/flutter/src/foundation/synchronous_future.dart":"1068140644","packages/flutter/src/foundation/stack_frame.dart":"921675229","packages/flutter/src/foundation/object.dart":"106631024","packages/flutter/src/foundation/constants.dart":"118403057","packages/meta/meta.dart":"648964031","packages/meta/meta_meta.dart":"392955183","packages/flutter/src/foundation/serialization.dart":"1038447638","packages/typed_data/typed_buffers.dart":"374609692","packages/typed_data/src/typed_buffer.dart":"746696900","packages/flutter/src/foundation/print.dart":"867711291","packages/flutter/src/foundation/_platform_web.dart":"626934772","packages/flutter/src/foundation/observer_list.dart":"155453545","packages/flutter/src/foundation/node.dart":"178522390","packages/flutter/src/foundation/licenses.dart":"832352570","packages/flutter/src/foundation/key.dart":"963635506","packages/flutter/src/foundation/_isolates_web.dart":"1020533438","packages/flutter/src/foundation/debug.dart":"373393220","packages/flutter/src/foundation/basic_types.dart":"732904279","packages/flutter/src/foundation/consolidate_response.dart":"773683342","packages/flutter/src/foundation/collections.dart":"854513349","packages/flutter/src/foundation/change_notifier.dart":"361309994","packages/flutter/src/foundation/_bitfield_web.dart":"357499355","packages/flutter/src/foundation/binding.dart":"282395200","packages/flutter/src/foundation/annotations.dart":"655328278","packages/flutter/src/painting/colors.dart":"526829887","packages/flutter/src/painting/placeholder_span.dart":"887194849","packages/flutter/services.dart":"649874705","packages/flutter/src/services/text_input.dart":"69414013","packages/flutter/src/services/text_editing.dart":"61201440","packages/flutter/src/services/system_chrome.dart":"4630447","packages/flutter/src/services/system_channels.dart":"391175814","packages/flutter/scheduler.dart":"110381053","packages/flutter/src/scheduler/ticker.dart":"223822437","packages/flutter/src/scheduler/binding.dart":"503946530","packages/flutter/src/scheduler/priority.dart":"720401362","packages/flutter/src/scheduler/debug.dart":"825440157","packages/collection/src/union_set_controller.dart":"264955536","packages/collection/src/queue_list.dart":"1016270221","packages/collection/src/priority_queue.dart":"172545320","packages/collection/src/utils.dart":"392373389","packages/collection/src/list_extensions.dart":"643636173","packages/collection/src/equality.dart":"282304964","packages/collection/src/comparators.dart":"272544564","packages/collection/src/algorithms.dart":"583847753","packages/collection/src/iterable_zip.dart":"424166807","packages/collection/src/iterable_extensions.dart":"526456951","packages/collection/src/functions.dart":"697923681","packages/collection/src/combined_wrappers/combined_map.dart":"867162344","packages/collection/src/combined_wrappers/combined_iterable.dart":"308706280","packages/collection/src/combined_wrappers/combined_iterator.dart":"780306048","packages/collection/src/combined_wrappers/combined_list.dart":"651964115","packages/collection/src/canonicalized_map.dart":"755755698","packages/vector_math/vector_math_64.dart":"24507217","packages/vector_math/hash.dart":"572557243","packages/flutter/src/services/text_formatter.dart":"661529561","packages/characters/characters.dart":"663531389","packages/characters/src/extensions.dart":"316872454","packages/characters/src/characters_impl.dart":"291406392","packages/characters/src/grapheme_clusters/breaks.dart":"714485082","packages/characters/src/grapheme_clusters/table.dart":"810680527","packages/characters/src/grapheme_clusters/constants.dart":"280193907","packages/flutter/src/services/system_sound.dart":"541966939","packages/flutter/src/services/system_navigator.dart":"254459750","packages/flutter/src/services/raw_keyboard_windows.dart":"228606124","packages/flutter/src/services/keyboard_maps.dart":"584520303","packages/flutter/src/services/keyboard_key.dart":"268519952","packages/flutter/src/services/platform_views.dart":"515683172","packages/flutter/gestures.dart":"132418816","packages/flutter/src/gestures/velocity_tracker.dart":"347612847","packages/flutter/src/gestures/lsq_solver.dart":"561250709","packages/flutter/src/gestures/events.dart":"139952668","packages/flutter/src/gestures/constants.dart":"979988388","packages/flutter/src/gestures/team.dart":"186461662","packages/flutter/src/gestures/binding.dart":"255287178","packages/flutter/src/gestures/resampler.dart":"771123140","packages/flutter/src/gestures/pointer_signal_resolver.dart":"887432077","packages/flutter/src/gestures/pointer_router.dart":"611059288","packages/flutter/src/gestures/hit_test.dart":"1040626540","packages/flutter/src/gestures/debug.dart":"588300047","packages/flutter/src/gestures/converter.dart":"125720311","packages/flutter/src/gestures/arena.dart":"835095306","packages/flutter/src/gestures/tap.dart":"723478366","packages/flutter/src/gestures/recognizer.dart":"204417315","packages/flutter/src/gestures/scale.dart":"871343206","packages/flutter/src/gestures/multitap.dart":"349592551","packages/flutter/src/gestures/multidrag.dart":"354722985","packages/flutter/src/gestures/drag_details.dart":"50208729","packages/flutter/src/gestures/drag.dart":"386223310","packages/flutter/src/gestures/monodrag.dart":"603176191","packages/flutter/src/gestures/long_press.dart":"1050229656","packages/flutter/src/gestures/force_press.dart":"547130231","packages/flutter/src/gestures/eager.dart":"191170525","packages/flutter/src/services/mouse_tracking.dart":"55495295","packages/flutter/src/services/mouse_cursor.dart":"361478134","packages/flutter/src/services/haptic_feedback.dart":"12487846","packages/flutter/src/services/font_loader.dart":"712948478","packages/flutter/src/services/deferred_component.dart":"60808709","packages/flutter/src/services/clipboard.dart":"1018145793","packages/flutter/src/painting/stadium_border.dart":"347319683","packages/flutter/src/painting/rounded_rectangle_border.dart":"451801388","packages/flutter/src/painting/edge_insets.dart":"100890464","packages/flutter/src/painting/circle_border.dart":"24789652","packages/flutter/src/painting/borders.dart":"561485426","packages/flutter/src/painting/border_radius.dart":"770219838","packages/flutter/src/painting/shape_decoration.dart":"14264408","packages/flutter/src/painting/_network_image_web.dart":"163115118","packages/flutter/src/painting/image_stream.dart":"773082704","packages/flutter/src/painting/image_cache.dart":"700833762","packages/flutter/src/painting/binding.dart":"650732933","packages/flutter/src/painting/shader_warm_up.dart":"40725090","packages/flutter/src/painting/gradient.dart":"336992490","packages/flutter/src/painting/alignment.dart":"446840871","packages/flutter/src/painting/decoration_image.dart":"389517495","packages/flutter/src/painting/debug.dart":"370415047","packages/flutter/src/painting/box_fit.dart":"82518745","packages/flutter/src/painting/decoration.dart":"460476354","packages/flutter/src/painting/box_shadow.dart":"191726675","packages/flutter/src/painting/box_decoration.dart":"677860458","packages/flutter/src/painting/box_border.dart":"432457452","packages/flutter/src/painting/paint_utilities.dart":"339940609","packages/flutter/src/painting/notched_shapes.dart":"9224542","packages/flutter/src/painting/matrix_utils.dart":"212924849","packages/flutter/src/painting/image_resolution.dart":"599261411","packages/flutter/src/painting/image_decoder.dart":"324962758","packages/flutter/src/painting/geometry.dart":"610926284","packages/flutter/src/painting/fractional_offset.dart":"915599967","packages/flutter/src/painting/flutter_logo.dart":"542303673","packages/flutter/src/painting/continuous_rectangle_border.dart":"773944784","packages/flutter/src/painting/clip.dart":"887845492","packages/flutter/src/painting/beveled_rectangle_border.dart":"857867067","packages/flutter/semantics.dart":"261129941","packages/flutter/src/semantics/semantics_service.dart":"480429143","packages/flutter/src/semantics/semantics_event.dart":"887018726","packages/flutter/src/semantics/semantics.dart":"179546468","packages/flutter/src/semantics/binding.dart":"1041323652","packages/flutter/src/semantics/debug.dart":"660187748","packages/flutter/animation.dart":"568293995","packages/flutter/src/animation/tween_sequence.dart":"545412183","packages/flutter/src/animation/listener_helpers.dart":"525016017","packages/flutter/src/animation/curves.dart":"143983144","packages/flutter/src/animation/animation_controller.dart":"273444718","packages/flutter/physics.dart":"357788525","packages/flutter/src/physics/utils.dart":"615764943","packages/flutter/src/physics/tolerance.dart":"818160320","packages/flutter/src/physics/spring_simulation.dart":"1218729","packages/flutter/src/physics/simulation.dart":"351529635","packages/flutter/src/physics/gravity_simulation.dart":"1046680785","packages/flutter/src/physics/friction_simulation.dart":"286566600","packages/flutter/src/physics/clamped_simulation.dart":"161880003","packages/flutter/src/rendering/layout_helper.dart":"974863204","packages/flutter/src/rendering/viewport_offset.dart":"502040310","packages/flutter/src/rendering/sliver.dart":"441868506","packages/flutter/src/rendering/tweens.dart":"982276259","packages/flutter/src/rendering/texture.dart":"759786961","packages/flutter/src/rendering/table_border.dart":"70534246","packages/flutter/src/rendering/table.dart":"297585511","packages/flutter/src/rendering/stack.dart":"768999463","packages/flutter/src/rendering/sliver_persistent_header.dart":"43459948","packages/flutter/src/rendering/sliver_padding.dart":"436096666","packages/flutter/src/rendering/sliver_multi_box_adaptor.dart":"769520300","packages/flutter/src/rendering/sliver_list.dart":"931090464","packages/flutter/src/rendering/sliver_grid.dart":"27110467","packages/flutter/src/rendering/sliver_fixed_extent_list.dart":"540161197","packages/flutter/src/rendering/sliver_fill.dart":"858270535","packages/flutter/src/rendering/shifted_box.dart":"488724188","packages/flutter/src/rendering/debug_overflow_indicator.dart":"282706873","packages/flutter/src/rendering/rotated_box.dart":"735065061","packages/flutter/src/rendering/proxy_sliver.dart":"958669944","packages/flutter/src/rendering/proxy_box.dart":"516737304","packages/flutter/src/rendering/platform_view.dart":"659874202","packages/flutter/src/rendering/performance_overlay.dart":"53806802","packages/flutter/src/rendering/paragraph.dart":"983976701","packages/flutter/src/rendering/list_wheel_viewport.dart":"283791054","packages/flutter/src/rendering/list_body.dart":"128160194","packages/flutter/src/rendering/image.dart":"608578580","packages/flutter/src/rendering/flow.dart":"532067301","packages/flutter/src/rendering/flex.dart":"687584866","packages/flutter/src/rendering/error.dart":"957568902","packages/flutter/src/rendering/editable.dart":"1028958219","packages/flutter/src/rendering/custom_paint.dart":"792153754","packages/flutter/src/rendering/custom_layout.dart":"892929057","packages/flutter/src/rendering/animated_size.dart":"165224292","packages/flutter/src/widgets/constants.dart":"842911852","packages/flutter/src/widgets/scroll_simulation.dart":"17094257","packages/flutter/src/widgets/scroll_metrics.dart":"223320670","packages/flutter/src/widgets/value_listenable_builder.dart":"46008260","packages/flutter/src/widgets/unique_widget.dart":"185740940","packages/flutter/src/widgets/tween_animation_builder.dart":"899382342","packages/flutter/src/widgets/implicit_animations.dart":"678003333","packages/flutter/src/widgets/texture.dart":"152342315","packages/flutter/src/widgets/text_selection_toolbar_layout_delegate.dart":"770167572","packages/flutter/src/widgets/status_transitions.dart":"341927762","packages/flutter/src/widgets/spacer.dart":"779891920","packages/flutter/src/widgets/sliver_prototype_extent_list.dart":"859069902","packages/flutter/src/widgets/sliver_persistent_header.dart":"318917025","packages/flutter/src/widgets/sliver_layout_builder.dart":"221267995","packages/flutter/src/widgets/layout_builder.dart":"561596700","packages/flutter/src/widgets/sliver_fill.dart":"26874801","packages/flutter/src/widgets/size_changed_layout_notifier.dart":"713063995","packages/flutter/src/widgets/single_child_scroll_view.dart":"120894584","packages/flutter/src/widgets/scroll_view.dart":"872950817","packages/flutter/src/widgets/safe_area.dart":"430759301","packages/flutter/src/widgets/reorderable_list.dart":"836789950","packages/flutter/src/widgets/raw_keyboard_listener.dart":"803006339","packages/flutter/src/widgets/preferred_size.dart":"410948991","packages/flutter/src/widgets/platform_view.dart":"302533505","packages/flutter/src/widgets/page_view.dart":"417243082","packages/flutter/src/widgets/overflow_bar.dart":"540852743","packages/flutter/src/widgets/orientation_builder.dart":"228156635","packages/flutter/src/widgets/nested_scroll_view.dart":"805808069","packages/flutter/src/widgets/navigation_toolbar.dart":"1047094861","packages/flutter/src/widgets/list_wheel_scroll_view.dart":"154847754","packages/flutter/src/widgets/interactive_viewer.dart":"1035074044","packages/flutter/src/widgets/image_icon.dart":"618693647","packages/flutter/src/widgets/icon_theme_data.dart":"924649899","packages/flutter/src/widgets/icon_theme.dart":"67701615","packages/flutter/src/widgets/icon.dart":"730730251","packages/flutter/src/widgets/icon_data.dart":"692124585","packages/flutter/src/widgets/image_filter.dart":"500585616","packages/flutter/src/widgets/grid_paper.dart":"714324396","packages/flutter/src/widgets/form.dart":"536307330","packages/flutter/src/widgets/fade_in_image.dart":"384685421","packages/flutter/src/widgets/dual_transition_builder.dart":"116216674","packages/flutter/src/widgets/draggable_scrollable_sheet.dart":"661625612","packages/flutter/src/widgets/drag_target.dart":"596141577","packages/flutter/src/widgets/dismissible.dart":"214770290","packages/flutter/src/widgets/desktop_text_selection_toolbar_layout_delegate.dart":"104889217","packages/flutter/src/widgets/color_filter.dart":"154417456","packages/flutter/src/widgets/bottom_navigation_bar_item.dart":"210518074","packages/flutter/src/widgets/autocomplete.dart":"4380765","packages/flutter/src/widgets/async.dart":"264827306","packages/flutter/src/widgets/annotated_region.dart":"492407296","packages/flutter/src/widgets/animated_switcher.dart":"508284580","packages/flutter/src/widgets/animated_size.dart":"912854403","packages/flutter/src/widgets/animated_list.dart":"554615611","packages/flutter/src/widgets/animated_cross_fade.dart":"644376936","packages/flutter/src/material/user_accounts_drawer_header.dart":"616568214","packages/flutter/src/material/icon_button.dart":"860826704","packages/flutter/src/material/typography.dart":"402518488","packages/flutter/src/material/colors.dart":"574211761","packages/flutter/src/material/input_border.dart":"331507193","packages/flutter/src/material/constants.dart":"635276714","packages/flutter/src/material/material_state.dart":"951670534","packages/flutter/src/material/floating_action_button_theme.dart":"210531456","packages/flutter/src/material/curves.dart":"293357726","packages/flutter/src/material/bottom_sheet_theme.dart":"533416062","packages/flutter/src/material/tab_indicator.dart":"981055328","packages/flutter/src/material/tab_controller.dart":"442731989","packages/flutter/src/material/icons.dart":"274429359","packages/flutter/cupertino.dart":"140888789","packages/flutter/src/cupertino/thumb_painter.dart":"917114819","packages/flutter/src/cupertino/text_theme.dart":"876223792","packages/flutter/src/cupertino/interface_level.dart":"614258987","packages/flutter/src/cupertino/text_selection_toolbar_button.dart":"962597061","packages/flutter/src/cupertino/button.dart":"182825408","packages/flutter/src/cupertino/constants.dart":"159595872","packages/flutter/src/cupertino/text_selection_toolbar.dart":"328058447","packages/flutter/src/cupertino/text_selection.dart":"1002470745","packages/flutter/src/cupertino/debug.dart":"919134067","packages/flutter/src/cupertino/text_form_field_row.dart":"633839719","packages/flutter/src/cupertino/text_field.dart":"202834788","packages/flutter/src/cupertino/icons.dart":"920651474","packages/flutter/src/cupertino/desktop_text_selection.dart":"942231004","packages/flutter/src/cupertino/form_row.dart":"555314170","packages/flutter/src/cupertino/tab_view.dart":"250762243","packages/flutter/src/cupertino/route.dart":"805045365","packages/flutter/src/cupertino/app.dart":"93772882","packages/flutter/src/cupertino/scrollbar.dart":"932912880","packages/flutter/src/cupertino/tab_scaffold.dart":"762883337","packages/flutter/src/cupertino/bottom_tab_bar.dart":"387661255","packages/flutter/src/cupertino/switch.dart":"73626964","packages/flutter/src/cupertino/sliding_segmented_control.dart":"893160820","packages/flutter/src/cupertino/slider.dart":"974386972","packages/flutter/src/cupertino/segmented_control.dart":"35136691","packages/flutter/src/cupertino/search_field.dart":"100174448","packages/flutter/src/cupertino/refresh.dart":"720047118","packages/flutter/src/cupertino/activity_indicator.dart":"447666152","packages/flutter/src/cupertino/picker.dart":"657758919","packages/flutter/src/cupertino/page_scaffold.dart":"512480474","packages/flutter/src/cupertino/nav_bar.dart":"837895493","packages/flutter/src/cupertino/form_section.dart":"1062245934","packages/flutter/src/cupertino/dialog.dart":"376346589","packages/flutter/src/cupertino/date_picker.dart":"112422388","packages/flutter/src/cupertino/context_menu_action.dart":"879744426","packages/flutter/src/cupertino/context_menu.dart":"506059689","packages/flutter/src/cupertino/action_sheet.dart":"241211567","packages/flutter/src/material/drawer_header.dart":"971664838","packages/flutter/src/material/toggleable.dart":"688796651","packages/flutter/src/material/toggle_buttons.dart":"691242360","packages/flutter/src/material/time_picker.dart":"701693253","packages/flutter/src/material/text_form_field.dart":"643926734","packages/flutter/src/material/text_field.dart":"323033757","packages/flutter/src/material/text_selection.dart":"45308114","packages/flutter/src/material/text_selection_toolbar_text_button.dart":"384355677","packages/flutter/src/material/text_selection_toolbar.dart":"356250837","packages/flutter/src/material/selectable_text.dart":"954611888","packages/flutter/src/material/desktop_text_selection.dart":"1067931800","packages/flutter/src/material/button_bar.dart":"1030026381","packages/flutter/src/material/switch_list_tile.dart":"856225831","packages/flutter/src/material/switch.dart":"403688761","packages/flutter/src/material/shadows.dart":"713715094","packages/flutter/src/material/stepper.dart":"573915613","packages/flutter/src/material/slider.dart":"8569287","packages/flutter/src/material/search.dart":"189930005","packages/flutter/src/material/scrollbar.dart":"88105631","packages/flutter/src/material/reorderable_list.dart":"903279551","packages/flutter/src/material/refresh_indicator.dart":"647695124","packages/flutter/src/material/progress_indicator.dart":"1022659911","packages/flutter/src/material/range_slider.dart":"17294991","packages/flutter/src/material/radio_list_tile.dart":"647044194","packages/flutter/src/material/radio.dart":"630835758","packages/flutter/src/material/popup_menu.dart":"577166566","packages/flutter/src/material/paginated_data_table.dart":"657863049","packages/flutter/src/material/dropdown.dart":"735877456","packages/flutter/src/material/data_table_source.dart":"69666128","packages/flutter/src/material/data_table.dart":"144638904","packages/flutter/src/material/checkbox.dart":"114393140","packages/flutter/src/material/card.dart":"289756533","packages/flutter/src/material/page.dart":"302761934","packages/flutter/src/material/outlined_button.dart":"560183199","packages/flutter/src/material/no_splash.dart":"421508204","packages/flutter/src/material/mergeable_material.dart":"734282112","packages/flutter/src/material/input_date_picker_form_field.dart":"52833858","packages/flutter/src/material/date.dart":"157274080","packages/flutter/src/material/grid_tile_bar.dart":"266914926","packages/flutter/src/material/grid_tile.dart":"271279861","packages/flutter/src/material/flutter_logo.dart":"48752917","packages/flutter/src/material/expansion_tile.dart":"886844453","packages/flutter/src/material/expansion_panel.dart":"836952338","packages/flutter/src/material/expand_icon.dart":"324965032","packages/flutter/src/material/elevated_button.dart":"861257805","packages/flutter/src/material/date_picker_deprecated.dart":"796892308","packages/flutter/src/material/date_picker.dart":"325951968","packages/flutter/src/material/calendar_date_picker.dart":"247853426","packages/flutter/src/material/circle_avatar.dart":"183578109","packages/flutter/src/material/chip.dart":"558785687","packages/flutter/src/material/checkbox_list_tile.dart":"111572325","packages/flutter/src/material/bottom_app_bar.dart":"225650722","packages/flutter/src/material/banner.dart":"622321563","packages/flutter/src/material/autocomplete.dart":"451122820","packages/flutter/src/material/arc.dart":"150847166","packages/flutter/src/material/app.dart":"140847360","packages/flutter/src/material/animated_icons.dart":"43382785","packages/flutter/src/material/about.dart":"194202473"}
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/foundation/debug.dart'], (function load__packages__flutter__src__widgets__layout_builder_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__foundation__debug$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const debug = packages__flutter__src__widgets__widget_span$46dart.src__widgets__debug;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  var layout_builder = Object.create(dart.library);
+  var $_equals = dartx._equals;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    SyncIterableOfDiagnosticsNode: () => (T.SyncIterableOfDiagnosticsNode = dart.constFn(_js_helper.SyncIterable$(diagnostics.DiagnosticsNode)))(),
+    IterableOfDiagnosticsNode: () => (T.IterableOfDiagnosticsNode = dart.constFn(core.Iterable$(diagnostics.DiagnosticsNode)))(),
+    VoidToIterableOfDiagnosticsNode: () => (T.VoidToIterableOfDiagnosticsNode = dart.constFn(dart.fnType(T.IterableOfDiagnosticsNode(), [])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = [
+    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/widgets/layout_builder.dart",
+    "package:flutter/src/widgets/layout_builder.dart"
+  ];
+  var builder$ = dart.privateName(layout_builder, "ConstrainedLayoutBuilder.builder");
+  const _is_ConstrainedLayoutBuilder_default = Symbol('_is_ConstrainedLayoutBuilder_default');
+  layout_builder.ConstrainedLayoutBuilder$ = dart.generic(ConstraintType => {
+    var _LayoutBuilderElementOfConstraintType = () => (_LayoutBuilderElementOfConstraintType = dart.constFn(layout_builder._LayoutBuilderElement$(ConstraintType)))();
+    class ConstrainedLayoutBuilder extends framework.RenderObjectWidget {
+      get builder() {
+        return this[builder$];
+      }
+      set builder(value) {
+        super.builder = value;
+      }
+      createElement() {
+        return new (_LayoutBuilderElementOfConstraintType()).new(this);
+      }
+    }
+    (ConstrainedLayoutBuilder.new = function(opts) {
+      let key = opts && 'key' in opts ? opts.key : null;
+      let builder = opts && 'builder' in opts ? opts.builder : null;
+      let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+      this[builder$] = builder;
+      if (!(builder !== null)) dart.assertFailed(null, I[0], 43, 15, "builder != null");
+      ConstrainedLayoutBuilder.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+      ;
+    }).prototype = ConstrainedLayoutBuilder.prototype;
+    dart.addTypeTests(ConstrainedLayoutBuilder);
+    ConstrainedLayoutBuilder.prototype[_is_ConstrainedLayoutBuilder_default] = true;
+    dart.addTypeCaches(ConstrainedLayoutBuilder);
+    dart.setMethodSignature(ConstrainedLayoutBuilder, () => ({
+      __proto__: dart.getMethods(ConstrainedLayoutBuilder.__proto__),
+      createElement: dart.fnType(layout_builder._LayoutBuilderElement$(ConstraintType), [])
+    }));
+    dart.setLibraryUri(ConstrainedLayoutBuilder, I[1]);
+    dart.setFieldSignature(ConstrainedLayoutBuilder, () => ({
+      __proto__: dart.getFields(ConstrainedLayoutBuilder.__proto__),
+      builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext, ConstraintType]))
+    }));
+    return ConstrainedLayoutBuilder;
+  });
+  layout_builder.ConstrainedLayoutBuilder = layout_builder.ConstrainedLayoutBuilder$();
+  dart.addTypeTests(layout_builder.ConstrainedLayoutBuilder, _is_ConstrainedLayoutBuilder_default);
+  var _child = dart.privateName(layout_builder, "_child");
+  var _layout = dart.privateName(layout_builder, "_layout");
+  const _is__LayoutBuilderElement_default = Symbol('_is__LayoutBuilderElement_default');
+  layout_builder._LayoutBuilderElement$ = dart.generic(ConstraintType => {
+    var ConstrainedLayoutBuilderOfConstraintType = () => (ConstrainedLayoutBuilderOfConstraintType = dart.constFn(layout_builder.ConstrainedLayoutBuilder$(ConstraintType)))();
+    var RenderConstrainedLayoutBuilderOfConstraintType$RenderObject = () => (RenderConstrainedLayoutBuilderOfConstraintType$RenderObject = dart.constFn(layout_builder.RenderConstrainedLayoutBuilder$(ConstraintType, object.RenderObject)))();
+    var BuildContextAndConstraintTypeToWidget = () => (BuildContextAndConstraintTypeToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, ConstraintType])))();
+    class _LayoutBuilderElement extends framework.RenderObjectElement {
+      get widget() {
+        return ConstrainedLayoutBuilderOfConstraintType().as(super.widget);
+      }
+      get renderObject() {
+        return RenderConstrainedLayoutBuilderOfConstraintType$RenderObject().as(super.renderObject);
+      }
+      visitChildren(visitor) {
+        if (this[_child] != null) visitor(dart.nullCheck(this[_child]));
+      }
+      forgetChild(child) {
+        if (!child._equals(this[_child])) dart.assertFailed(null, I[0], 76, 12, "child == _child");
+        this[_child] = null;
+        super.forgetChild(child);
+      }
+      mount(parent, newSlot) {
+        super.mount(parent, newSlot);
+        this.renderObject.updateCallback(dart.bind(this, _layout));
+      }
+      update(newWidget) {
+        ConstrainedLayoutBuilderOfConstraintType().as(newWidget);
+        if (!!this.widget._equals(newWidget)) dart.assertFailed(null, I[0], 89, 12, "widget != newWidget");
+        super.update(newWidget);
+        if (!this.widget._equals(newWidget)) dart.assertFailed(null, I[0], 91, 12, "widget == newWidget");
+        this.renderObject.updateCallback(dart.bind(this, _layout));
+        this.renderObject.markNeedsBuild();
+      }
+      performRebuild() {
+        this.renderObject.markNeedsBuild();
+        super.performRebuild();
+      }
+      unmount() {
+        this.renderObject.updateCallback(null);
+        super.unmount();
+      }
+      [_layout](constraints) {
+        ConstraintType.as(constraints);
+        dart.nullCheck(this.owner).buildScope(this, dart.fn(() => {
+          let t1, t0;
+          let built = null;
+          try {
+            built = (t0 = this.widget, t1 = constraints, BuildContextAndConstraintTypeToWidget().as(t0.builder)(this, t1));
+            debug.debugWidgetBuilderValue(this.widget, built);
+          } catch (e$) {
+            let e = dart.getThrown(e$);
+            let stack = dart.stackTrace(e$);
+            if (core.Object.is(e)) {
+              built = framework.ErrorWidget.builder(layout_builder._debugReportException(new assertions.ErrorDescription.new("building " + dart.str(this.widget)), e, stack, {informationCollector: dart.fn(() => new (T.SyncIterableOfDiagnosticsNode()).new((function*() {
+                  yield new object.DiagnosticsDebugCreator.new(new framework.DebugCreator.new(this));
+                }).bind(this)), T.VoidToIterableOfDiagnosticsNode())}));
+            } else
+              throw e$;
+          }
+          try {
+            this[_child] = this.updateChild(this[_child], built, null);
+            if (!(this[_child] != null)) dart.assertFailed(null, I[0], 137, 16, "_child != null");
+          } catch (e$0) {
+            let e = dart.getThrown(e$0);
+            let stack = dart.stackTrace(e$0);
+            if (core.Object.is(e)) {
+              built = framework.ErrorWidget.builder(layout_builder._debugReportException(new assertions.ErrorDescription.new("building " + dart.str(this.widget)), e, stack, {informationCollector: dart.fn(() => new (T.SyncIterableOfDiagnosticsNode()).new((function*() {
+                  yield new object.DiagnosticsDebugCreator.new(new framework.DebugCreator.new(this));
+                }).bind(this)), T.VoidToIterableOfDiagnosticsNode())}));
+              this[_child] = this.updateChild(null, built, this.slot);
+            } else
+              throw e$0;
+          }
+        }, T.VoidTovoid()));
+      }
+      insertRenderObjectChild(child, slot) {
+        object.RenderObject.as(child);
+        let renderObject = this.renderObject;
+        if (!(slot == null)) dart.assertFailed(null, I[0], 157, 12, "slot == null");
+        if (!renderObject.debugValidateChild(child)) dart.assertFailed(null, I[0], 158, 12, "renderObject.debugValidateChild(child)");
+        renderObject.child = child;
+        if (!renderObject[$_equals](this.renderObject)) dart.assertFailed(null, I[0], 160, 12, "renderObject == this.renderObject");
+      }
+      moveRenderObjectChild(child, oldSlot, newSlot) {
+        object.RenderObject.as(child);
+        if (!false) dart.assertFailed(null, I[0], 165, 12, "false");
+      }
+      removeRenderObjectChild(child, slot) {
+        object.RenderObject.as(child);
+        let renderObject = this.renderObject;
+        if (!dart.equals(renderObject.child, child)) dart.assertFailed(null, I[0], 171, 12, "renderObject.child == child");
+        renderObject.child = null;
+        if (!renderObject[$_equals](this.renderObject)) dart.assertFailed(null, I[0], 173, 12, "renderObject == this.renderObject");
+      }
+    }
+    (_LayoutBuilderElement.new = function(widget) {
+      this[_child] = null;
+      _LayoutBuilderElement.__proto__.new.call(this, widget);
+      ;
+    }).prototype = _LayoutBuilderElement.prototype;
+    dart.addTypeTests(_LayoutBuilderElement);
+    _LayoutBuilderElement.prototype[_is__LayoutBuilderElement_default] = true;
+    dart.addTypeCaches(_LayoutBuilderElement);
+    dart.setMethodSignature(_LayoutBuilderElement, () => ({
+      __proto__: dart.getMethods(_LayoutBuilderElement.__proto__),
+      [_layout]: dart.fnType(dart.void, [dart.nullable(core.Object)])
+    }));
+    dart.setGetterSignature(_LayoutBuilderElement, () => ({
+      __proto__: dart.getGetters(_LayoutBuilderElement.__proto__),
+      widget: layout_builder.ConstrainedLayoutBuilder$(ConstraintType),
+      renderObject: layout_builder.RenderConstrainedLayoutBuilder$(ConstraintType, object.RenderObject)
+    }));
+    dart.setLibraryUri(_LayoutBuilderElement, I[1]);
+    dart.setFieldSignature(_LayoutBuilderElement, () => ({
+      __proto__: dart.getFields(_LayoutBuilderElement.__proto__),
+      [_child]: dart.fieldType(dart.nullable(framework.Element))
+    }));
+    return _LayoutBuilderElement;
+  });
+  layout_builder._LayoutBuilderElement = layout_builder._LayoutBuilderElement$();
+  dart.addTypeTests(layout_builder._LayoutBuilderElement, _is__LayoutBuilderElement_default);
+  var _callback = dart.privateName(layout_builder, "RenderConstrainedLayoutBuilder._callback");
+  var _needsBuild = dart.privateName(layout_builder, "RenderConstrainedLayoutBuilder._needsBuild");
+  var _previousConstraints = dart.privateName(layout_builder, "RenderConstrainedLayoutBuilder._previousConstraints");
+  var _callback$ = dart.privateName(layout_builder, "_callback");
+  var _needsBuild$ = dart.privateName(layout_builder, "_needsBuild");
+  var _previousConstraints$ = dart.privateName(layout_builder, "_previousConstraints");
+  const _is_RenderConstrainedLayoutBuilder_default = Symbol('_is_RenderConstrainedLayoutBuilder_default');
+  layout_builder.RenderConstrainedLayoutBuilder$ = dart.generic((ConstraintType, ChildType) => {
+    class RenderConstrainedLayoutBuilder extends object.RenderObjectWithChildMixin$(ChildType) {}
+    RenderConstrainedLayoutBuilder[dart.mixinOn] = RenderObjectWithChildMixin => class RenderConstrainedLayoutBuilder extends RenderObjectWithChildMixin {
+      get [_callback$]() {
+        return this[_callback];
+      }
+      set [_callback$](value) {
+        this[_callback] = value;
+      }
+      get [_needsBuild$]() {
+        return this[_needsBuild];
+      }
+      set [_needsBuild$](value) {
+        this[_needsBuild] = value;
+      }
+      get [_previousConstraints$]() {
+        return this[_previousConstraints];
+      }
+      set [_previousConstraints$](value) {
+        this[_previousConstraints] = value;
+      }
+      updateCallback(value) {
+        if (dart.equals(value, this[_callback$])) return;
+        this[_callback$] = value;
+        this.markNeedsLayout();
+      }
+      markNeedsBuild() {
+        this[_needsBuild$] = true;
+        this.markNeedsLayout();
+      }
+      rebuildIfNecessary() {
+        if (!(this[_callback$] != null)) dart.assertFailed(null, I[0], 221, 12, "_callback != null");
+        if (this[_needsBuild$] || !this.constraints[$_equals](this[_previousConstraints$])) {
+          this[_previousConstraints$] = this.constraints;
+          this[_needsBuild$] = false;
+          this.invokeLayoutCallback(ConstraintType, dart.nullCheck(this[_callback$]));
+        }
+      }
+    };
+    (RenderConstrainedLayoutBuilder[dart.mixinNew] = function() {
+      this[_callback] = null;
+      this[_needsBuild] = true;
+      this[_previousConstraints] = null;
+    }).prototype = RenderConstrainedLayoutBuilder.prototype;
+    dart.addTypeTests(RenderConstrainedLayoutBuilder);
+    RenderConstrainedLayoutBuilder.prototype[_is_RenderConstrainedLayoutBuilder_default] = true;
+    dart.addTypeCaches(RenderConstrainedLayoutBuilder);
+    RenderConstrainedLayoutBuilder[dart.implements] = () => [object.RenderObjectWithChildMixin$(ChildType)];
+    dart.setMethodSignature(RenderConstrainedLayoutBuilder, () => ({
+      __proto__: dart.getMethods(RenderConstrainedLayoutBuilder.__proto__),
+      updateCallback: dart.fnType(dart.void, [dart.nullable(dart.fnType(dart.void, [ConstraintType]))]),
+      markNeedsBuild: dart.fnType(dart.void, []),
+      rebuildIfNecessary: dart.fnType(dart.void, [])
+    }));
+    dart.setLibraryUri(RenderConstrainedLayoutBuilder, I[1]);
+    dart.setFieldSignature(RenderConstrainedLayoutBuilder, () => ({
+      __proto__: dart.getFields(RenderConstrainedLayoutBuilder.__proto__),
+      [_callback$]: dart.fieldType(dart.nullable(dart.fnType(dart.void, [ConstraintType]))),
+      [_needsBuild$]: dart.fieldType(core.bool),
+      [_previousConstraints$]: dart.fieldType(dart.nullable(object.Constraints))
+    }));
+    return RenderConstrainedLayoutBuilder;
+  });
+  layout_builder.RenderConstrainedLayoutBuilder = layout_builder.RenderConstrainedLayoutBuilder$();
+  dart.addTypeTests(layout_builder.RenderConstrainedLayoutBuilder, _is_RenderConstrainedLayoutBuilder_default);
+  layout_builder.LayoutBuilder = class LayoutBuilder extends layout_builder.ConstrainedLayoutBuilder$(box.BoxConstraints) {
+    get builder() {
+      return super.builder;
+    }
+    createRenderObject(context) {
+      return new layout_builder._RenderLayoutBuilder.new();
+    }
+  };
+  (layout_builder.LayoutBuilder.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    if (!(builder !== null)) dart.assertFailed(null, I[0], 313, 15, "builder != null");
+    layout_builder.LayoutBuilder.__proto__.new.call(this, {key: key, builder: builder, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = layout_builder.LayoutBuilder.prototype;
+  dart.addTypeTests(layout_builder.LayoutBuilder);
+  dart.addTypeCaches(layout_builder.LayoutBuilder);
+  dart.setMethodSignature(layout_builder.LayoutBuilder, () => ({
+    __proto__: dart.getMethods(layout_builder.LayoutBuilder.__proto__),
+    createRenderObject: dart.fnType(layout_builder._RenderLayoutBuilder, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(layout_builder.LayoutBuilder, () => ({
+    __proto__: dart.getGetters(layout_builder.LayoutBuilder.__proto__),
+    builder: dart.fnType(framework.Widget, [framework.BuildContext, box.BoxConstraints])
+  }));
+  dart.setLibraryUri(layout_builder.LayoutBuilder, I[1]);
+  var _debugThrowIfNotCheckingIntrinsics = dart.privateName(layout_builder, "_debugThrowIfNotCheckingIntrinsics");
+  const RenderBox_RenderObjectWithChildMixin$36 = class RenderBox_RenderObjectWithChildMixin extends box.RenderBox {};
+  (RenderBox_RenderObjectWithChildMixin$36.new = function() {
+    object.RenderObjectWithChildMixin$(box.RenderBox)[dart.mixinNew].call(this);
+    RenderBox_RenderObjectWithChildMixin$36.__proto__.new.call(this);
+  }).prototype = RenderBox_RenderObjectWithChildMixin$36.prototype;
+  dart.applyMixin(RenderBox_RenderObjectWithChildMixin$36, object.RenderObjectWithChildMixin$(box.RenderBox));
+  const RenderBox_RenderConstrainedLayoutBuilder$36 = class RenderBox_RenderConstrainedLayoutBuilder extends RenderBox_RenderObjectWithChildMixin$36 {};
+  (RenderBox_RenderConstrainedLayoutBuilder$36.new = function() {
+    layout_builder.RenderConstrainedLayoutBuilder$(box.BoxConstraints, box.RenderBox)[dart.mixinNew].call(this);
+    RenderBox_RenderConstrainedLayoutBuilder$36.__proto__.new.call(this);
+  }).prototype = RenderBox_RenderConstrainedLayoutBuilder$36.prototype;
+  dart.applyMixin(RenderBox_RenderConstrainedLayoutBuilder$36, layout_builder.RenderConstrainedLayoutBuilder$(box.BoxConstraints, box.RenderBox));
+  layout_builder._RenderLayoutBuilder = class _RenderLayoutBuilder extends RenderBox_RenderConstrainedLayoutBuilder$36 {
+    computeMinIntrinsicWidth(height) {
+      if (!this[_debugThrowIfNotCheckingIntrinsics]()) dart.assertFailed(null, I[0], 326, 12, "_debugThrowIfNotCheckingIntrinsics()");
+      return 0.0;
+    }
+    computeMaxIntrinsicWidth(height) {
+      if (!this[_debugThrowIfNotCheckingIntrinsics]()) dart.assertFailed(null, I[0], 332, 12, "_debugThrowIfNotCheckingIntrinsics()");
+      return 0.0;
+    }
+    computeMinIntrinsicHeight(width) {
+      if (!this[_debugThrowIfNotCheckingIntrinsics]()) dart.assertFailed(null, I[0], 338, 12, "_debugThrowIfNotCheckingIntrinsics()");
+      return 0.0;
+    }
+    computeMaxIntrinsicHeight(width) {
+      if (!this[_debugThrowIfNotCheckingIntrinsics]()) dart.assertFailed(null, I[0], 344, 12, "_debugThrowIfNotCheckingIntrinsics()");
+      return 0.0;
+    }
+    computeDryLayout(constraints) {
+      if (!this.debugCannotComputeDryLayout({reason: "Calculating the dry layout would require running the layout callback " + "speculatively, which might mutate the live render object tree."})) dart.assertFailed(null, I[0], 350, 12, "debugCannotComputeDryLayout(reason:\r\n      'Calculating the dry layout would require running the layout callback '\r\n      'speculatively, which might mutate the live render object tree.',\r\n    )");
+      return ui.Size.zero;
+    }
+    performLayout() {
+      let constraints = this.constraints;
+      this.rebuildIfNecessary();
+      if (this.child != null) {
+        dart.nullCheck(this.child).layout(constraints, {parentUsesSize: true});
+        this.size = constraints.constrain(dart.nullCheck(this.child).size);
+      } else {
+        this.size = constraints.biggest;
+      }
+    }
+    computeDistanceToActualBaseline(baseline) {
+      if (this.child != null) return dart.nullCheck(this.child).getDistanceToActualBaseline(baseline);
+      return super.computeDistanceToActualBaseline(baseline);
+    }
+    hitTestChildren(result, opts) {
+      let t2, t2$;
+      let position = opts && 'position' in opts ? opts.position : null;
+      t2$ = (t2 = this.child, t2 == null ? null : t2.hitTest(result, {position: position}));
+      return t2$ == null ? false : t2$;
+    }
+    paint(context, offset) {
+      if (this.child != null) context.paintChild(dart.nullCheck(this.child), offset);
+    }
+    [_debugThrowIfNotCheckingIntrinsics]() {
+      if (!dart.fn(() => {
+        if (!object.RenderObject.debugCheckingIntrinsics) {
+          dart.throw(assertions.FlutterError.new("LayoutBuilder does not support returning intrinsic dimensions.\n" + "Calculating the intrinsic dimensions would require running the layout " + "callback speculatively, which might mutate the live render object tree."));
+        }
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[0], 388, 12, "() {\r\n      if (!RenderObject.debugCheckingIntrinsics) {\r\n        throw FlutterError(\r\n          'LayoutBuilder does not support returning intrinsic dimensions.\\n'\r\n          'Calculating the intrinsic dimensions would require running the layout '\r\n          'callback speculatively, which might mutate the live render object tree.',\r\n        );\r\n      }\r\n      return true;\r\n    }()");
+      return true;
+    }
+  };
+  (layout_builder._RenderLayoutBuilder.new = function() {
+    layout_builder._RenderLayoutBuilder.__proto__.new.call(this);
+    ;
+  }).prototype = layout_builder._RenderLayoutBuilder.prototype;
+  dart.addTypeTests(layout_builder._RenderLayoutBuilder);
+  dart.addTypeCaches(layout_builder._RenderLayoutBuilder);
+  dart.setMethodSignature(layout_builder._RenderLayoutBuilder, () => ({
+    __proto__: dart.getMethods(layout_builder._RenderLayoutBuilder.__proto__),
+    [_debugThrowIfNotCheckingIntrinsics]: dart.fnType(core.bool, [])
+  }));
+  dart.setLibraryUri(layout_builder._RenderLayoutBuilder, I[1]);
+  layout_builder._debugReportException = function _debugReportException(context, exception, stack, opts) {
+    let informationCollector = opts && 'informationCollector' in opts ? opts.informationCollector : null;
+    let details = new assertions.FlutterErrorDetails.new({exception: exception, stack: stack, library: "widgets library", context: context, informationCollector: informationCollector});
+    assertions.FlutterError.reportError(details);
+    return details;
+  };
+  dart.trackLibraries("packages/flutter/src/widgets/layout_builder.dart", {
+    "package:flutter/src/widgets/layout_builder.dart": layout_builder
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["layout_builder.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/widgets/layout_builder.dart.lib.js"}');
+  // Exports:
+  return {
+    src__widgets__layout_builder: layout_builder
+  };
+}));
+
+//# sourceMappingURL=layout_builder.dart.lib.js.map
