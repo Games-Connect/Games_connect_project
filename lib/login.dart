@@ -15,7 +15,6 @@ class Login extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-
         ),
         child: ListView(
           children: <Widget>[
@@ -36,8 +35,7 @@ class Login extends StatelessWidget {
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold))))),
             TextField(
-              //cursorColor: Colors.yellow,
-              // autofocus: true,
+              cursorColor: Colors.white,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -46,7 +44,7 @@ class Login extends StatelessWidget {
                 ),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
-                  //color: Colors.white,
+                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -67,7 +65,7 @@ class Login extends StatelessWidget {
                 ),
                 labelText: "Senha",
                 labelStyle: TextStyle(
-                  //color: Colors.white,
+                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
@@ -77,45 +75,80 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Container(
-              height: 60,
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                /*gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Colors.black.withBlue(60),
-                    Colors.black.withBlue(20)
-                  ],
-                ),*/
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
+            Padding(
+              padding: EdgeInsets.only(left: 60, right: 60),
+              child: Container(
+                height: 60,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  /*gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3, 1],
+                    colors: [
+                      Colors.black.withBlue(60),
+                      Colors.black.(20)
+                    ],
+                  ),*/
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                ),
+                child: SizedBox.expand(
+                  child: TextButton(
+                    style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Login',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
-              child: SizedBox.expand(
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 130, right: 130),
+              child: Container(
+                height: 20,
                 child: TextButton(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'Login',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          //color: Colors.white,
-                          fontSize: 20,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                  style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all(Colors.transparent)),
+                  child: Text(
+                    "Cadastre-se",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Home(),
+                        builder: (context) => Cadastro('', '', '', ''),
                       ),
                     );
                   },
@@ -125,43 +158,26 @@ class Login extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Container(
-              height: 20,
-              child: TextButton(
-                child: Text(
-                  "Cadastre-se",
-                  textAlign: TextAlign.left,
-                  //style: TextStyle(color: Colors.white),
+            Padding(
+              padding: EdgeInsets.only(left: 130, right: 130),
+              child: Container(
+                height: 20,
+                child: TextButton(
+                  style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all(Colors.transparent)),
+                  child: Text("Sobre o App",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, fontSize: 18)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Sobre(),
+                      ),
+                    );
+                  },
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Cadastro('','','',''),
-                    ),
-                  );
-                },
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Container(
-              height: 20,
-              child: TextButton(
-                child: Text(
-                  "Sobre o App",
-                  textAlign: TextAlign.center,
-                  //style: TextStyle(color: Colors.white),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Sobre(),
-                    ),
-                  );
-                },
               ),
             ),
           ],

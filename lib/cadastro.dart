@@ -2,20 +2,34 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'login.dart';
 
-class Cadastro extends StatelessWidget {
-  final String nome;
-  final String email;
-  final String senha;
-  final String senha2;
+class Cadastro extends StatefulWidget {
+  Cadastro(String s, String t, String u, String v);
 
-    const Cadastro(this.nome, this.email, this.senha, this.senha2, {Key? key}) : super(key: key);
+  @override
+  State<StatefulWidget> createState() {
+    return CadastroState();
+  }
+}
+
+class CadastroState extends State<Cadastro> {
+  final TextEditingController controladorNome = TextEditingController();
+  final TextEditingController controladorEmail = TextEditingController();
+  final TextEditingController controladorSenha = TextEditingController();
+  final TextEditingController controladorRepeteSenha = TextEditingController();
+
+  late String nome;
+  late String email;
+  late String senha;
+  late String repeteSenha;
+  late bool erroCadastro;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Games Connect"),
-      centerTitle: true,
-      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text("Games Connect"),
+        centerTitle: true,
+        backgroundColor: Colors.black,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -24,9 +38,8 @@ class Cadastro extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-
         ),
-        padding: EdgeInsets.only(top: 40, left: 40, right: 40),
+        padding: EdgeInsets.only(top: 10, left: 40, right: 40),
         child: ListView(
           children: <Widget>[
             SizedBox(
@@ -37,18 +50,14 @@ class Cadastro extends StatelessWidget {
                         child: Text('Cadastro',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold))))),
+                                fontSize: 25, fontWeight: FontWeight.bold))))),
             TextFormField(
-              //cursorColor: Colors.yellow,
-              // autofocus: true,
-              initialValue: this.nome,
+              controller: controladorNome,
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.white),
                 ),
-                //focusedBorder: UnderlineInputBorder(
-                //borderSide: BorderSide(color: Colors.white)),
                 labelText: "Nome",
                 labelStyle: TextStyle(
                   color: Colors.white,
@@ -62,8 +71,8 @@ class Cadastro extends StatelessWidget {
               height: 25,
             ),
             TextFormField(
+              controller: controladorEmail,
               // autofocus: true,
-              initialValue: this.email,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
@@ -83,8 +92,7 @@ class Cadastro extends StatelessWidget {
               height: 25,
             ),
             TextFormField(
-              // autofocus: true,
-              initialValue: this.senha,
+              controller: controladorSenha,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
@@ -105,8 +113,8 @@ class Cadastro extends StatelessWidget {
               height: 25,
             ),
             TextFormField(
+              controller: controladorRepeteSenha,
               // autofocus: true,
-              initialValue: this.senha2,
               keyboardType: TextInputType.text,
               obscureText: true,
               decoration: InputDecoration(
@@ -126,65 +134,96 @@ class Cadastro extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Container(
-              height: 60,
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                /*gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Colors.black.withBlue(60),
-                    Colors.black.withBlue(20)
-                  ],
-                ),*/
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
+            Padding(
+              padding: EdgeInsets.only(left: 60, right: 60),
+              child: Container(
+                height: 60,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
                 ),
-              ),
-              child: SizedBox.expand( 
-                child: TextButton(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      if (this.nome != '')
+                child: SizedBox.expand(
+                  child: TextButton(
+                    style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        /*  if (this.nome != '')
+                          Text(
+                            'Atualizar Cadastro',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),*/
+                        //if (this.nome == '')
                         Text(
-                          'Atualizar Cadastro',
+                          'Finalizar Cadastro',
                           style: TextStyle(
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: 18,
                           ),
                           textAlign: TextAlign.center,
                         ),
-                      if (this.nome == '')
-                        Text(
-                        'Finalizar Cadastro',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                      ],
+                    ),
+                    onPressed: () {
+                      final String nome = controladorNome.text;
+                      final String email = controladorEmail.text;
+                      final String senha = controladorSenha.text;
+                      final String repeteSenha = controladorRepeteSenha.text;
+                      //debugPrint('Cria cadastro ' + ' $nome');
+                      //debugPrint('Cria cadastro ' + ' $email');
+                      //debugPrint('Cria cadastro ' + ' $senha');
+                      //debugPrint('Cria cadastro ' + ' $repeteSenha');
+                      if (nome != '' &&
+                          email != '' &&
+                          senha != '' &&
+                          repeteSenha != '') {
+                        erroCadastro = false;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Login(),
+                          ),
+                        );
+                      } else {
+                        erroCadastro = true;
+                        /*Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Cadastro(),
+                          ),
+                        );*/
+                      }
+                      /*
+                      if (controladorNome != '') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Home(),
+                          ),
+                        );
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Login(),
+                          ),
+                        );
+                      }*/
+                    },
                   ),
-                  onPressed: () {
-                    if (this.nome != '')
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Home(),
-                        ),
-                      );
-                    if (this.nome == '')
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Login(),
-                        ),
-                      );
-                  },
                 ),
               ),
             ),

@@ -3,13 +3,11 @@ import 'home.dart';
 import 'login.dart';
 import 'cadastro.dart';
 
-void main(){
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Games Connect',
-      theme: ThemeData.dark(),
-      home: Login(),
-    )
-  );
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'Games Connect',
+    theme: ThemeData.dark(),
+    home: Login(),
+  ));
 }

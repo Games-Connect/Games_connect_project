@@ -6,20 +6,21 @@ class Jogos extends StatelessWidget {
   final String jogoNome;
   final String data;
 
-    const Jogos(this.jogoNome, this.data, {Key? key}) : super(key: key);
+  const Jogos(this.jogoNome, this.data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
     String dataFim = '';
-    if(data == '')
+    if (data == '')
       dataFim = DateFormat('dd/MM/yyyy – kk:mm').format(now);
     else
       dataFim = data;
     return Scaffold(
-      appBar: AppBar(title: Text("Games Connect"),
-      centerTitle: true,
-      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: Text("Games Connect"),
+        centerTitle: true,
+        backgroundColor: Colors.black,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -28,7 +29,6 @@ class Jogos extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
-
         ),
         padding: EdgeInsets.only(top: 40, left: 40, right: 40),
         child: ListView(
@@ -68,7 +68,7 @@ class Jogos extends StatelessWidget {
             TextFormField(
               // autofocus: true,
               initialValue: dataFim,
-              
+
               keyboardType: TextInputType.datetime,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
@@ -84,57 +84,70 @@ class Jogos extends StatelessWidget {
               ),
               style: TextStyle(fontSize: 20),
             ),
-            Container(
-              height: 60,
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                /*gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  stops: [0.3, 1],
-                  colors: [
-                    Colors.black.withBlue(60),
-                    Colors.black.withBlue(20)
-                  ],
-                ),*/
-                borderRadius: BorderRadius.all(
-                  Radius.circular(5),
-                ),
-              ),
-              child: SizedBox.expand( 
-                child: TextButton(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      if (this.jogoNome != '')
-                        Text(
-                          'Atualizar Cadastro',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      if (this.jogoNome == '')
-                        Text(
-                        'Finalizar Cadastro',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+            SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 70, right: 70),
+              child: Container(
+                height: 60,
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                  /*gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: [0.3, 1],
+                    colors: [
+                      Colors.black.withBlue(60),
+                      Colors.black.withBlue(20)
                     ],
+                  ),*/
+                  color: Colors.blueAccent,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Home(),
-                      ),
-                    );
-                  },
+                ),
+                child: SizedBox.expand(
+                  child: TextButton(
+                    style: ButtonStyle(
+                      overlayColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        if (this.jogoNome != '')
+                          Text(
+                            'Atualizar Cadastro',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        if (this.jogoNome == '')
+                          Text(
+                            'Finalizar Cadastro',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
