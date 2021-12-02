@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'home.dart';
 import 'cadastro.dart';
 import 'sobre.dart';
 
-class Login extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+
+}
+
+class _LoginPageState extends State<LoginPage> {
+  var txtEmail = TextEditingController();
+  var txtSenha = TextEditingController();
+  bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,10 +45,11 @@ class Login extends StatelessWidget {
                         child: Text('Games Connect',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                //color: Colors.white,
+                                color: Colors.white,
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold))))),
             TextField(
+              controller: txtEmail,
               cursorColor: Colors.white,
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
@@ -49,15 +64,14 @@ class Login extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
               height: 25,
             ),
-            TextFormField(
-              // autofocus: true,
-              keyboardType: TextInputType.text,
+            TextField(
               obscureText: true,
+              controller: txtSenha,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 enabledBorder: OutlineInputBorder(
@@ -70,7 +84,7 @@ class Login extends StatelessWidget {
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
               height: 40,
@@ -82,15 +96,6 @@ class Login extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   color: Colors.blueAccent,
-                  /*gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    stops: [0.3, 1],
-                    colors: [
-                      Colors.black.withBlue(60),
-                      Colors.black.(20)
-                    ],
-                  ),*/
                   borderRadius: BorderRadius.all(
                     Radius.circular(5),
                   ),
@@ -117,13 +122,11 @@ class Login extends StatelessWidget {
                       ],
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Home(),
-                        ),
-                      );
-                    },
+                      setState(() {
+                        isLoading = true;
+                      });
+                      login(txtEmail.text, txtSenha.text);
+                    }
                   ),
                 ),
               ),
@@ -145,12 +148,7 @@ class Login extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Cadastro('', '', '', ''),
-                      ),
-                    );
+                    Navigator.pushNamed(context, '/criar_conta');
                   },
                 ),
               ),
@@ -185,4 +183,35 @@ class Login extends StatelessWidget {
       ),
     );
   }
+
+
+   void login(email, senha) {
+
+    FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: senha).then((value) {
+
+      Navigator.pushNamed(context, '/principal');
+
+    }).catchError((erro){
+
+      var mensagem = '';
+      if (erro.code == 'user-not-found'){
+        mensagem = 'ERRO: Usuário não encontrado';
+      }else if (erro.code == 'wrong-password'){
+        mensagem = 'ERRO: Senha incorreta';
+      }else if ( erro.code == 'invalid-email'){
+        mensagem = 'ERRO: Email inválido';
+      }else{
+        mensagem = erro.message;
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(mensagem),
+            duration: const Duration(seconds:2)
+          )
+      );
+
+    });
+  }
+
 }

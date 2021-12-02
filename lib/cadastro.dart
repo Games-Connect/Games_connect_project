@@ -1,21 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'login.dart';
 
-class Cadastro extends StatefulWidget {
-  Cadastro(String s, String t, String u, String v);
+class CriarContaPage extends StatefulWidget {
+  const CriarContaPage({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    return CadastroState();
-  }
+  _CriarContaPageState createState() => _CriarContaPageState();
 }
 
-class CadastroState extends State<Cadastro> {
-  final TextEditingController controladorNome = TextEditingController();
-  final TextEditingController controladorEmail = TextEditingController();
-  final TextEditingController controladorSenha = TextEditingController();
-  final TextEditingController controladorRepeteSenha = TextEditingController();
+class _CriarContaPageState extends State<CriarContaPage> {
+  var controladorNome = TextEditingController();
+  var controladorEmail = TextEditingController();
+  var controladorSenha = TextEditingController();
+  var controladorRepeteSenha = TextEditingController();
 
   late String nome;
   late String email;
@@ -50,27 +49,8 @@ class CadastroState extends State<Cadastro> {
                         child: Text('Cadastro',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold))))),
-            TextFormField(
-              controller: controladorNome,
-              keyboardType: TextInputType.name,
-              decoration: InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
-                ),
-                labelText: "Nome",
-                labelStyle: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                ),
-              ),
-              style: TextStyle(fontSize: 20, color: Colors.white),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            TextFormField(
+                              color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold))))),
+            TextField(
               controller: controladorEmail,
               // autofocus: true,
               keyboardType: TextInputType.emailAddress,
@@ -82,16 +62,17 @@ class CadastroState extends State<Cadastro> {
                 //borderSide: BorderSide(color: Colors.white)),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
+                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
               height: 25,
             ),
-            TextFormField(
+            TextField(
               controller: controladorSenha,
               keyboardType: TextInputType.text,
               obscureText: true,
@@ -103,38 +84,41 @@ class CadastroState extends State<Cadastro> {
                 //borderSide: BorderSide(color: Colors.white)),
                 labelText: "Senha",
                 labelStyle: TextStyle(
+                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20, color: Colors.white),
             ),
             SizedBox(
               height: 25,
             ),
-            TextFormField(
-              controller: controladorRepeteSenha,
-              // autofocus: true,
-              keyboardType: TextInputType.text,
-              obscureText: true,
-              decoration: InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 150,
+                  child: OutlinedButton(
+                    child: const Text('criar'),
+                    onPressed: () {
+                      criarConta(controladorEmail.text, controladorSenha.text);
+                    },
+                  ),
                 ),
-                //focusedBorder: UnderlineInputBorder(
-                //borderSide: BorderSide(color: Colors.white)),
-                labelText: "Repetir Senha",
-                labelStyle: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
+                Container(
+                  width: 150,
+                  child: OutlinedButton(
+                    child: const Text('cancelar'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 ),
-              ),
-              style: TextStyle(fontSize: 20),
+              ],
             ),
-            SizedBox(
-              height: 40,
-            ),
-            Padding(
+            
+            /*Padding(
               padding: EdgeInsets.only(left: 60, right: 60),
               child: Container(
                 height: 60,
@@ -194,7 +178,7 @@ class CadastroState extends State<Cadastro> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Login(),
+                            builder: (context) => LoginPage(),
                           ),
                         );
                       } else {
@@ -226,7 +210,7 @@ class CadastroState extends State<Cadastro> {
                   ),
                 ),
               ),
-            ),
+            ),*/
             SizedBox(
               height: 40,
             ),
@@ -235,4 +219,42 @@ class CadastroState extends State<Cadastro> {
       ),
     );
   }
+
+
+  //
+  // CRIAR CONTA no Firebase Auth
+  //
+  void criarConta(email, senha) {
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+      email: email,
+      password: senha,
+    )
+        .then((value) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Usuário criado com sucesso!'),
+          duration: Duration(seconds: 2),
+        ),
+      );
+      Navigator.pop(context);
+    }).catchError((erro) {
+      if (erro.code == 'email-already-in-use') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('ERRO: O email informado já está em uso.'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('ERRO: ${erro.message}'),
+            duration: const Duration(seconds: 2),
+          ),
+        );
+      }
+    });
+  }
 }
+
