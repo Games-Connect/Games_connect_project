@@ -1,21 +1,47 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'home.dart';
 import 'package:intl/intl.dart';
 
-class Jogos extends StatelessWidget {
-  final String jogoNome;
-  final String data;
 
-  const Jogos(this.jogoNome, this.data, {Key? key}) : super(key: key);
+class Jogos extends StatefulWidget {
+  const Jogos({Key? key}) : super(key: key);
+
+  @override
+  _JogosState createState() => _JogosState();
+}
+
+class _JogosState extends State<Jogos> {
+  var jogoNome = TextEditingController();
+  var data = TextEditingController();
+  DateTime selectedDate = DateTime.now();
+
+  //
+  // RETORNAR UM DOCUMENTO A PARTIR DO ID
+  //
+  getDocumentById(id) async{
+
+    // select * from tb_cafes where id = 1;
+    await FirebaseFirestore.instance.collection('jogos')
+    .doc(id).get().then((doc){
+      jogoNome.text = doc.get('nome');
+      data.text = DateFormat('dd/MM/yyyy').format(DateTime.parse(doc.get('data').toDate().toString()));
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
-    String dataFim = '';
-    if (data == '')
-      dataFim = DateFormat('dd/MM/yyyy – kk:mm').format(now);
-    else
-      dataFim = data;
+
+    //
+    // RECUPERAR O ID DO CAFÉ
+    //
+    var id = ModalRoute.of(context)?.settings.arguments;
+
+    if (id != null){
+      if (jogoNome.text.isEmpty && data.text.isEmpty){
+        getDocumentById(id);
+      }
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Games Connect"),
@@ -38,14 +64,14 @@ class Jogos extends StatelessWidget {
                 child: Center(
                     child: Padding(
                         padding: EdgeInsets.all(10),
-                        child: Text('Cadastro de jogos',
+                        child: Text('Detalhes de jogos',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold))))),
-            TextFormField(
+                              color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold))))),
+            TextField(
               //cursorColor: Colors.yellow,
               // autofocus: true,
-              initialValue: this.jogoNome,
+              controller: this.jogoNome,
               keyboardType: TextInputType.name,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
@@ -65,10 +91,8 @@ class Jogos extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            TextFormField(
-              // autofocus: true,
-              initialValue: dataFim,
-
+            TextField(
+              controller: data,
               keyboardType: TextInputType.datetime,
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
@@ -78,85 +102,93 @@ class Jogos extends StatelessWidget {
                 //borderSide: BorderSide(color: Colors.white)),
                 labelText: "Data de finalização",
                 labelStyle: TextStyle(
+                  color: Colors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
                 ),
               ),
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 20,color: Colors.white),
+              onTap: () {
+                _selectDate(context);
+              },
             ),
             SizedBox(
               height: 50,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 70, right: 70),
-              child: Container(
-                height: 60,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                  /*gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    stops: [0.3, 1],
-                    colors: [
-                      Colors.black.withBlue(60),
-                      Colors.black.withBlue(20)
-                    ],
-                  ),*/
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
-                  ),
-                ),
-                child: SizedBox.expand(
-                  child: TextButton(
-                    style: ButtonStyle(
-                      overlayColor:
-                          MaterialStateProperty.all<Color>(Colors.blue),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        if (this.jogoNome != '')
-                          Text(
-                            'Atualizar Cadastro',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        if (this.jogoNome == '')
-                          Text(
-                            'Finalizar Cadastro',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                      ],
-                    ),
+            Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 150,
+                child: OutlinedButton(
+                    child: const Text('salvar'),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Home(),
-                        ),
+
+                      if (id == null){
+                        //
+                        // ADICIONAR DOCUMENTO NO FIRESTORE
+                        //
+                        FirebaseFirestore.instance.collection('jogos')
+                          .add(
+                          {
+                            'nome': jogoNome.text,
+                            'data': Timestamp.fromDate(selectedDate)
+                          }
+                        );
+                      }else{
+                        //
+                        // ATUALIZAR DOCUMENTO NO FIRESTORE
+                        //
+                        FirebaseFirestore.instance.collection('jogos')
+                          .doc(id.toString()).set(
+                          {
+                            'nome': jogoNome.text,
+                            'data': Timestamp.fromDate(selectedDate)
+                          }
+                        );
+                      }
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Operação realizada com sucesso!'),
+                          duration: Duration(seconds: 2),
+                        )
                       );
-                    },
-                  ),
-                ),
+
+                      Navigator.pop(context);
+                    }),
               ),
-            ),
-            SizedBox(
+              Container(
+                width: 150,
+                child: OutlinedButton(
+                    child: const Text('cancelar'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
+              ),
+            ],
+          ),
+          SizedBox(
               height: 40,
             ),
           ],
         ),
       ),
     );
+  }
+
+  Future<Null> _selectDate(BuildContext context) async {
+    DateFormat formatter = DateFormat('dd/MM/yyyy');
+
+    DateTime? picked = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(1901, 1),
+        lastDate: DateTime(2100));
+    if (picked != null && picked != selectedDate)
+      setState(() {
+        selectedDate = picked;
+        data.value = TextEditingValue(text: formatter.format(picked));
+      });
   }
 }

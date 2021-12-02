@@ -1,11 +1,56 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:games_connect_project/cadastro.dart';
+import 'package:intl/intl.dart';
 import 'jogos.dart';
 import 'widget_function.dart';
 import 'login.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+
+class PrincipalPage extends StatefulWidget {
+  const PrincipalPage({Key? key}) : super(key: key);
+
+  @override
+  _PrincipalPageState createState() => _PrincipalPageState();
+}
+
+class _PrincipalPageState extends State<PrincipalPage> {
+
+  //REFERENCIAR A COLEÇÃO DE CAFÉS
+  late CollectionReference jogos;
+
+  @override
+  void initState(){
+    super.initState();
+
+    jogos = FirebaseFirestore.instance.collection('jogos');
+  }
+  
+  //
+  // ITEM LISTA
+  // DEFINIR A APARECENCIA DE CADA ITEM DA LISTA
+  Widget itemLista(item){
+
+     String nome = item.data()['nome'];
+     Timestamp data = item.data()['data'];
+      
+    return ListTile(
+      title: Text(nome, style: TextStyle(fontSize: 30, color: Colors.white)),
+      subtitle: Text( DateFormat('dd/MM/yyyy').format(DateTime.parse(data.toDate().toString())),style: TextStyle(fontSize: 25, color: Colors.white)),
+      trailing: IconButton(
+        icon: Icon(Icons.delete, color: Colors.white),
+        onPressed: (){
+          
+          //
+          //APAGAR UM DOCUMENTO DA COLEÇÃO
+          //
+          jogos.doc(item.id).delete();
+        },
+      ),
+      onTap: (){
+        Navigator.pushNamed(context,'/inserir', arguments: item.id);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,279 +60,43 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: Container(
-        //largura responsiva
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
+      body: StreamBuilder<QuerySnapshot>(
+        
+        stream: jogos.snapshots(),
 
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.black.withBlue(60), Colors.black.withBlue(20)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
+        //exibir os dados retornados
+        builder: (context, snapshot){
+          switch(snapshot.connectionState){
+            
+            case ConnectionState.none:
+              return const Center(child: Text('Não foi possível conectar ao Firebase'));
 
-        child: ListView(
-          children: <Widget>[
-            SizedBox(
-              height: 25,
-            ),
-            Text(
-              'Jogos Finalizados',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            WidgetFunction('God of War Ragnarok ', 'lib/imagens/gow.jpg'),
-            WidgetFunction(
-                'Call of Duty - World At War', 'lib/imagens/cod.jpg'),
-            WidgetFunction('Super Mario Bros', 'lib/imagens/mario.jpg'),
-            SizedBox(
-              height: 50,
-            ),
-            Padding(
-              padding: EdgeInsets.only(left: 70, right: 70),
-              child: Container(
-                height: 60,
-                alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                  /*gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    stops: [0.3, 1],
-                    colors: [
-                      Colors.black.withBlue(60),
-                      Colors.black.withBlue(20)
-                    ],
-                  ),*/
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
-                  ),
-                ),
-                child: SizedBox.expand(
-                  child: TextButton(
-                    style: ButtonStyle(
-                      overlayColor:
-                          MaterialStateProperty.all<Color>(Colors.blue),
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Cadastrar Jogos',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Jogos('', ''),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+            case ConnectionState.waiting:
+              return const Center(child: CircularProgressIndicator());
+
+            //dados recebidos
+            default:
+              final dados = snapshot.requireData;
+              return ListView.builder(
+                itemCount: dados.size,
+                itemBuilder: (context,index){
+                  return itemLista(dados.docs[index]);
+                },
+              );
+          }
+
+        }
       ),
-      drawer: Drawer(
-        child: Container(
-          width: MediaQuery.of(context).size.width * .1,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.black.withBlue(60), Colors.black.withBlue(20)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: ListView(
-            children: <Widget>[
-              Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(20, 20, 2, 0),
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.black.withBlue(60),
-                            Colors.black.withBlue(20)
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-
-                        //BORDAS ARREDONDADAS
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100.0),
-                      child: Image.network(
-                        'lib/imagens/avatar.jpg',
-                        width: MediaQuery.of(context).size.width * .15,
-                      ),
-                    ),
-                  ),
-                  Container(
-                      margin: EdgeInsets.only(left: 25),
-                      child: Text(
-                        'Bem-vindo, João Paulo!',
-                        textAlign: TextAlign.right,
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ))
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.fromLTRB(20, 40, 2, 0),
-                    child: TextButton(
-                      child: Row(
-                        children: [
-                          Icon(Icons.home, size: 30),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(40, 0, 20, 0),
-                            child: Text(
-                              'Tela inicial',
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Home(),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(20, 20, 2, 0),
-                    child: TextButton(
-                      child: Row(
-                        children: [
-                          Icon(Icons.games, size: 30),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(40, 0, 20, 0),
-                            child: Text(
-                              'Cadastrar jogos',
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Jogos('', ''),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(20, 20, 2, 0),
-                    child: TextButton(
-                      child: Row(
-                        children: [
-                          Icon(Icons.settings, size: 30),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(40, 0, 20, 0),
-                            child: Text(
-                              'Dados do usuário',
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Cadastro('João Paulo',
-                                'joaopaulorpo@gmail.com', 'senha', 'senha'),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    height: 60,
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(20, 20, 2, 0),
-                    child: TextButton(
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.logout,
-                            size: 30,
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(40, 0, 20, 0),
-                            child: Text(
-                              'Sair',
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Login(),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
+     
+      
+      backgroundColor: Colors.black.withBlue(60),
+      floatingActionButton: FloatingActionButton(
+        foregroundColor: Colors.white,
+        backgroundColor: Colors.black.withBlue(20),
+        child: const Icon(Icons.add),
+        onPressed: (){
+          Navigator.pushNamed(context, '/inserir');
+        } 
       ),
     );
   }

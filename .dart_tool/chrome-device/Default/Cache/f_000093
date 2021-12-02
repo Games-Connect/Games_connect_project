@@ -1,1 +1,427 @@
-{"web_entrypoint.dart":"485511417","packages/games_connect_project/main.dart":"181439322","packages/games_connect_project/home.dart":"300122619","packages/games_connect_project/widget_function.dart":"226655586","packages/flutter/material.dart":"1005220648","packages/flutter/widgets.dart":"860862463","packages/flutter/src/widgets/will_pop_scope.dart":"132925802","packages/flutter/src/widgets/widget_span.dart":"483248160","packages/flutter/rendering.dart":"273945278","packages/flutter/src/rendering/wrap.dart":"341642983","packages/flutter/src/rendering/layer.dart":"304176387","packages/flutter/painting.dart":"250601450","packages/flutter/src/painting/strut_style.dart":"771370670","packages/flutter/src/painting/basic_types.dart":"1052804577","packages/flutter/foundation.dart":"242768257","packages/flutter/src/foundation/unicode.dart":"499913650","packages/flutter/src/foundation/synchronous_future.dart":"723399346","packages/flutter/src/foundation/stack_frame.dart":"305732336","packages/flutter/src/foundation/object.dart":"27756215","packages/flutter/src/foundation/constants.dart":"622532732","packages/meta/meta.dart":"706935267","packages/meta/meta_meta.dart":"833733193","packages/flutter/src/foundation/serialization.dart":"792437989","packages/typed_data/typed_buffers.dart":"988797310","packages/typed_data/src/typed_buffer.dart":"283603300","packages/flutter/src/foundation/print.dart":"892281086","packages/flutter/src/foundation/_platform_web.dart":"91227721","packages/flutter/src/foundation/observer_list.dart":"869446570","packages/flutter/src/foundation/node.dart":"924551566","packages/flutter/src/foundation/licenses.dart":"288361611","packages/flutter/src/foundation/key.dart":"980561812","packages/flutter/src/foundation/_isolates_web.dart":"872708675","packages/flutter/src/foundation/debug.dart":"980960407","packages/flutter/src/foundation/basic_types.dart":"231733804","packages/flutter/src/foundation/consolidate_response.dart":"389507701","packages/flutter/src/foundation/collections.dart":"450460551","packages/flutter/src/foundation/change_notifier.dart":"648402033","packages/flutter/src/foundation/_bitfield_web.dart":"388826271","packages/flutter/src/foundation/binding.dart":"110157148","packages/flutter/src/foundation/annotations.dart":"3266775","packages/flutter/src/painting/colors.dart":"272961574","packages/flutter/src/painting/placeholder_span.dart":"629713313","packages/flutter/services.dart":"524107823","packages/flutter/src/services/text_input.dart":"950729248","packages/flutter/src/services/text_editing.dart":"480974288","packages/flutter/src/services/system_chrome.dart":"53066791","packages/flutter/src/services/system_channels.dart":"606135066","packages/flutter/scheduler.dart":"386956642","packages/flutter/src/scheduler/ticker.dart":"625999497","packages/flutter/src/scheduler/binding.dart":"1072757450","packages/flutter/src/scheduler/priority.dart":"476215176","packages/flutter/src/scheduler/debug.dart":"709281406","packages/collection/src/union_set_controller.dart":"251579419","packages/collection/src/queue_list.dart":"81130093","packages/collection/src/priority_queue.dart":"625134641","packages/collection/src/utils.dart":"962083340","packages/collection/src/list_extensions.dart":"966644781","packages/collection/src/equality.dart":"883562087","packages/collection/src/comparators.dart":"818457816","packages/collection/src/algorithms.dart":"230219753","packages/collection/src/iterable_zip.dart":"888159683","packages/collection/src/iterable_extensions.dart":"1064271329","packages/collection/src/functions.dart":"934155871","packages/collection/src/combined_wrappers/combined_map.dart":"722018092","packages/collection/src/combined_wrappers/combined_iterable.dart":"68186889","packages/collection/src/combined_wrappers/combined_iterator.dart":"765611161","packages/collection/src/combined_wrappers/combined_list.dart":"777657741","packages/collection/src/canonicalized_map.dart":"866339389","packages/vector_math/vector_math_64.dart":"584912481","packages/vector_math/hash.dart":"359295464","packages/flutter/src/services/text_formatter.dart":"659868101","packages/characters/characters.dart":"124456233","packages/characters/src/extensions.dart":"220016438","packages/characters/src/characters_impl.dart":"886413009","packages/characters/src/grapheme_clusters/breaks.dart":"1005765445","packages/characters/src/grapheme_clusters/table.dart":"1010994827","packages/characters/src/grapheme_clusters/constants.dart":"794018438","packages/flutter/src/services/system_sound.dart":"253219868","packages/flutter/src/services/system_navigator.dart":"726171416","packages/flutter/src/services/raw_keyboard_windows.dart":"367052885","packages/flutter/src/services/keyboard_maps.dart":"319359429","packages/flutter/src/services/keyboard_key.dart":"151034208","packages/flutter/src/services/platform_views.dart":"1057668983","packages/flutter/gestures.dart":"1033022923","packages/flutter/src/gestures/velocity_tracker.dart":"874839782","packages/flutter/src/gestures/lsq_solver.dart":"551726292","packages/flutter/src/gestures/events.dart":"241899774","packages/flutter/src/gestures/constants.dart":"283388373","packages/flutter/src/gestures/team.dart":"964531339","packages/flutter/src/gestures/binding.dart":"838025803","packages/flutter/src/gestures/resampler.dart":"579131668","packages/flutter/src/gestures/pointer_signal_resolver.dart":"640217228","packages/flutter/src/gestures/pointer_router.dart":"409233025","packages/flutter/src/gestures/hit_test.dart":"155776058","packages/flutter/src/gestures/debug.dart":"1025937694","packages/flutter/src/gestures/converter.dart":"713212276","packages/flutter/src/gestures/arena.dart":"529040787","packages/flutter/src/gestures/tap.dart":"403410553","packages/flutter/src/gestures/recognizer.dart":"707915636","packages/flutter/src/gestures/scale.dart":"87003164","packages/flutter/src/gestures/multitap.dart":"777121024","packages/flutter/src/gestures/multidrag.dart":"743060832","packages/flutter/src/gestures/drag_details.dart":"392739900","packages/flutter/src/gestures/drag.dart":"462017825","packages/flutter/src/gestures/monodrag.dart":"251184925","packages/flutter/src/gestures/long_press.dart":"591998857","packages/flutter/src/gestures/force_press.dart":"1018130110","packages/flutter/src/gestures/eager.dart":"83338514","packages/flutter/src/services/mouse_tracking.dart":"413881768","packages/flutter/src/services/mouse_cursor.dart":"593204117","packages/flutter/src/services/haptic_feedback.dart":"296945293","packages/flutter/src/services/font_loader.dart":"473488292","packages/flutter/src/services/deferred_component.dart":"76349474","packages/flutter/src/services/clipboard.dart":"344150114","packages/flutter/src/painting/stadium_border.dart":"215745256","packages/flutter/src/painting/rounded_rectangle_border.dart":"728542359","packages/flutter/src/painting/edge_insets.dart":"441346500","packages/flutter/src/painting/circle_border.dart":"762844595","packages/flutter/src/painting/borders.dart":"61458255","packages/flutter/src/painting/border_radius.dart":"572741923","packages/flutter/src/painting/shape_decoration.dart":"411079600","packages/flutter/src/painting/_network_image_web.dart":"248294603","packages/flutter/src/painting/image_stream.dart":"553376138","packages/flutter/src/painting/image_cache.dart":"307983762","packages/flutter/src/painting/binding.dart":"666389524","packages/flutter/src/painting/shader_warm_up.dart":"206481806","packages/flutter/src/painting/gradient.dart":"849543901","packages/flutter/src/painting/alignment.dart":"626649503","packages/flutter/src/painting/decoration_image.dart":"925214150","packages/flutter/src/painting/debug.dart":"388827130","packages/flutter/src/painting/box_fit.dart":"111511027","packages/flutter/src/painting/decoration.dart":"40286442","packages/flutter/src/painting/box_shadow.dart":"888603040","packages/flutter/src/painting/box_decoration.dart":"1046274854","packages/flutter/src/painting/box_border.dart":"38502300","packages/flutter/src/painting/paint_utilities.dart":"237709723","packages/flutter/src/painting/notched_shapes.dart":"426380360","packages/flutter/src/painting/matrix_utils.dart":"643905321","packages/flutter/src/painting/image_resolution.dart":"858651875","packages/flutter/src/painting/image_decoder.dart":"882994491","packages/flutter/src/painting/geometry.dart":"604066926","packages/flutter/src/painting/fractional_offset.dart":"450731669","packages/flutter/src/painting/flutter_logo.dart":"271617544","packages/flutter/src/painting/continuous_rectangle_border.dart":"981355883","packages/flutter/src/painting/clip.dart":"404841202","packages/flutter/src/painting/beveled_rectangle_border.dart":"174663500","packages/flutter/semantics.dart":"862895759","packages/flutter/src/semantics/semantics_service.dart":"1054151597","packages/flutter/src/semantics/semantics_event.dart":"769680092","packages/flutter/src/semantics/semantics.dart":"82858008","packages/flutter/src/semantics/binding.dart":"641758643","packages/flutter/src/semantics/debug.dart":"442773203","packages/flutter/animation.dart":"906094623","packages/flutter/src/animation/tween_sequence.dart":"891100491","packages/flutter/src/animation/listener_helpers.dart":"796359833","packages/flutter/src/animation/curves.dart":"1013143039","packages/flutter/src/animation/animation_controller.dart":"208648679","packages/flutter/physics.dart":"862226596","packages/flutter/src/physics/utils.dart":"776115998","packages/flutter/src/physics/tolerance.dart":"893773150","packages/flutter/src/physics/spring_simulation.dart":"985644148","packages/flutter/src/physics/simulation.dart":"476720291","packages/flutter/src/physics/gravity_simulation.dart":"620834888","packages/flutter/src/physics/friction_simulation.dart":"457787122","packages/flutter/src/physics/clamped_simulation.dart":"1012262077","packages/flutter/src/rendering/layout_helper.dart":"832128639","packages/flutter/src/rendering/viewport_offset.dart":"633911703","packages/flutter/src/rendering/sliver.dart":"752917472","packages/flutter/src/rendering/tweens.dart":"344286258","packages/flutter/src/rendering/texture.dart":"609625469","packages/flutter/src/rendering/table_border.dart":"814768531","packages/flutter/src/rendering/table.dart":"253508016","packages/flutter/src/rendering/stack.dart":"567383253","packages/flutter/src/rendering/sliver_persistent_header.dart":"611606141","packages/flutter/src/rendering/sliver_padding.dart":"677890612","packages/flutter/src/rendering/sliver_multi_box_adaptor.dart":"904895932","packages/flutter/src/rendering/sliver_list.dart":"719318369","packages/flutter/src/rendering/sliver_grid.dart":"1072240354","packages/flutter/src/rendering/sliver_fixed_extent_list.dart":"594356183","packages/flutter/src/rendering/sliver_fill.dart":"994556053","packages/flutter/src/rendering/shifted_box.dart":"812337782","packages/flutter/src/rendering/debug_overflow_indicator.dart":"510663149","packages/flutter/src/rendering/rotated_box.dart":"435782846","packages/flutter/src/rendering/proxy_sliver.dart":"651366808","packages/flutter/src/rendering/proxy_box.dart":"158405084","packages/flutter/src/rendering/platform_view.dart":"527960809","packages/flutter/src/rendering/performance_overlay.dart":"37809682","packages/flutter/src/rendering/paragraph.dart":"294165733","packages/flutter/src/rendering/list_wheel_viewport.dart":"132707732","packages/flutter/src/rendering/list_body.dart":"846000154","packages/flutter/src/rendering/image.dart":"944321385","packages/flutter/src/rendering/flow.dart":"60577810","packages/flutter/src/rendering/flex.dart":"322276876","packages/flutter/src/rendering/error.dart":"769527772","packages/flutter/src/rendering/editable.dart":"509539106","packages/flutter/src/rendering/custom_paint.dart":"974553243","packages/flutter/src/rendering/custom_layout.dart":"935234815","packages/flutter/src/rendering/animated_size.dart":"328539850","packages/flutter/src/widgets/constants.dart":"660987971","packages/flutter/src/widgets/scroll_simulation.dart":"122747679","packages/flutter/src/widgets/scroll_metrics.dart":"186937448","packages/flutter/src/widgets/value_listenable_builder.dart":"272861331","packages/flutter/src/widgets/unique_widget.dart":"940740315","packages/flutter/src/widgets/tween_animation_builder.dart":"610516196","packages/flutter/src/widgets/implicit_animations.dart":"481593257","packages/flutter/src/widgets/texture.dart":"600760356","packages/flutter/src/widgets/text_selection_toolbar_layout_delegate.dart":"813900440","packages/flutter/src/widgets/status_transitions.dart":"445844731","packages/flutter/src/widgets/spacer.dart":"494160737","packages/flutter/src/widgets/sliver_prototype_extent_list.dart":"918940748","packages/flutter/src/widgets/sliver_persistent_header.dart":"1052744058","packages/flutter/src/widgets/sliver_layout_builder.dart":"55803467","packages/flutter/src/widgets/layout_builder.dart":"287063733","packages/flutter/src/widgets/sliver_fill.dart":"421698099","packages/flutter/src/widgets/size_changed_layout_notifier.dart":"200178500","packages/flutter/src/widgets/single_child_scroll_view.dart":"250236058","packages/flutter/src/widgets/scroll_view.dart":"105645443","packages/flutter/src/widgets/safe_area.dart":"381109788","packages/flutter/src/widgets/reorderable_list.dart":"272544377","packages/flutter/src/widgets/raw_keyboard_listener.dart":"324672070","packages/flutter/src/widgets/preferred_size.dart":"547753553","packages/flutter/src/widgets/platform_view.dart":"47896130","packages/flutter/src/widgets/page_view.dart":"271637704","packages/flutter/src/widgets/overflow_bar.dart":"915677264","packages/flutter/src/widgets/orientation_builder.dart":"216378592","packages/flutter/src/widgets/nested_scroll_view.dart":"443243513","packages/flutter/src/widgets/navigation_toolbar.dart":"481435223","packages/flutter/src/widgets/list_wheel_scroll_view.dart":"823808361","packages/flutter/src/widgets/interactive_viewer.dart":"356674504","packages/flutter/src/widgets/image_icon.dart":"390559784","packages/flutter/src/widgets/icon_theme_data.dart":"482911684","packages/flutter/src/widgets/icon_theme.dart":"239525365","packages/flutter/src/widgets/icon.dart":"918555839","packages/flutter/src/widgets/icon_data.dart":"529568832","packages/flutter/src/widgets/image_filter.dart":"913879089","packages/flutter/src/widgets/grid_paper.dart":"1061916336","packages/flutter/src/widgets/form.dart":"714105925","packages/flutter/src/widgets/fade_in_image.dart":"212131055","packages/flutter/src/widgets/dual_transition_builder.dart":"332006591","packages/flutter/src/widgets/draggable_scrollable_sheet.dart":"889219000","packages/flutter/src/widgets/drag_target.dart":"1007601509","packages/flutter/src/widgets/dismissible.dart":"1044768160","packages/flutter/src/widgets/desktop_text_selection_toolbar_layout_delegate.dart":"909299731","packages/flutter/src/widgets/color_filter.dart":"528795986","packages/flutter/src/widgets/bottom_navigation_bar_item.dart":"901830588","packages/flutter/src/widgets/autocomplete.dart":"286558152","packages/flutter/src/widgets/async.dart":"577037467","packages/flutter/src/widgets/annotated_region.dart":"711730987","packages/flutter/src/widgets/animated_switcher.dart":"463373201","packages/flutter/src/widgets/animated_size.dart":"369039397","packages/flutter/src/widgets/animated_list.dart":"243503886","packages/flutter/src/widgets/animated_cross_fade.dart":"104609115","packages/flutter/src/material/user_accounts_drawer_header.dart":"291006789","packages/flutter/src/material/icon_button.dart":"871374643","packages/flutter/src/material/typography.dart":"1036314244","packages/flutter/src/material/colors.dart":"812858503","packages/flutter/src/material/input_border.dart":"398935689","packages/flutter/src/material/constants.dart":"222112477","packages/flutter/src/material/material_state.dart":"847082112","packages/flutter/src/material/floating_action_button_theme.dart":"725199479","packages/flutter/src/material/curves.dart":"161979982","packages/flutter/src/material/bottom_sheet_theme.dart":"339741926","packages/flutter/src/material/tab_indicator.dart":"874240447","packages/flutter/src/material/tab_controller.dart":"11810442","packages/flutter/src/material/icons.dart":"1018316895","packages/flutter/cupertino.dart":"177125063","packages/flutter/src/cupertino/thumb_painter.dart":"634849567","packages/flutter/src/cupertino/text_theme.dart":"532900616","packages/flutter/src/cupertino/interface_level.dart":"305890434","packages/flutter/src/cupertino/text_selection_toolbar_button.dart":"674205613","packages/flutter/src/cupertino/button.dart":"203837013","packages/flutter/src/cupertino/constants.dart":"3360757","packages/flutter/src/cupertino/text_selection_toolbar.dart":"1010485619","packages/flutter/src/cupertino/text_selection.dart":"316928283","packages/flutter/src/cupertino/debug.dart":"829825847","packages/flutter/src/cupertino/text_form_field_row.dart":"489400494","packages/flutter/src/cupertino/text_field.dart":"585027583","packages/flutter/src/cupertino/icons.dart":"916666698","packages/flutter/src/cupertino/desktop_text_selection.dart":"34576959","packages/flutter/src/cupertino/form_row.dart":"245189352","packages/flutter/src/cupertino/tab_view.dart":"1036379797","packages/flutter/src/cupertino/route.dart":"217139838","packages/flutter/src/cupertino/app.dart":"276044178","packages/flutter/src/cupertino/scrollbar.dart":"1025703363","packages/flutter/src/cupertino/tab_scaffold.dart":"717166060","packages/flutter/src/cupertino/bottom_tab_bar.dart":"853556357","packages/flutter/src/cupertino/switch.dart":"801607019","packages/flutter/src/cupertino/sliding_segmented_control.dart":"897914438","packages/flutter/src/cupertino/slider.dart":"852421378","packages/flutter/src/cupertino/segmented_control.dart":"437697291","packages/flutter/src/cupertino/search_field.dart":"458812145","packages/flutter/src/cupertino/refresh.dart":"663271876","packages/flutter/src/cupertino/activity_indicator.dart":"204612093","packages/flutter/src/cupertino/picker.dart":"18477631","packages/flutter/src/cupertino/page_scaffold.dart":"819957404","packages/flutter/src/cupertino/nav_bar.dart":"376030802","packages/flutter/src/cupertino/form_section.dart":"807561061","packages/flutter/src/cupertino/dialog.dart":"655724635","packages/flutter/src/cupertino/date_picker.dart":"656274203","packages/flutter/src/cupertino/context_menu_action.dart":"790433909","packages/flutter/src/cupertino/context_menu.dart":"900159154","packages/flutter/src/cupertino/action_sheet.dart":"677058315","packages/flutter/src/material/drawer_header.dart":"964688523","packages/flutter/src/material/toggleable.dart":"948972414","packages/flutter/src/material/toggle_buttons.dart":"307487773","packages/flutter/src/material/time_picker.dart":"859307784","packages/flutter/src/material/text_form_field.dart":"378760074","packages/flutter/src/material/text_field.dart":"347363076","packages/flutter/src/material/text_selection.dart":"654884334","packages/flutter/src/material/text_selection_toolbar_text_button.dart":"1002820640","packages/flutter/src/material/text_selection_toolbar.dart":"594419520","packages/flutter/src/material/selectable_text.dart":"442646831","packages/flutter/src/material/desktop_text_selection.dart":"158346960","packages/flutter/src/material/button_bar.dart":"720763148","packages/flutter/src/material/switch_list_tile.dart":"258520756","packages/flutter/src/material/switch.dart":"844106942","packages/flutter/src/material/shadows.dart":"969627266","packages/flutter/src/material/stepper.dart":"623082153","packages/flutter/src/material/slider.dart":"1054201286","packages/flutter/src/material/search.dart":"323274087","packages/flutter/src/material/scrollbar.dart":"800645944","packages/flutter/src/material/reorderable_list.dart":"58361048","packages/flutter/src/material/refresh_indicator.dart":"523686813","packages/flutter/src/material/progress_indicator.dart":"154430011","packages/flutter/src/material/range_slider.dart":"432375629","packages/flutter/src/material/radio_list_tile.dart":"489627515","packages/flutter/src/material/radio.dart":"407897058","packages/flutter/src/material/popup_menu.dart":"566259463","packages/flutter/src/material/paginated_data_table.dart":"930277876","packages/flutter/src/material/dropdown.dart":"28079343","packages/flutter/src/material/data_table_source.dart":"760015212","packages/flutter/src/material/data_table.dart":"674721399","packages/flutter/src/material/checkbox.dart":"448810063","packages/flutter/src/material/card.dart":"455731283","packages/flutter/src/material/page.dart":"559046904","packages/flutter/src/material/outlined_button.dart":"352315848","packages/flutter/src/material/no_splash.dart":"114004818","packages/flutter/src/material/mergeable_material.dart":"488823594","packages/flutter/src/material/input_date_picker_form_field.dart":"201583879","packages/flutter/src/material/date.dart":"131211023","packages/flutter/src/material/grid_tile_bar.dart":"329462342","packages/flutter/src/material/grid_tile.dart":"688919237","packages/flutter/src/material/flutter_logo.dart":"975369942","packages/flutter/src/material/expansion_tile.dart":"13463316","packages/flutter/src/material/expansion_panel.dart":"1008234626","packages/flutter/src/material/expand_icon.dart":"235071672","packages/flutter/src/material/elevated_button.dart":"35945608","packages/flutter/src/material/date_picker_deprecated.dart":"895677123","packages/flutter/src/material/date_picker.dart":"56960577","packages/flutter/src/material/calendar_date_picker.dart":"409951382","packages/flutter/src/material/circle_avatar.dart":"601095498","packages/flutter/src/material/chip.dart":"423563382","packages/flutter/src/material/checkbox_list_tile.dart":"97416270","packages/flutter/src/material/bottom_app_bar.dart":"668150072","packages/flutter/src/material/banner.dart":"1019032998","packages/flutter/src/material/autocomplete.dart":"826386373","packages/flutter/src/material/arc.dart":"738678533","packages/flutter/src/material/app.dart":"493146067","packages/flutter/src/material/animated_icons.dart":"450935654","packages/flutter/src/material/about.dart":"798539827"}
+define(['dart_sdk', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/rendering/shifted_box.dart', 'packages/flutter/src/scheduler/ticker.dart', 'packages/flutter/src/rendering/layer.dart'], (function load__packages__flutter__src__rendering__animated_size_dart(dart_sdk, packages__flutter__src__animation__curves$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__rendering__shifted_box$46dart, packages__flutter__src__scheduler__ticker$46dart, packages__flutter__src__rendering__layer$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const animations = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animations;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const shifted_box = packages__flutter__src__rendering__shifted_box$46dart.src__rendering__shifted_box;
+  const ticker = packages__flutter__src__scheduler__ticker$46dart.src__scheduler__ticker;
+  const layer = packages__flutter__src__rendering__layer$46dart.src__rendering__layer;
+  var animated_size = Object.create(dart.library);
+  var $_equals = dartx._equals;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: animated_size.RenderAnimatedSizeState.prototype,
+        [_name$]: "RenderAnimatedSizeState.start",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: animated_size.RenderAnimatedSizeState.prototype,
+        [_name$]: "RenderAnimatedSizeState.stable",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: animated_size.RenderAnimatedSizeState.prototype,
+        [_name$]: "RenderAnimatedSizeState.changed",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: animated_size.RenderAnimatedSizeState.prototype,
+        [_name$]: "RenderAnimatedSizeState.unstable",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3], animated_size.RenderAnimatedSizeState);
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: curves._Linear.prototype
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 0,
+        [Alignment_x]: 0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Clip.prototype,
+        [_name]: "Clip.hardEdge",
+        index: 1
+      });
+    }
+  }, false);
+  var C = Array(8).fill(void 0);
+  var I = [
+    "package:flutter/src/rendering/animated_size.dart",
+    "file:///C:/flutter/sdk/flutter/packages/flutter/lib/src/rendering/animated_size.dart"
+  ];
+  var _name$ = dart.privateName(animated_size, "_name");
+  animated_size.RenderAnimatedSizeState = class RenderAnimatedSizeState extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (animated_size.RenderAnimatedSizeState.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = animated_size.RenderAnimatedSizeState.prototype;
+  dart.addTypeTests(animated_size.RenderAnimatedSizeState);
+  dart.addTypeCaches(animated_size.RenderAnimatedSizeState);
+  dart.setLibraryUri(animated_size.RenderAnimatedSizeState, I[0]);
+  dart.setFieldSignature(animated_size.RenderAnimatedSizeState, () => ({
+    __proto__: dart.getFields(animated_size.RenderAnimatedSizeState.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(animated_size.RenderAnimatedSizeState, ['toString']);
+  animated_size.RenderAnimatedSizeState.start = C[0] || CT.C0;
+  animated_size.RenderAnimatedSizeState.stable = C[1] || CT.C1;
+  animated_size.RenderAnimatedSizeState.changed = C[2] || CT.C2;
+  animated_size.RenderAnimatedSizeState.unstable = C[3] || CT.C3;
+  animated_size.RenderAnimatedSizeState.values = C[4] || CT.C4;
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  var _name = dart.privateName(ui, "_name");
+  var __RenderAnimatedSize__controller = dart.privateName(animated_size, "_#RenderAnimatedSize#_controller");
+  var __RenderAnimatedSize__animation = dart.privateName(animated_size, "_#RenderAnimatedSize#_animation");
+  var _sizeTween = dart.privateName(animated_size, "_sizeTween");
+  var __RenderAnimatedSize__hasVisualOverflow = dart.privateName(animated_size, "_#RenderAnimatedSize#_hasVisualOverflow");
+  var _lastValue = dart.privateName(animated_size, "_lastValue");
+  var _state = dart.privateName(animated_size, "_state");
+  var _clipBehavior = dart.privateName(animated_size, "_clipBehavior");
+  var _clipRectLayer = dart.privateName(animated_size, "_clipRectLayer");
+  var _vsync = dart.privateName(animated_size, "_vsync");
+  var _controller = dart.privateName(animated_size, "_controller");
+  var _animation = dart.privateName(animated_size, "_animation");
+  var _hasVisualOverflow = dart.privateName(animated_size, "_hasVisualOverflow");
+  var _animatedSize = dart.privateName(animated_size, "_animatedSize");
+  var _layoutStart = dart.privateName(animated_size, "_layoutStart");
+  var _layoutStable = dart.privateName(animated_size, "_layoutStable");
+  var _layoutChanged = dart.privateName(animated_size, "_layoutChanged");
+  var _layoutUnstable = dart.privateName(animated_size, "_layoutUnstable");
+  var _restartAnimation = dart.privateName(animated_size, "_restartAnimation");
+  animated_size.RenderAnimatedSize = class RenderAnimatedSize extends shifted_box.RenderAligningShiftedBox {
+    get [_controller]() {
+      let t0;
+      t0 = this[__RenderAnimatedSize__controller];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_controller")) : t0;
+    }
+    set [_controller](t0) {
+      if (this[__RenderAnimatedSize__controller] == null)
+        this[__RenderAnimatedSize__controller] = t0;
+      else
+        dart.throw(new _internal.LateError.fieldAI("_controller"));
+    }
+    get [_animation]() {
+      let t1;
+      t1 = this[__RenderAnimatedSize__animation];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_animation")) : t1;
+    }
+    set [_animation](t1) {
+      if (this[__RenderAnimatedSize__animation] == null)
+        this[__RenderAnimatedSize__animation] = t1;
+      else
+        dart.throw(new _internal.LateError.fieldAI("_animation"));
+    }
+    get [_hasVisualOverflow]() {
+      let t2;
+      t2 = this[__RenderAnimatedSize__hasVisualOverflow];
+      return t2 == null ? dart.throw(new _internal.LateError.fieldNI("_hasVisualOverflow")) : t2;
+    }
+    set [_hasVisualOverflow](t2) {
+      this[__RenderAnimatedSize__hasVisualOverflow] = t2;
+    }
+    get state() {
+      return this[_state];
+    }
+    get duration() {
+      return dart.nullCheck(this[_controller].duration);
+    }
+    set duration(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 123, 12, "value != null");
+      if (value._equals(this[_controller].duration)) return;
+      this[_controller].duration = value;
+    }
+    get reverseDuration() {
+      return this[_controller].reverseDuration;
+    }
+    set reverseDuration(value) {
+      if (dart.equals(value, this[_controller].reverseDuration)) return;
+      this[_controller].reverseDuration = value;
+    }
+    get curve() {
+      return this[_animation].curve;
+    }
+    set curve(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 140, 12, "value != null");
+      if (value[$_equals](this[_animation].curve)) return;
+      this[_animation].curve = value;
+    }
+    get clipBehavior() {
+      return this[_clipBehavior];
+    }
+    set clipBehavior(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 152, 12, "value != null");
+      if (value !== this[_clipBehavior]) {
+        this[_clipBehavior] = value;
+        this.markNeedsPaint();
+        this.markNeedsSemanticsUpdate();
+      }
+    }
+    get isAnimating() {
+      return this[_controller].isAnimating;
+    }
+    get vsync() {
+      return this[_vsync];
+    }
+    set vsync(value) {
+      if (!(value !== null)) dart.assertFailed(null, I[1], 170, 12, "value != null");
+      if (value[$_equals](this[_vsync])) return;
+      this[_vsync] = value;
+      this[_controller].resync(this.vsync);
+    }
+    detach() {
+      this[_controller].stop();
+      super.detach();
+    }
+    get [_animatedSize]() {
+      return this[_sizeTween].evaluate(this[_animation]);
+    }
+    performLayout() {
+      let t3;
+      this[_lastValue] = this[_controller].value;
+      this[_hasVisualOverflow] = false;
+      let constraints = this.constraints;
+      if (this.child == null || constraints.isTight) {
+        this[_controller].stop();
+        this.size = this[_sizeTween].begin = this[_sizeTween].end = constraints.smallest;
+        this[_state] = animated_size.RenderAnimatedSizeState.start;
+        t3 = this.child;
+        t3 == null ? null : t3.layout(constraints);
+        return;
+      }
+      dart.nullCheck(this.child).layout(constraints, {parentUsesSize: true});
+      if (!(this[_state] !== null)) dart.assertFailed(null, I[1], 202, 12, "_state != null");
+      switch (this[_state]) {
+        case C[0] || CT.C0:
+        {
+          this[_layoutStart]();
+          break;
+        }
+        case C[1] || CT.C1:
+        {
+          this[_layoutStable]();
+          break;
+        }
+        case C[2] || CT.C2:
+        {
+          this[_layoutChanged]();
+          break;
+        }
+        case C[3] || CT.C3:
+        {
+          this[_layoutUnstable]();
+          break;
+        }
+      }
+      this.size = constraints.constrain(dart.nullCheck(this[_animatedSize]));
+      this.alignChild();
+      if (this.size.width < dart.nullCheck(this[_sizeTween].end).width || this.size.height < dart.nullCheck(this[_sizeTween].end).height) this[_hasVisualOverflow] = true;
+    }
+    computeDryLayout(constraints) {
+      if (this.child == null || constraints.isTight) {
+        return constraints.smallest;
+      }
+      let childSize = dart.nullCheck(this.child).getDryLayout(constraints);
+      if (!(this[_state] !== null)) dart.assertFailed(null, I[1], 236, 12, "_state != null");
+      switch (this[_state]) {
+        case C[0] || CT.C0:
+        {
+          return constraints.constrain(childSize);
+        }
+        case C[1] || CT.C1:
+        {
+          if (!dart.equals(this[_sizeTween].end, childSize)) {
+            return constraints.constrain(this.size);
+          } else if (this[_controller].value === this[_controller].upperBound) {
+            return constraints.constrain(childSize);
+          }
+          break;
+        }
+        case C[3] || CT.C3:
+        case C[2] || CT.C2:
+        {
+          if (!dart.equals(this[_sizeTween].end, childSize)) {
+            return constraints.constrain(childSize);
+          }
+          break;
+        }
+      }
+      return constraints.constrain(dart.nullCheck(this[_animatedSize]));
+    }
+    [_restartAnimation]() {
+      this[_lastValue] = 0.0;
+      this[_controller].forward({from: 0.0});
+    }
+    [_layoutStart]() {
+      this[_sizeTween].begin = this[_sizeTween].end = this.debugAdoptSize(dart.nullCheck(this.child).size);
+      this[_state] = animated_size.RenderAnimatedSizeState.stable;
+    }
+    [_layoutStable]() {
+      if (!dart.equals(this[_sizeTween].end, dart.nullCheck(this.child).size)) {
+        this[_sizeTween].begin = this.size;
+        this[_sizeTween].end = this.debugAdoptSize(dart.nullCheck(this.child).size);
+        this[_restartAnimation]();
+        this[_state] = animated_size.RenderAnimatedSizeState.changed;
+      } else if (this[_controller].value === this[_controller].upperBound) {
+        this[_sizeTween].begin = this[_sizeTween].end = this.debugAdoptSize(dart.nullCheck(this.child).size);
+      } else if (!this[_controller].isAnimating) {
+        this[_controller].forward();
+      }
+    }
+    [_layoutChanged]() {
+      if (!dart.equals(this[_sizeTween].end, dart.nullCheck(this.child).size)) {
+        this[_sizeTween].begin = this[_sizeTween].end = this.debugAdoptSize(dart.nullCheck(this.child).size);
+        this[_restartAnimation]();
+        this[_state] = animated_size.RenderAnimatedSizeState.unstable;
+      } else {
+        this[_state] = animated_size.RenderAnimatedSizeState.stable;
+        if (!this[_controller].isAnimating) this[_controller].forward();
+      }
+    }
+    [_layoutUnstable]() {
+      if (!dart.equals(this[_sizeTween].end, dart.nullCheck(this.child).size)) {
+        this[_sizeTween].begin = this[_sizeTween].end = this.debugAdoptSize(dart.nullCheck(this.child).size);
+        this[_restartAnimation]();
+      } else {
+        this[_controller].stop();
+        this[_state] = animated_size.RenderAnimatedSizeState.stable;
+      }
+    }
+    paint(context, offset) {
+      if (this.child != null && this[_hasVisualOverflow] && this.clipBehavior !== ui.Clip.none) {
+        let rect = ui.Offset.zero['&'](this.size);
+        this[_clipRectLayer] = context.pushClipRect(this.needsCompositing, offset, rect, dart.bind(this, 'paint', super.paint), {clipBehavior: this.clipBehavior, oldLayer: this[_clipRectLayer]});
+      } else {
+        this[_clipRectLayer] = null;
+        super.paint(context, offset);
+      }
+    }
+  };
+  (animated_size.RenderAnimatedSize.new = function(opts) {
+    let t0;
+    let vsync = opts && 'vsync' in opts ? opts.vsync : null;
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    let reverseDuration = opts && 'reverseDuration' in opts ? opts.reverseDuration : null;
+    let curve = opts && 'curve' in opts ? opts.curve : C[5] || CT.C5;
+    let alignment = opts && 'alignment' in opts ? opts.alignment : C[6] || CT.C6;
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[7] || CT.C7;
+    this[__RenderAnimatedSize__controller] = null;
+    this[__RenderAnimatedSize__animation] = null;
+    this[_sizeTween] = new tween.SizeTween.new();
+    this[__RenderAnimatedSize__hasVisualOverflow] = null;
+    this[_lastValue] = null;
+    this[_state] = animated_size.RenderAnimatedSizeState.start;
+    this[_clipBehavior] = ui.Clip.hardEdge;
+    this[_clipRectLayer] = null;
+    if (!(vsync !== null)) dart.assertFailed(null, I[1], 86, 15, "vsync != null");
+    if (!(duration !== null)) dart.assertFailed(null, I[1], 87, 15, "duration != null");
+    if (!(curve !== null)) dart.assertFailed(null, I[1], 88, 15, "curve != null");
+    if (!(clipBehavior !== null)) dart.assertFailed(null, I[1], 89, 15, "clipBehavior != null");
+    this[_vsync] = vsync;
+    this[_clipBehavior] = clipBehavior;
+    animated_size.RenderAnimatedSize.__proto__.new.call(this, {child: child, alignment: alignment, textDirection: textDirection});
+    this[_controller] = (t0 = new animation_controller.AnimationController.new({vsync: vsync, duration: duration, reverseDuration: reverseDuration}), (() => {
+      t0.addListener(dart.fn(() => {
+        if (this[_controller].value !== this[_lastValue]) this.markNeedsLayout();
+      }, T.VoidTovoid()));
+      return t0;
+    })());
+    this[_animation] = new animations.CurvedAnimation.new({parent: this[_controller], curve: curve});
+  }).prototype = animated_size.RenderAnimatedSize.prototype;
+  dart.addTypeTests(animated_size.RenderAnimatedSize);
+  dart.addTypeCaches(animated_size.RenderAnimatedSize);
+  dart.setMethodSignature(animated_size.RenderAnimatedSize, () => ({
+    __proto__: dart.getMethods(animated_size.RenderAnimatedSize.__proto__),
+    [_restartAnimation]: dart.fnType(dart.void, []),
+    [_layoutStart]: dart.fnType(dart.void, []),
+    [_layoutStable]: dart.fnType(dart.void, []),
+    [_layoutChanged]: dart.fnType(dart.void, []),
+    [_layoutUnstable]: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(animated_size.RenderAnimatedSize, () => ({
+    __proto__: dart.getGetters(animated_size.RenderAnimatedSize.__proto__),
+    [_controller]: animation_controller.AnimationController,
+    [_animation]: animations.CurvedAnimation,
+    [_hasVisualOverflow]: core.bool,
+    state: animated_size.RenderAnimatedSizeState,
+    duration: core.Duration,
+    reverseDuration: dart.nullable(core.Duration),
+    curve: curves.Curve,
+    clipBehavior: ui.Clip,
+    isAnimating: core.bool,
+    vsync: ticker.TickerProvider,
+    [_animatedSize]: dart.nullable(ui.Size)
+  }));
+  dart.setSetterSignature(animated_size.RenderAnimatedSize, () => ({
+    __proto__: dart.getSetters(animated_size.RenderAnimatedSize.__proto__),
+    [_controller]: animation_controller.AnimationController,
+    [_animation]: animations.CurvedAnimation,
+    [_hasVisualOverflow]: core.bool,
+    duration: core.Duration,
+    reverseDuration: dart.nullable(core.Duration),
+    curve: curves.Curve,
+    clipBehavior: ui.Clip,
+    vsync: ticker.TickerProvider
+  }));
+  dart.setLibraryUri(animated_size.RenderAnimatedSize, I[0]);
+  dart.setFieldSignature(animated_size.RenderAnimatedSize, () => ({
+    __proto__: dart.getFields(animated_size.RenderAnimatedSize.__proto__),
+    [__RenderAnimatedSize__controller]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [__RenderAnimatedSize__animation]: dart.fieldType(dart.nullable(animations.CurvedAnimation)),
+    [_sizeTween]: dart.finalFieldType(tween.SizeTween),
+    [__RenderAnimatedSize__hasVisualOverflow]: dart.fieldType(dart.nullable(core.bool)),
+    [_lastValue]: dart.fieldType(dart.nullable(core.double)),
+    [_state]: dart.fieldType(animated_size.RenderAnimatedSizeState),
+    [_clipBehavior]: dart.fieldType(ui.Clip),
+    [_vsync]: dart.fieldType(ticker.TickerProvider),
+    [_clipRectLayer]: dart.fieldType(dart.nullable(layer.ClipRectLayer))
+  }));
+  dart.trackLibraries("packages/flutter/src/rendering/animated_size.dart", {
+    "package:flutter/src/rendering/animated_size.dart": animated_size
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["animated_size.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/flutter/src/rendering/animated_size.dart.lib.js"}');
+  // Exports:
+  return {
+    src__rendering__animated_size: animated_size
+  };
+}));
+
+//# sourceMappingURL=animated_size.dart.lib.js.map

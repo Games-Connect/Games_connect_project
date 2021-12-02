@@ -39,7 +39,7 @@ class Sobre extends StatelessWidget {
                             child: Text('Games Connect',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    //color: Colors.white,
+                                    color: Colors.white,
                                     fontSize: 30,
                                     fontWeight: FontWeight.bold))))),
                 SizedBox(
@@ -56,7 +56,7 @@ class Sobre extends StatelessWidget {
                                     'quais já foram ' 'zerados' '.',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    //color: Colors.white,
+                                    color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold))))),
                 SizedBox(
@@ -71,7 +71,7 @@ class Sobre extends StatelessWidget {
                                 'Criado por: \n João Paulo Novato \n Kleiber Paz',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    //color: Colors.white,
+                                    color: Colors.white,
                                     fontSize: 15))))),
               ])),
         ));

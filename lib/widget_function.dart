@@ -57,7 +57,7 @@ class WidgetFunction extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => Jogos(this.nome, '19/09/2021 - 19:50'),
+              builder: (context) => Jogos(),
             ),
           );
         },
